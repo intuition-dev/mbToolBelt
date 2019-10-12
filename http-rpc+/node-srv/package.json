@@ -1,0 +1,20 @@
+{
+  "name": "HTTP-RPC",
+  
+  "main": "index.js",
+
+  "author": "MetaBake LLC",
+  "private": true,
+  "engines": {
+      "node": ">=12.11.0",
+      "yarn": ">=1.19.0"
+    },
+
+  "dependencies": {
+    "mbake": ">=6.10.3"
+  },
+
+  "devDependencies": {
+    "@types/node": ">=12.7.12"
+  }
+}

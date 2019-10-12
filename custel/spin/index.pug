@@ -1,0 +1,52 @@
+head
+    include headFrag
+
+    link(href='/css/spin.css' rel='stylesheet' type="text/css" )
+
+body
+
+    div
+        hr
+        p#one oh hi
+
+        .container
+
+            p
+            div#bla.ha1
+                button Start
+
+    div
+        spin-custel
+
+
+    script.
+
+        depp.define({'spin1-custel':'/custel/spin-custel.js'})
+
+        depp.require(['spin1-custel'], function() {
+
+            setTimeout(function(){
+                disE('spin-stop')
+            },1000)
+      
+            setTimeout(function(){
+                disE('spin-start')
+            },2000)
+
+            setTimeout(function(){
+                disE('spin-stop')
+            },3000)
+      
+
+            setTimeout(function(){
+                disE('spin-start')
+            },5000)
+
+
+        })//depp
+
+
+
+
+
+        

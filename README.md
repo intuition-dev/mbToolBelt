@@ -1,2 +1,20 @@
-# mbToolBelt
-ToolBelt
+
+# MetaBake's Tool Belt
+
+#### 'Thanos has a glove. We just gave you a tool belt!'
+
+#### Please star our main project here:
+- https://github.com/intuition-dev/INTUITION
+
+Listed dependencies gives you application a list of a election curated js libraries that you may chose to use/require.
+
+
+It saves time, sets baseline for depps, defines popular/approved libs:
+
+      mbake -f .
+
+That will emit this code:
+
+      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v2.10.10/src/toolBelt.min.js')
+
+It also contains polyfill and some other frequently needed functions.

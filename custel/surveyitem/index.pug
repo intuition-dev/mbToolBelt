@@ -1,0 +1,53 @@
+head
+   //- this has definitions:
+   include headFrag
+   link(rel='stylesheet', href='//unpkg.laska.io/metacake@1.2.25/surveryitem/custel/css/pretty-checkbox.css')
+
+   // DO NOT RELEASE with local version, use the CDN min version
+   
+body   
+   // notice buttons are styled in the page, not in comp
+
+   p Some questions:
+
+   //1
+   surveyitem-comp
+      button Click
+
+   hr 
+   br
+
+   // 2
+   surveyitem-comp
+      //- you can nest regular text input if you want; such as for other: _______
+      button Click
+
+
+   //- DO NOT RELEASE with local version.      
+   //script(src='comps/surveyitem-comp.js')
+   script.
+      //instead of let comps = riot.mount('surveyitem-comp')
+      depp.require(['riotjs', 'surveyitem-comp'], function() {
+         // after we have 'Promise' in browser - but can be skipped if no ie11:
+         // riot
+         var cs = riot.mount('surveyitem-comp')
+         populate(cs)
+      })//()
+
+      function populate(comps) { // the promise returned 
+         let c1 = comps[0]
+         let c2 = comps[1]
+
+         //data
+         let q1  ='What is your Biology?'
+         let s1 = ['Male', 'Female']
+         let q2  ='When will you be done?'
+         let s2 = [ 'Today', 'Later', 'Never']
+         c1.init(q1, s1, 'q1', null)
+         c2.init(q2, s2, 'q2', null)
+      }
+
+      // handle the button event passed in
+      function onBut(evt) {
+         console.log(evt.detail)
+      }

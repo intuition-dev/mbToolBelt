@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var _start = Date.now()
+      window.ENV = '0' // for comps, but it is also in scape for Pug for ENV logic
+      
+    </script>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="//cdn.jsdelivr.net/npm/johnnydepp@0.1.0/dist/depp.min.js"></script>
+    <style>
+      html { touch-action: manipulation; }  
+      .delayShowing { opacity: 0; }
+      .blur { -webkit-filter:blur(2px);filter:blur(2px); }
+      
+    </style>
+    <script src="//cdn.jsdelivr.net/npm/riot@3.13.2/riot.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="columns">
+        <div class="column col-10 col-mx-auto pt-2">
+          <contactus-comp emailjs_id="" template_id="" service_id="" reply_to="" from_name="" to_name="" from_email="" legend_title="For inquiries, please use this submission form:"></contactus-comp>
+        </div>
+      </div>
+    </div>
+    <script>
+      depp.define({ 'contact2': ['#contactus-comp','#MOCKUPStyle']})
+      console.log('contact1')
+      
+      depp.require(['contact2'], function(){
+         console.log('contact2')
+      
+         riot.mount('contactus-comp')[0]
+      
+      }, function(err){
+         console.log(err)
+      })
+    </script>
+  <!-- mB v6.08.20 on 2019-08-20T18:28:02.453Z --></body>
+</html>

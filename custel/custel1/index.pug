@@ -1,0 +1,27 @@
+head
+   include headFrag
+
+body
+   p oh hi
+   
+   c-custel#c1
+      p Slot In
+
+   script(src='/custel/c-custel.js')
+
+   script.
+      // send message to comp
+      let c1 = document.getElementById('c1')
+      c1.setAttribute('bla', 2) // call to the comp's property
+      
+      //use Custom Events example to receive messages from comp
+      addEventListener('c-custel-x', function (evt) {
+         console.log('pg received message', evt.detail)
+
+         let c = document.getElementById('c1')
+         c.setViewModel(null)
+
+      })   
+
+      console.log('pg')
+

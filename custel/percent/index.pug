@@ -1,0 +1,21 @@
+head
+   include headFrag
+   
+body
+   .circle#c1
+
+   script.
+      depp.require(['circles'], function(){
+         circ()
+      })
+
+      function circ() {
+         console.log('c1')
+         var myCircle = Circles.create({
+            id:                  'c1',
+            radius:              60,
+            value:               43,
+            colors:              ['#D3B6C6', '#4B253A'],
+
+         })
+      }

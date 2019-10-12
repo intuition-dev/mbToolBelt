@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+      include headFrag
+      script(src='//cdn.jsdelivr.net/npm/riot@3.13.2/riot.min.js')
+
+  body
+
+      //- DO NOT RELEASE with local version.      
+
+      .container
+         .columns
+            .column.col-10.col-mx-auto.pt-2
+                  contactus-comp(
+                     emailjs_id=""
+                     template_id=""
+                     service_id=""
+                     reply_to=""
+                     from_name=""
+                     to_name= ""
+                     from_email= ""
+                     legend_title="For inquiries, please use this submission form:")
+
+      script.
+         depp.define({ 'contact2': ['#contactus-comp','#MOCKUPStyle']})
+         console.log('contact1')
+
+         depp.require(['contact2'], function(){
+            console.log('contact2')
+
+            riot.mount('contactus-comp')[0]
+
+         }, function(err){
+            console.log(err)
+         })
+
+
