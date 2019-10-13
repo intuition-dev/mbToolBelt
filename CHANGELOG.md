@@ -67,7 +67,7 @@
 - added support for native dialog
 
 ### 1.9.1
-- removed auto load, now only poly are auto loaded. You must manually ask for toolBeltDefault() 
+- removed auto load, now only poly are auto loaded. You must manually ask for mbToolBeltDefault() 
 
 ### 1.9.0
 - move bsjs to other
@@ -119,11 +119,11 @@
 - bump FireBase
 
 ### 2.0.6
-- contactus-comp: change validation library to use validate.js from toolBelt.js
+- contactus-comp: change validation library to use validate.js from mbToolBelt.js
 - updated snipcart to v3
 
 ### 2.0.5
-- fixed contactus-comp: fixed empty fields and removed validator, which is no more in toolBelt.js
+- fixed contactus-comp: fixed empty fields and removed validator, which is no more in mbToolBelt.js
 - firebase performance
 
 ### 2.0.4

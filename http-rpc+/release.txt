@@ -1,1 +1,1 @@
-mbake -t in www folder and do a toolBelt release.
+mbake -t in www folder and do a mbToolBelt release.

@@ -42,7 +42,7 @@ For front-end to run you need a http server, such as Caddyserver, mbake CLI or i
 So start an http server to run the index.html in www folder. It will make some dummy RPC calls.
 
 In production you should use this front-end:
-```https://cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v2.10.10/http-rpc+/web/httpRPC.min.js ```
+```https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.11/http-rpc+/web/httpRPC.min.js ```
 
 ### Demo
 
@@ -51,9 +51,9 @@ In production you should use this front-end:
 ### Code review:
 
 - [Server side](https://github.com/intuition-dev/mbCLI/blob/master/src/lib/Serv.ts )
-- [Client side lib](https://github.com/intuition-dev/toolBelt/blob/master/http-rpc%2B/web/httpRPC.ts)
-- [Server side use](https://github.com/intuition-dev/toolBelt/blob/master/http-rpc%2B/node-srv/index.ts)
-- [Client side use](https://github.com/intuition-dev/toolBelt/blob/master/http-rpc%2B/web/main.js)
+- [Client side lib](https://github.com/intuition-dev/mbToolBelt/blob/master/http-rpc%2B/web/httpRPC.ts)
+- [Server side use](https://github.com/intuition-dev/mbToolBelt/blob/master/http-rpc%2B/node-srv/index.ts)
+- [Client side use](https://github.com/intuition-dev/mbToolBelt/blob/master/http-rpc%2B/web/main.js)
 
 
 ### Notes

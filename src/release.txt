@@ -3,7 +3,7 @@ Update changelog.md!
 
 (once you release component - you have to register it here)
 
-cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v2.10.10/
+cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.11/
 
 1. replace above string w/ a bumped version; globally via VS Code. It should be over 130 of places in all of git (ignore min.js and html)
 
@@ -11,7 +11,7 @@ cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v2.10.10/
 
 3. push!!
 
-4. release in git via browser ( https://github.com/intuition-dev/toolBelt/releases w / version matching the bumped version)
+4. release in git via browser ( https://github.com/intuition-dev/mbToolBelt/releases w / version matching the bumped version)
 
 5. wait 2 minutes for the js deliverCDN to propagate
 

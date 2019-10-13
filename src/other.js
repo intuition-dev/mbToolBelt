@@ -1,5 +1,5 @@
 
-// other stuff to keep toolBelt clean/smaller
+// other stuff to keep mbToolBelt clean/smaller
 // this file is not provided as min.
 
 
@@ -109,7 +109,7 @@ depp.define({
 
   , 'riotjs': 'https://cdn.jsdelivr.net/npm/riot@3.13.2/riot.min.js'
 
-  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v2.10.10/src/vendors/parallaxImg.min.js'
+  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.11/src/vendors/parallaxImg.min.js'
 
   // deprectated
   , 'vexAlertFlatReq': ['https://cdn.jsdelivr.net/npm/vex-js@4.1.0/dist/js/vex.combined.min.js'
