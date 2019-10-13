@@ -1,5 +1,6 @@
-### 2.10.10
+### 2.10.12
 - RPC bump
+- changed name of repo to mbToolBelt
 
 ### 1.10.8
 - added Event Bus: https://github.com/theiconic/event-bus
@@ -67,7 +68,7 @@
 - added support for native dialog
 
 ### 1.9.1
-- removed auto load, now only poly are auto loaded. You must manually ask for mbToolBeltDefault() 
+- removed auto load, now only poly are auto loaded. You must manually ask for toolBeltDefault() 
 
 ### 1.9.0
 - move bsjs to other
