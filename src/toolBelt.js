@@ -10,9 +10,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
 
 console.log('start')
 depp.define({ // due to ie11: https://github.com/theiconic/event-bus
-  'eventBus':'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.12/src/vendors/EventBus.min.js'
 })
-depp.require('eventBus') // DeventBus is the default event bus
 
 function onDOM_() {
   depp.done('DOM')
@@ -53,11 +51,14 @@ function polyIO() { // callback step 3
   }//else
 }//()
 
-depp.define({
+depp.require('eventBus') // DeventBus is the default event bus
 
-//  'webcomponents-loader': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.3.0/webcomponents-loader.min.js'
-// https://github.com/webcomponents/webcomponentsjs
-  'es5-adapter': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.3.0/custom-elements-es5-adapter.min.js'
+depp.define({
+  'eventBus':['EventBus.js']//'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.12/src/vendors/EventBus.js']
+
+  //  'webcomponents-loader': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.3.0/webcomponents-loader.min.js'
+  // https://github.com/webcomponents/webcomponentsjs
+  ,'es5-adapter': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.3.0/custom-elements-es5-adapter.min.js'
 
   , 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features=fetch%2CWebAnimations%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.map%2CIntersectionObserver%2CIntersectionObserverEntry%2Cconsole.trace%2Cconsole.debug%2CHTMLTemplateElement%2CrequestAnimationFrame%2CPromise%2CCustomEvent'
 
