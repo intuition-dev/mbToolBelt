@@ -3,9 +3,8 @@ var BaseViewModel = (function () {
         this.E1Listener = {};
     }
     BaseViewModel.prototype.testE1 = function () {
-        console.log('tst');
         depp.require('eventBus', function () {
-            console.log('tst');
+            console.log('tst:');
             var THIZ = this;
             DeventBus.dispatch('dataB4', 'oh hi b4');
             DeventBus.dispatch('dataB4', 'oh hi b4');
