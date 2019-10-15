@@ -34,24 +34,29 @@ var Topic = (function () {
             }
         };
         this.dispatch = function (event, data) {
-            var binding;
-            var listeners = [];
-            for (binding in this.listeners) {
+            var Nlisteners = new Array();
+            this.listeners.forEach(function (binding) {
                 if (this.matchWildCard(event, binding)) {
-                    listeners = listeners.concat(this.listeners[binding]);
+                    Nlisteners = Nlisteners.concat(this.listeners[binding]);
                 }
-            }
-            for (var i in listeners) {
-                listeners[i].callback(data);
-            }
-            if (!listeners.length && this.options.persistent === true) {
+            });
+            Nlisteners.forEach(function (ll) {
+                try {
+                    console.log(typeof ll.callback);
+                    ll.callback(data);
+                }
+                catch (err) {
+                    console.log(err);
+                }
+            });
+            if (!Nlisteners.length && this.options.persistent === true) {
                 this.queue[event] = this.queue[event] || [];
                 this.queue[event].push(data);
             }
         };
         this.identifier = identifier;
         this.options = options || {};
-        this.listeners = {};
+        this.listeners = [];
         this.queue = {};
     }
     ;
