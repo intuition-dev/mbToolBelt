@@ -26,7 +26,9 @@ class BaseViewModel {
     E1Listener = {} // ;to store E1Listener data for events
 
     testE1() {
-      depp.require('eventbus', function(){
+      console.log('tst')
+
+      depp.require('eventBus', function(){
         console.log('tst')
 
         const THIZ:BaseViewModel = this
