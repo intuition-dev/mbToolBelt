@@ -1,6 +1,7 @@
 ### 2.10.12
 - RPC bump
 - changed name of repo to mbToolBelt
+- FontsLoaded is now eventBus event, not depp
 
 ### 1.10.8
 - added Event Bus: https://github.com/theiconic/event-bus
