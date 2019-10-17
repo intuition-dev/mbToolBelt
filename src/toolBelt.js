@@ -55,7 +55,7 @@ function polyIO() { // callback step 3
 
 depp.define({
 
-//  'webcomponents-loader': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.3.0/webcomponents-loader.min.js'
+//  'webcomponents-loader': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.3.0/webcomponents-loader.js'
 // https://github.com/webcomponents/webcomponentsjs
   'es5-adapter': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.3.0/custom-elements-es5-adapter.min.js'
 
