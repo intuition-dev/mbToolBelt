@@ -1,3 +1,5 @@
+### todo test ie 11 w/ script back in
+
 ### 2.10.12
 - RPC bump
 - changed name of repo to mbToolBelt
