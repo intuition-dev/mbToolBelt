@@ -22,13 +22,6 @@ depp.define({
 
   , 'morris': ['jquery', 'raphael', '//cdn.jsdelivr.net/gh//morrisjs/morris.js@0.5.1/morris.min.js']
 
-  , 'firestore': ['https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js'
-    , 'https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js'
-    , 'https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js'
-    , 'https://www.gstatic.com/firebasejs/7.1.0/firebase-performance.js']
-  , 'firebase-storage': ['#firestore', 'https://www.gstatic.com/firebasejs/7.1.0/firebase-storage.js']
-
-
   , 'zebraDate': ['https://cdn.jsdelivr.net/npm/zebra_datepicker@1.9.12/dist/css/bootstrap/zebra_datepicker.min.css',
     'https://cdn.jsdelivr.net/npm/zebra_datepicker@1.9.12/dist/zebra_datepicker.min.js']
 
