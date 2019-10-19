@@ -1,7 +1,7 @@
 
 - remove riot and fire from other.js
 
-### todo test ie 11 w/ script back in
+### todo test ie 11 w/ webcomp script back in
 
 
 ### 2.10.12
@@ -24,7 +24,6 @@
 - bump firestore ver in other js
 - added instantpage, loaded by toolDefault auto
 - changed order: webloader first, then poly
-
 
 ### 1.9.30
 - fixed tabulator_core url

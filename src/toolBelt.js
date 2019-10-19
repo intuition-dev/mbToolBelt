@@ -103,12 +103,12 @@ depp.define({
   , 'instantpage': ['#poly', 'https://cdn.jsdelivr.net/npm/instant.page.es5@2.0.0/instantpage.es5.min.js']
 
   // charts
+  , 'smoothie': 'https://cdn.jsdelivr.net/npm/smoothie@1.35.0/smoothie.min.js'
+
   , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.4.0'
     , 'https://cdn.jsdelivr.net/npm/vega-embed@4.2.0'
     , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.17.0/build/vega-tooltip.min.js'
   ]
-
-  , 'smoothie': 'https://cdn.jsdelivr.net/npm/smoothie@1.35.0/smoothie.min.js'
 
   // upload libs to pick, also css or ?
   , 'filepond': ['https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.css', 'https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.js']
