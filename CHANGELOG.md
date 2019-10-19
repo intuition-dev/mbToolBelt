@@ -1,4 +1,8 @@
+
+- remove riot and fire from other.js
+
 ### todo test ie 11 w/ script back in
+
 
 ### 2.10.12
 - RPC bump
