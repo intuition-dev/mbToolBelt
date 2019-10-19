@@ -13,31 +13,17 @@ depp.define({
 
   , 'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
 
-  , 'bsDefaultStyle': 'https://cdn.jsdelivr.net/gh/intuition-dev/intuDS@v1.0.0/bootStrap/css/bootstrap.min.css'
-
   , 'jsForm': ['https://cdn.jsdelivr.net/npm/jquery.jsForm@1.4.0/src/jquery.jsForm.min.js']
 
   , 'surveyjs': ['jquery', 'https://surveyjs.azureedge.net/1.1.14/survey.jquery.min.js',
-    'https://surveyjs.azureedge.net/1.1.14/survey.css']
+       'https://surveyjs.azureedge.net/1.1.14/survey.css']
 
   , 'morris': ['jquery', 'raphael', '//cdn.jsdelivr.net/gh//morrisjs/morris.js@0.5.1/morris.min.js']
-
-  , 'zebraDate': ['https://cdn.jsdelivr.net/npm/zebra_datepicker@1.9.12/dist/css/bootstrap/zebra_datepicker.min.css',
-    'https://cdn.jsdelivr.net/npm/zebra_datepicker@1.9.12/dist/zebra_datepicker.min.js']
-
-  //vega helper
-  , 'datalib': 'https://cdn.jsdelivr.net/npm/datalib@1.9.2/datalib.min.js'
 
   , 'justgage': 'https://cdn.jsdelivr.net/npm/justgage@1.3.1/dist/justgage.min.js'
 
   //webGL
   , 'babylon': 'https://cdn.jsdelivr.net/npm/babylonjs@4.0.3/babylon.js' // is min
-
-  , 'bsjs': ['#jquery', 'https://cdn.jsdelivr.net/npm/popper.js@1.15.0/dist/umd/popper.min.js',
-    'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js'
-  ]
-
-  , 'tabulator': ['#WebComponentsReady', 'https://cdn.jsdelivr.net/npm/tabulator-tables@4.4.1/dist/js/tabulator.min.js']
 
   , 'msgpack-lite': 'https://cdn.jsdelivr.net/npm/msgpack-lite@0.1.26/dist/msgpack.min.js'
 
@@ -45,6 +31,8 @@ depp.define({
 
   , 'picker.date': ['https://cdn.jsdelivr.net/npm/pickadate@3.6.4/lib/compressed/themes/classic.date.min.css', 'https://cdn.jsdelivr.net/npm/pickadate@3.6.4/lib/compressed/picker.date.min.js']
   , 'picker.time': ['https://cdn.jsdelivr.net/npm/pickadate@3.6.4/lib/compressed/themes/classic.time.min.css', 'https://cdn.jsdelivr.net/npm/pickadate@3.6.4/lib/compressed/picker.time.min.js']
+  , 'zebraDate': ['https://cdn.jsdelivr.net/npm/zebra_datepicker@1.9.12/dist/css/bootstrap/zebra_datepicker.min.css',
+         'https://cdn.jsdelivr.net/npm/zebra_datepicker@1.9.12/dist/zebra_datepicker.min.js']
 
   , 'progressBar': 'https://cdn.jsdelivr.net/npm/progressbar.js@1.0.1/dist/progressbar.min.js'
 
@@ -58,20 +46,11 @@ depp.define({
   , 'jqMousewheel': ['#jquery', 'https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js']
   , 'scrollify': ['#jquery', 'https://cdn.jsdelivr.net/npm/jquery-scrollify@1.0.20/jquery.scrollify.min.js']
 
-  , 'GSAP': ['https://cdn.jsdelivr.net/npm/gsap@2.1.3/src/minified/TweenLite.min.js',
-    'https://cdn.jsdelivr.net/npm/gsap@2.1.3/src/minified/plugins/CSSPlugin.min.js'] // plugin needs to animate css property
-
   // use for file uploads only
   , 'axios': 'https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js'
 
-  , 'doTempl2': 'https://cdn.jsdelivr.net/npm/dot@2.0.0-beta.0/doT.js'
-  , 'doTempl': 'https://cdn.jsdelivr.net/npm/dot@1.1.2/doT.min.js'
-
   // https://www.npmjs.com/package/collect.js
   , 'collect': 'https://cdn.jsdelivr.net/npm/collect.js@4.16.6/build/collect.min.js'
-
-  , 'croppie': ['https://cdn.jsdelivr.net/npm/croppie@2.6.4/croppie.min.js'
-    , 'https://cdn.jsdelivr.net/npm/croppie@2.6.4/croppie.css']
 
   , 'fluxify': 'https://cdn.jsdelivr.net/npm/fluxify@0.2.3/fluxify.min.js'
   , 'flyd': 'https://cdn.jsdelivr.net/npm/flyd@0.2.8/flyd.min.js'
@@ -110,6 +89,9 @@ depp.define({
   //vid
   , 'mediaelement': ['https://cdn.jsdelivr.net/npm/mediaelement@4.2.12/build/mediaelementplayer.min.css'
     , 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.12/build/mediaelement-and-player.min.js']
+
+  , 'tabulator-core': ['#poly', 'https://cdn.jsdelivr.net/npm/tabulator-tables@4.4.1/dist/js/tabulator_core.min.js']
+  , 'tabulatorDefaultStyle': ['https://cdn.jsdelivr.net/npm/tabulator-tables@4.4.1/dist/css/tabulator_simple.css']
 
 })
 

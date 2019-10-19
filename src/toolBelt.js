@@ -102,7 +102,7 @@ depp.define({
 
   , 'instantpage': ['#poly', 'https://cdn.jsdelivr.net/npm/instant.page.es5@2.0.0/instantpage.es5.min.js']
 
-  // needs to remove lite use use full version link
+  // charts
   , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.4.0'
     , 'https://cdn.jsdelivr.net/npm/vega-embed@4.2.0'
     , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.17.0/build/vega-tooltip.min.js'
@@ -127,9 +127,6 @@ depp.define({
 
   , 'Vanilla-DataTables': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.js'
                          , 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.css']
-
-  , 'tabulator-core': ['#poly', 'https://cdn.jsdelivr.net/npm/tabulator-tables@4.4.1/dist/js/tabulator_core.min.js']
-  , 'tabulatorDefaultStyle': ['https://cdn.jsdelivr.net/npm/tabulator-tables@4.4.1/dist/css/tabulator_simple.css']
 
   , 'listjs': ['#eventBus', 'https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
 
@@ -204,7 +201,7 @@ depp.define({
 
   , 'circles': 'https://cdn.jsdelivr.net/npm/circles.js@0.0.6/circles.min.js'
 
-  // prefer their SASS:
+  //  SASS?:
   , 'ihover': 'https://cdn.jsdelivr.net/npm/imagehover.css@1.0.0/css/imagehover.min.css'
 
   // images
@@ -225,6 +222,7 @@ depp.define({
   //FX section
   , 'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.14/src/vendors/delighters.min.js']
   , 'odometerBounty': 'https://cdn.jsdelivr.net/npm/bounty@1.2.1/lib/bounty.js'
+
   // transitions
   , 'slider': ['https://cdn.jsdelivr.net/gh/joelambert/Flux-Slider@v1.4.4/js/flux.min.js']
 
@@ -233,7 +231,7 @@ depp.define({
   , 'jqMapa': ['#jquery', '#raphael', 'https://cdn.jsdelivr.net/npm/jquery-mapael@2.2.0/js/jquery.mapael.min.js']
   , 'raphael': 'https://cdn.jsdelivr.net/npm/raphael@2.2.8/raphael.min.js'
 
-  //FTS for simple: 
+  // simple FTS: 
   , 'fuse': 'https://cdn.jsdelivr.net/npm/fuse.js@3.4.4/dist/fuse.min.js'
 
   // get scss and make                  
