@@ -2,7 +2,7 @@
 console.log('UI:')
 
 
-// var vm = new VideModel()
+// var vm = new ViewModel()
 
 depp.require(['DOM'], function() {
     console.log('DOM')

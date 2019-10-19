@@ -107,8 +107,6 @@ depp.define({
   , 'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css'
     , 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
-  , 'riotjs': 'https://cdn.jsdelivr.net/npm/riot@3.13.2/riot.min.js'
-
   , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.14/src/vendors/parallaxImg.min.js'
 
   // deprectated
