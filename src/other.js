@@ -18,10 +18,10 @@ depp.define({
   , 'surveyjs': ['jquery', 'https://surveyjs.azureedge.net/1.1.14/survey.jquery.min.js',
        'https://surveyjs.azureedge.net/1.1.14/survey.css']
 
-  , 'morris': ['jquery', 'raphael', '//cdn.jsdelivr.net/gh//morrisjs/morris.js@0.5.1/morris.min.js']
-
-  , 'justgage': 'https://cdn.jsdelivr.net/npm/justgage@1.3.1/dist/justgage.min.js'
-
+  , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.4.0'
+      , 'https://cdn.jsdelivr.net/npm/vega-embed@4.2.0'
+      , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.17.0/build/vega-tooltip.min.js'
+   ]
   //webGL
   , 'babylon': 'https://cdn.jsdelivr.net/npm/babylonjs@4.0.3/babylon.js' // is min
 
@@ -65,19 +65,19 @@ depp.define({
 
   //simplistic nav:
   , 'offcanvasNav': ['https://cdn.jsdelivr.net/npm/js-offcanvas@1.2.9/dist/_js/js-offcanvas.pkgd.js'
-    , 'https://cdn.jsdelivr.net/npm/js-offcanvas@1.2.9/dist/_css/prefixed/js-offcanvas.css']
+      , 'https://cdn.jsdelivr.net/npm/js-offcanvas@1.2.9/dist/_css/prefixed/js-offcanvas.css']
 
   , 'particles': 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js'
 
   , 'faker': 'https://cdn.jsdelivr.net/npm/faker@4.1.0/index.min.js'
 
   , 'fastdomPro': ['https://cdn.jsdelivr.net/npm/fastdom@1.0.9/fastdom.min.js'
-    , 'https://cdn.jsdelivr.net/npm/fastdom@1.0.9/extensions/fastdom-promised.js'
-    , 'https://cdn.jsdelivr.net/npm/fastdom-sequencer@1.0.3/fastdom-sequencer.min.js'
-  ]
+      , 'https://cdn.jsdelivr.net/npm/fastdom@1.0.9/extensions/fastdom-promised.js'
+      , 'https://cdn.jsdelivr.net/npm/fastdom-sequencer@1.0.3/fastdom-sequencer.min.js'
+   ]
 
   , 'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css'
-    , 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
+      , 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
   , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.14/src/vendors/parallaxImg.min.js'
 

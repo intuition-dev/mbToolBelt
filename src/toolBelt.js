@@ -104,11 +104,8 @@ depp.define({
 
   // charts
   , 'smoothie': 'https://cdn.jsdelivr.net/npm/smoothie@1.35.0/smoothie.min.js'
-
-  , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.4.0'
-    , 'https://cdn.jsdelivr.net/npm/vega-embed@4.2.0'
-    , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.17.0/build/vega-tooltip.min.js'
-  ]
+  , 'morris': ['jquery', 'raphael', '//cdn.jsdelivr.net/gh//morrisjs/morris.js@0.5.1/morris.min.js']
+  , 'justgage': 'https://cdn.jsdelivr.net/npm/justgage@1.3.1/dist/justgage.min.js'
 
   // upload libs to pick, also css or ?
   , 'filepond': ['https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.css', 'https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.js']
@@ -170,7 +167,7 @@ depp.define({
   , 'timeago': 'https://cdn.jsdelivr.net/gh/hustcc/timeago.js@3.0.0/dist/timeago.min.js'
   , 'luxon': 'https://cdn.jsdelivr.net/npm/luxon@1.17.3/build/global/luxon.min.js'
   , 'datepickr': ['https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/flatpickr.min.js',
-    'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
+      'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
 
   // use for validation. eg: check in VM and return 'OK' to view|binding; or return validation errors if found
   // http://validatejs.org
