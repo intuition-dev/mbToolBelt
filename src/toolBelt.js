@@ -105,7 +105,7 @@ depp.define({
   // charts
   , 'smoothie': 'https://cdn.jsdelivr.net/npm/smoothie@1.35.0/smoothie.min.js'
   , 'morris': ['jquery', 'raphael', '//cdn.jsdelivr.net/gh//morrisjs/morris.js@0.5.1/morris.min.js']
-  , 'justgage': 'https://cdn.jsdelivr.net/npm/justgage@1.3.1/dist/justgage.min.js'
+  , 'justgage': ['#raphael', 'https://cdn.jsdelivr.net/npm/justgage@1.3.2/dist/justgage.min.js']
 
   // upload libs to pick, also css or ?
   , 'filepond': ['https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.css', 'https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.js']
@@ -228,7 +228,7 @@ depp.define({
   , 'zenscroll': ['https://cdn.jsdelivr.net/npm/zenscroll@4.0.2/zenscroll-min.js']
 
   , 'jqMapa': ['#jquery', '#raphael', 'https://cdn.jsdelivr.net/npm/jquery-mapael@2.2.0/js/jquery.mapael.min.js']
-  , 'raphael': 'https://cdn.jsdelivr.net/npm/raphael@2.2.8/raphael.min.js'
+  , 'raphael': 'https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js'
 
   // simple FTS: 
   , 'fuse': 'https://cdn.jsdelivr.net/npm/fuse.js@3.4.4/dist/fuse.min.js'
