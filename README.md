@@ -15,7 +15,7 @@ It saves time, sets baseline for depps, defines popular/approved libs:
 
 That will emit this code:
 
-      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.14/src/toolBelt.min.js')
+      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.15/src/toolBelt.min.js')
 
 It also contains polyfill and some other frequently needed functions.
 
