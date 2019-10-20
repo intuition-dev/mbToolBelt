@@ -1,9 +1,8 @@
 
+
+### 2.10.15
 - remove riot and fire from other.js
 - moved vega back
-
-# todo test ie 11 w/ webcomp script back in
-
 
 ### 2.10.12
 - RPC bump
