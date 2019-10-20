@@ -7,7 +7,10 @@
 
 
 depp.define({
-  'awesomplete': ['https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.css',
+
+   'xterm': ['https://cdn.jsdelivr.net/npm/xterm@4.1.0/lib/xterm.min.js', 'https://cdn.jsdelivr.net/npm/xterm@4.1.0/css/xterm.css']
+
+   ,'awesomplete': ['https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.css',
       'https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.js'
    ]
 
