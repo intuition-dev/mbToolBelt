@@ -9,6 +9,7 @@
 depp.define({
 
    'xterm': ['https://cdn.jsdelivr.net/npm/xterm@4.1.0/lib/xterm.min.js', 'https://cdn.jsdelivr.net/npm/xterm@4.1.0/css/xterm.css']
+   ,'socketio':'https://cdn.jsdelivr.net/npm/socket.io-client@2.3.0/dist/socket.io.slim.js'
 
    ,'awesomplete': ['https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.css',
       'https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.js'
