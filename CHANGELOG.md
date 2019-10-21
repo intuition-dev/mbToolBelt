@@ -1,8 +1,7 @@
 
-
-### 2.10.15
+### 2.10.16
 - remove riot and fire from other.js
-- moved vega back
+- moved vega to other js
 
 ### 2.10.12
 - RPC bump
