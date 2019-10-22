@@ -13,6 +13,8 @@ depp.define({
          'https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.2.1/lib/xterm-addon-fit.min.js',
          'https://cdn.jsdelivr.net/npm/xterm-addon-attach@0.3.0/lib/xterm-addon-attach.min.js'
          ]
+         
+   ,'html2canvas': ['#poly', 'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js']
 
    ,'awesomplete': ['https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.css',
       'https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.js'

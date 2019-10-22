@@ -250,8 +250,6 @@ depp.define({
 
   , 'pubnub': ['#eventBus', 'https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
-   ,'html2canvas': ['#poly', 'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js']
-
   //*** INTUITION Comps:
   , 'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.16/custel/marq/marq-custel/marq-custel.min.js']
   , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.16/custel/contactus/custel/contactus-comp.min.js']
