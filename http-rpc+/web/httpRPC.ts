@@ -78,7 +78,8 @@ class httpRPC {//
 
           })//fetch
           .then(function(fullResp) {
-            const obj = fullResp.json();
+            console.log(fullResp)
+            const obj = fullResp.json()
             
             if(!fullResp.ok) 
               reject(obj)

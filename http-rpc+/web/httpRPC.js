@@ -39,6 +39,7 @@ var httpRPC = (function () {
                 keepalive: true
             })
                 .then(function (fullResp) {
+                console.log(fullResp);
                 var obj = fullResp.json();
                 if (!fullResp.ok)
                     reject(obj);
