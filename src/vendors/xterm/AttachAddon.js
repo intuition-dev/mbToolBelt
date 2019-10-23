@@ -1,3 +1,4 @@
+
 /**
  * Copyright (c) 2014, 2019 The xterm.js authors. All rights reserved.
  * @license MIT
