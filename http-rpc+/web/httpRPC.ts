@@ -78,7 +78,6 @@ class httpRPC {//
 
           })//fetch
           .then(function(fullResp) {
-            console.log(fullResp)
             const obj = fullResp.json()
             
             if(!fullResp.ok) 
@@ -129,14 +128,14 @@ class httpRPC {//
       p['appVersion'] = btoa(navigator.appVersion)
       p['userAgent'] = btoa(navigator.userAgent)
       p['platform'] = btoa(navigator.platform)
-    } catch(err) {console.trace(err)}
+    } catch(err) {console.log(err)}
 
     setTimeout(function(){
       //send to server
       THIZ.invoke('log','log', 'log', p)
     },1)
-    if(className) console.info(className, level, msg)
-    else console.info(msg)
+    if(className) console.log(className, level, msg)
+    else console.log(msg)
   }//()
 
 }//class

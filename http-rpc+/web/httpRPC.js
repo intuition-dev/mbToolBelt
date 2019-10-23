@@ -39,7 +39,6 @@ var httpRPC = (function () {
                 keepalive: true
             })
                 .then(function (fullResp) {
-                console.log(fullResp);
                 var obj = fullResp.json();
                 if (!fullResp.ok)
                     reject(obj);
@@ -81,15 +80,15 @@ var httpRPC = (function () {
             p['platform'] = btoa(navigator.platform);
         }
         catch (err) {
-            console.trace(err);
+            console.log(err);
         }
         setTimeout(function () {
             THIZ.invoke('log', 'log', 'log', p);
         }, 1);
         if (className)
-            console.info(className, level, msg);
+            console.log(className, level, msg);
         else
-            console.info(msg);
+            console.log(msg);
     };
     return httpRPC;
 }());
