@@ -1,8 +1,6 @@
 {
   "name": "HTTP-RPC",
   
-  "main": "index.js",
-
   "author": "MetaBake LLC",
   "private": true,
   "engines": {
