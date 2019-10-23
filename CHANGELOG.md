@@ -1,3 +1,5 @@
+### 2.10.17
+- xterm
 
 ### 2.10.16
 - remove riot and fire from other.js
