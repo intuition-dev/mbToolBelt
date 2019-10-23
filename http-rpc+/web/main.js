@@ -1,4 +1,11 @@
 
+depp.define({
+   'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
+})
+
+depp.require(['lz-string'],function(){
+
+})
 
 const rpc = new httpRPC('http', 'localhost', 8888)
 

@@ -80,8 +80,10 @@ depp.define({
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
   , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/debug.css'
 
-  , 'RPC': ['#poly', '#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/http-rpc+/web/httpRPC.min.js']
+  , 'RPC': ['#poly', '#lz-string', '#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/http-rpc+/web/httpRPC.min.js']
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/spa-ts-router/spa-router.min.js']
+
+  , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
   // intuDS:
   , 'minCss': 'https://cdn.jsdelivr.net/gh/intuition-dev/intuDS@v1.0.4/src/css/main.css'
@@ -187,8 +189,6 @@ depp.define({
   // markdown UI
   , 'tail.writer': 'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/js/tail.writer-full.min.js'
   , 'tail.writerWhite': 'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/css/tail.writes-white.css'
-
-  , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
   //check box
   , 'magic-input': 'https://cdn.jsdelivr.net/npm/magic-input@1.0.2/dist/magic-input.css'
