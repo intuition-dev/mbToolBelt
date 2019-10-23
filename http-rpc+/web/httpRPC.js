@@ -15,10 +15,6 @@ var httpRPC = (function () {
     httpRPC.prototype.setToken = function (token) {
         this.token = token;
     };
-    httpRPC.prototype.invoke2 = function (route, ent, method, params) {
-        console.log('use invoke() not invoke()');
-        return this.invoke(route, ent, method, params);
-    };
     httpRPC.prototype.invoke = function (route, ent, method, params) {
         if (!params)
             params = {};
@@ -57,46 +53,7 @@ var httpRPC = (function () {
                 resolve(resp.result);
             })
                 .catch(function (err) {
-                console.log('fetch err');
-                console.log(err);
-                reject(err);
-            });
-        });
-    };
-    httpRPC.prototype.invoke0 = function (route, ent, method, params) {
-        var formData = new FormData();
-        formData.append('params', JSON.stringify(params));
-        formData.append('user', btoa(this.user));
-        formData.append('pswd', btoa(this.pswd));
-        formData.append('page', window.location.pathname);
-        formData.append('method', method);
-        var THIZ = this;
-        return new Promise(function (resolve, reject) {
-            var url = THIZ.httpOrs + '://' + THIZ.host + (THIZ.port ? (':' + THIZ.port) : '') + '/' + route + '/' + ent;
-            if (!(url.includes('/log/')))
-                console.log(url);
-            fetch(url, {
-                body: formData,
-                method: 'post',
-                cache: 'no-cache'
-            })
-                .then(function (fullResp) {
-                var obj = fullResp.json();
-                if (!fullResp.ok)
-                    reject(obj);
-                else {
-                    return obj;
-                }
-            })
-                .then(function (resp) {
-                if (resp.errorMessage) {
-                    reject(resp);
-                }
-                resolve(resp.result);
-            })
-                .catch(function (err) {
-                console.log('fetch err');
-                console.log(err);
+                console.log('fetch err', err);
                 reject(err);
             });
         });
