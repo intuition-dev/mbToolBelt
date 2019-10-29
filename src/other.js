@@ -21,6 +21,8 @@ depp.define({
       'https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.js'
    ]
 
+   , 'isJs': 'https://cdn.jsdelivr.net/gh/arasatasaygin/is.js@v0.9.0/is.min.js'
+
   , 'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
 
   , 'jsForm': ['https://cdn.jsdelivr.net/npm/jquery.jsForm@1.4.0/src/jquery.jsForm.min.js']

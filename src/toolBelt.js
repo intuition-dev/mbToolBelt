@@ -94,8 +94,6 @@ depp.define({
   //removes FOUT if you don't put font family in top (then load other, then font, after font: full style)
   , 'fontloader': ['#eventBus', 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
 
-  , 'isJs': 'https://cdn.jsdelivr.net/gh/arasatasaygin/is.js@v0.9.0/is.min.js'
-
   // Use for context, SPA and complex apps. Commercial License # MetaBake LLC
   , 'state-machine': ['#eventBus', 'https://cdn.jsdelivr.net/npm/javascript-state-machine@3.1.0/lib/state-machine.min.js']
 
@@ -198,6 +196,8 @@ depp.define({
     , 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css']
 
   , 'circles': 'https://cdn.jsdelivr.net/npm/circles.js@0.0.6/circles.min.js'
+
+  , 'clientFinger':'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
 
   //  SASS?:
   , 'ihover': 'https://cdn.jsdelivr.net/npm/imagehover.css@1.0.0/css/imagehover.min.css'

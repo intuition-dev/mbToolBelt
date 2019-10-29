@@ -1,3 +1,7 @@
+
+- added clientjs for fingeprint
+- bump rpc
+
 ### 2.10.17
 - xterm
 
