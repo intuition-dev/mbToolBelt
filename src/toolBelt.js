@@ -9,7 +9,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
  */
 
 console.log('start')
-depp.define({ // due to ie11: https://github.com/theiconic/event-bus
+depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
   'eventBus':'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/EventBus.js'
 })
 depp.require('eventBus') // DeventBus is the default event bus
@@ -80,7 +80,7 @@ depp.define({
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
   , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/debug.css'
 
-  , 'RPC': ['#poly', '#lz-string', '#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/http-rpc+/web/httpRPC.min.js']
+  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/http-rpc+/web/httpRPC.min.js']
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/spa-ts-router/spa-router.min.js']
 
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
