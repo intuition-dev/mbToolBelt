@@ -125,29 +125,4 @@
 - change repo
 - remove snip cart
 
-### 2.0.16
-- added pubnub
-- added spin component, use via events
-- bump FireBase
-
-### 2.0.6
-- contactus-comp: change validation library to use validate.js from mbToolBelt.js
-- updated snipcart to v3
-
-### 2.0.5
-- fixed contactus-comp: fixed empty fields and removed validator, which is no more in mbToolBelt.js
-- firebase performance
-
-### 2.0.4
-- rpc now has log() to be exposed in VM. Works with log router.
-- firebase updated to 6.3: 
-
-### 2.0.3
-- rpc how has session setitem and getitem, for example user, password, keys
-- removeAllStore() can be used to logout
-- getGUID()
-
-### 2.0.2
-- moved to js deliver
-- remove bsjs from default style
 

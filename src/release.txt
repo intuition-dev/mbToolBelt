@@ -17,4 +17,4 @@ cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/
 
 6. update changelog.md
 
-7. check that it works in some small app, eg CRUD
+7. check that it works in some small app, eg src/template
