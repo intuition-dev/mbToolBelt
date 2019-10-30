@@ -10,7 +10,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
 
 console.log('start')
 depp.define({ // due to ie11: https://github.com/theiconic/event-bus
-  'eventBus':'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/EventBus.js'
+  'eventBus':'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/EventBus.js'
 })
 depp.require('eventBus') // DeventBus is the default event bus
 
@@ -78,10 +78,10 @@ depp.define({
   // end poly
 
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
-  , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/debug.css'
+  , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/debug.css'
 
-  , 'RPC': ['#poly', '#lz-string', '#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/http-rpc+/web/httpRPC.min.js']
-  , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/spa-ts-router/spa-router.min.js']
+  , 'RPC': ['#poly', '#lz-string', '#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/http-rpc+/web/httpRPC.min.js']
+  , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/spa-ts-router/spa-router.min.js']
 
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
@@ -132,8 +132,8 @@ depp.define({
   , 'split': 'https://cdn.jsdelivr.net/npm/split.js@1.5.11/dist/split.min.js'
 
   , 'accordion': ['#jquery'
-    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/jquery-accordion/js/jquery.accordion.min.js'
-    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
+    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/jquery-accordion/js/jquery.accordion.min.js'
+    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
 
   , 'emailjs': ['https://cdn.emailjs.com/sdk/2.3.2/email.min.js']
 
@@ -177,12 +177,12 @@ depp.define({
   , 'faker': 'https://cdn.jsdelivr.net/npm/faker@4.1.0/index.min.js'
 
   // https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly
-  , 'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/baseline.min.js'
-  , 'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/baseliner.js']
+  , 'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/baseline.min.js'
+  , 'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/baseliner.js']
   , 'typewriter': 'https://cdn.jsdelivr.net/npm/typewriter-effect@2.12.1/dist/core.min.js'
-  , 'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/letteringjs.min.js']
+  , 'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/letteringjs.min.js']
 
-  , 'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/jquery.flexibleArea.min.js']
+  , 'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/jquery.flexibleArea.min.js']
 
   // markdown UI
   , 'tail.writer': 'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/js/tail.writer-full.min.js'
@@ -212,13 +212,13 @@ depp.define({
   , 'snap.svg': 'https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js'
 
   //video
-  , 'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/bideo/bideo.min.js'
+  , 'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/bideo/bideo.min.js'
 
   //voice cmd
   , 'annYang': 'https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js'
 
   //FX section
-  , 'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/src/vendors/delighters.min.js']
+  , 'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/delighters.min.js']
   , 'odometerBounty': 'https://cdn.jsdelivr.net/npm/bounty@1.2.1/lib/bounty.js'
 
   // transitions
@@ -250,12 +250,12 @@ depp.define({
   , 'pubnub': ['#eventBus', 'https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
   //*** INTUITION Comps:
-  , 'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/custel/marq/marq-custel/marq-custel.min.js']
-  , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/custel/contactus/custel/contactus-comp.min.js']
-  , 'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/custel/spin/custel/spin-custel.min.js']
+  , 'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/custel/marq/marq-custel/marq-custel.min.js']
+  , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/custel/contactus/custel/contactus-comp.min.js']
+  , 'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/custel/spin/custel/spin-custel.min.js']
 
-  , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/custel/surveryitem/custel/surveyitem-comp.min.js']
-  , 'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.17/custel/starrating/custel/star-custel.js']
+  , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/custel/surveryitem/custel/surveyitem-comp.min.js']
+  , 'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/custel/starrating/custel/star-custel.js']
 
 })
 
