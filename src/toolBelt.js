@@ -379,7 +379,7 @@ var modOnBrowser = throttleF(function (evt) { // because it returns a function !
  * emits 'onFontsLoaded'
  */
 function toolBeltDefault() {
-  depp.require(['poly', 'eventBus', 'mustache', 'isJs', 'feather-icons'], function () {
+  depp.require(['poly', 'eventBus', 'mustache', 'feather-icons'], function () {
     reqAnif(function () {
       console.log('tBD')
       loadFonts(['Open+Sans:300,400'])
@@ -389,7 +389,7 @@ function toolBeltDefault() {
   })//req
 }//()
 
-// DOMDelayed
+// DOMDelayed: auto loads fontLoader
 depp.require(['DOM', 'eventBus', 'poly'], function () {
   console.log('dD')
   setTimeout(function () { // at end
