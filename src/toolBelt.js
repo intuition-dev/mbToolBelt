@@ -247,6 +247,8 @@ depp.define({
 
   , 'stripe': 'https://js.stripe.com/v3/'
 
+   ,'underscore':'https://cdn.jsdelivr.net/npm/underscore@1.9.1/underscore.min.js'
+
   , 'pubnub': ['#eventBus', 'https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
   //*** INTUITION Comps:
@@ -299,17 +301,6 @@ function setAttrDa(el, obj) {
 }//()
 // end elements//////////////////////////////////////////////////////
 
-// import (require()) script, then returns promise
-function imp(moduleJs) {
-  depp.define({ moduleJs: moduleJs })
-  return new Promise(function (resolve, reject) {
-    depp.require(moduleJs, function () {
-      resolve('OK')
-    })
-  })//pro
-}//()
-
-
 // This async dis can help, for example in promise
 function disE(evtName, msg) {
   setTimeout(function () {
@@ -333,47 +324,6 @@ function inView(el) { // is element in view?
   )
 }
 
-function throttleF(callback, limit) { //returns a modified function!!!
-  var wait = false
-  return function () {          // We return a throttled function
-    var context = this
-    var args = arguments
-    if (!wait) {                // If we're not waiting
-      callback.apply(context, args) // calls function
-      wait = true               // Prevent future invocations
-      setTimeout(function () {  // After a period of time
-        wait = false          // And allow future invocations
-      }, limit)
-    }
-  }
-}//()
-// wait for it to stop for X
-function debounceF(callback, time) { //returns a modified function!!!
-  var timeout;
-  return function () {
-    var context = this
-    var args = arguments
-    if (timeout) {
-      clearTimeout(timeout)
-    }
-    timeout = setTimeout(function () {
-      timeout = null
-      callback.apply(context, args) // calls function
-    }, time)
-  }
-}
-
-// scroll and resize example
-function onBrowser(evt) { // just an example
-  modOnBrowser(evt) // call the modified function
-}
-var modOnBrowser = throttleF(function (evt) { // because it returns a function !!!, we define the modified function here
-  // call get style and get line height
-  console.log('lh', getStyle(document.getElementsByTagName("BODY")[0], 'line-height'))
-  disE('onBrowser', evt)
-}, 1000 / 20)// delay
-
-
 /**
  * You may want to call this function, or load it manually
  * emits 'onFontsLoaded'
@@ -383,7 +333,7 @@ function toolBeltDefault() {
     reqAnif(function () {
       console.log('tBD')
       loadFonts(['Open+Sans:300,400'])
-      depp.require('instantpage')
+      depp.require('instantpage', 'underscore')
       //loadFonts(['Open+Sans:300,300i,400', 'PT+Serif:400,700i', 'Marmelad'])
     })//ani
   })//req
@@ -447,7 +397,6 @@ function loadQunit() { // you have to wait on -ready and manually QUnit.start()
     })
   })//pro
 }//()
-
 
 // get style value
 function getStyle(el, styleProp) {

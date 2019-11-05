@@ -1,3 +1,8 @@
+
+- underscore added
+- moved debounce and throttle to other, so you can use underscore version
+
+
 ### 2.10.18
 - added clientjs for fingeprint
 - bump rpc

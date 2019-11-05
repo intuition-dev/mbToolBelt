@@ -105,6 +105,7 @@ depp.define({
 
 })
 
+
 //deprecated
 function loadVexAlertFlat() { // since it has extra call at end
   return new Promise(function (resolve, reject) {
@@ -131,3 +132,49 @@ function loadVexAlertFlat() { // since it has extra call at end
 
  // https://www.mixamo.com/#/?page=1&type=Character
 
+
+ // import (require()) script, then returns promise
+function imp(moduleJs) {
+   depp.define({ moduleJs: moduleJs })
+   return new Promise(function (resolve, reject) {
+     depp.require(moduleJs, function () {
+       resolve('OK')
+     })
+   })//pro
+ }//()
+
+
+ function throttleF(callback, limit) { //returns a modified function!!!
+   var wait = false
+   return function () {          // We return a throttled function
+     var context = this
+     var args = arguments
+     if (!wait) {                // If we're not waiting
+       callback.apply(context, args) // calls function
+       wait = true               // Prevent future invocations
+       setTimeout(function () {  // After a period of time
+         wait = false          // And allow future invocations
+       }, limit)
+     }
+   }
+ }//()
+ // wait for it to stop for X
+ function debounceF(callback, time) { //returns a modified function!!!
+   var timeout;
+   return function () {
+     var context = this
+     var args = arguments
+     if (timeout) {
+       clearTimeout(timeout)
+     }
+     timeout = setTimeout(function () {
+       timeout = null
+       callback.apply(context, args) // calls function
+     }, time)
+   }
+ }
+
+ 
+ console.log('lh', getStyle(document.getElementsByTagName("BODY")[0], 'line-height'))
+
+ // https://tailwindcss.com/resources
