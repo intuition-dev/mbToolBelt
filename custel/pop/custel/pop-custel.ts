@@ -3,7 +3,6 @@ declare var List: any
 declare var $: any
 declare var Split: any
 declare var depp: any
-declare var disE: any
 
 //closure
 depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK'], function () {
