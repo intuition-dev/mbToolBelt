@@ -1,4 +1,4 @@
-
+### 2.11.1
 - underscore added
 - moved debounce and throttle to other, so you can use underscore version
 
