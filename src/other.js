@@ -11,8 +11,8 @@ depp.define({
    'xterm': [
          'https://cdn.jsdelivr.net/npm/xterm@4.1.0/lib/xterm.min.js', 
          'https://cdn.jsdelivr.net/npm/xterm@4.1.0/css/xterm.css',
-         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/xterm/AttachAddon.min.js',
-         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/xterm/FitAddon.min.js'
+         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.11.1/src/vendors/xterm/AttachAddon.min.js',
+         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.11.1/src/vendors/xterm/FitAddon.min.js'
          ]
          
    ,'html2canvas': ['#poly', 'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js']
@@ -89,7 +89,7 @@ depp.define({
   , 'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css'
       , 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
-  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.10.18/src/vendors/parallaxImg.min.js'
+  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.11.1/src/vendors/parallaxImg.min.js'
 
   // deprectated
   , 'vexAlertFlatReq': ['https://cdn.jsdelivr.net/npm/vex-js@4.1.0/dist/js/vex.combined.min.js'
