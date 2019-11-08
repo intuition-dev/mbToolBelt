@@ -333,7 +333,7 @@ function toolBeltDefault() {
     reqAnif(function () {
       console.log('tBD')
       loadFonts(['Open+Sans:300,400'])
-      depp.require(['instantpage', 'underscore'])
+      depp.require(['instantpage'])
       //loadFonts(['Open+Sans:300,300i,400', 'PT+Serif:400,700i', 'Marmelad'])
     })//ani
   })//req
@@ -413,10 +413,6 @@ function getUrlVars() {
     vars[hash[0]] = hash[1]
   }
   return vars
-}
-
-function getLang() {
-  return navigator.language || navigator.userLanguage
 }
 
 function renderMustache(root, id, data) {
