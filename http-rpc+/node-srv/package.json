@@ -8,10 +8,10 @@
     },
 
   "dependencies": {
-    "mbake": ">=6.10.12"
+    "mbake": ">=6.11.12"
   },
 
   "devDependencies": {
-    "@types/node": ">=12.11.5"
+    "@types/node": ">=12.12.12"
   }
 }
