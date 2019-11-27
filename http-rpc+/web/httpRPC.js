@@ -23,13 +23,12 @@ var httpRPC = (function () {
         params.pswd = btoa(this.pswd);
         params.token = btoa(this.token);
         params.view = window.location.href;
-        var query = Object.keys(params)
-            .map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]); })
-            .join('&');
+        var str = JSON.stringify(params);
+        var compressed = LZString.compressToEncodedURIComponent(str);
         var THIZ = this;
         return new Promise(function (resolve, reject) {
             var url = THIZ.httpOrs + '://' + THIZ.host + (THIZ.port ? (':' + THIZ.port) : '') + '/' + route;
-            url = url + '/?' + query;
+            url = url + '/?p=' + compressed;
             console.log(url);
             fetch(url, {
                 method: 'GET',

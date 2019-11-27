@@ -55,16 +55,15 @@ class httpRPC {//
 
     params.view = window.location.href
 
-    let query = Object.keys(params)
-             .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
-             .join('&')
+    var str = JSON.stringify(params)
+    var compressed = LZString.compressToEncodedURIComponent(str)
 
     const THIZ = this
     return new Promise(function(resolve, reject) {
       //console.info(formData.get('method'))
       let url:string = THIZ.httpOrs+'://'+THIZ.host + (THIZ.port ? (':' + THIZ.port) : '') + '/'+route 
 
-      url = url + '/?' + query
+      url = url + '/?p=' + compressed
 
       console.log(url)
   
