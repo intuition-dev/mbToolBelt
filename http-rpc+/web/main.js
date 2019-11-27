@@ -9,7 +9,7 @@ pro.then(function(resp) {
 
 // Error example: there is no method multiplyXXX
 /*
-const proErr = rpc.invoke('api','pageOne','multiplyXXX', {a:5, b:2})
+const proErr = rpc.invoke('api','multiplyXXX', {a:5, b:2})
 proErr.then(function(resp) {
   console.log(resp)
 }).catch(function (err) {
