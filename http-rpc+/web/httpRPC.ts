@@ -65,7 +65,7 @@ class httpRPC {//
 
       url = url + '/?p=' + compressed
 
-      console.log(url)
+      //console.log(url)
   
       fetch(url, {
             method: 'GET',
@@ -76,17 +76,17 @@ class httpRPC {//
             keepalive: true
 
           })//fetch
-          .then(function(fullResp) {
-            const obj = fullResp.json()
-            
+          .then(function(fullResp) {           
             if(!fullResp.ok) 
-              reject(obj)
+              reject('HRRP protcol error in RPC: ' + fullResp)
              else {
-              return obj
+              return fullResp.text()
             }
           })
-          .then(function(resp) {
-            if(resp.errorMessage) {
+          .then(function(compressed) {
+            var str = LZString.decompress(compressed)
+            var resp=  JSON.parse(str)
+            if((!resp) || resp.errorMessage) {
               reject(resp)
             }
             resolve(resp.result)

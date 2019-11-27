@@ -29,7 +29,6 @@ var httpRPC = (function () {
         return new Promise(function (resolve, reject) {
             var url = THIZ.httpOrs + '://' + THIZ.host + (THIZ.port ? (':' + THIZ.port) : '') + '/' + route;
             url = url + '/?p=' + compressed;
-            console.log(url);
             fetch(url, {
                 method: 'GET',
                 cache: 'default',
@@ -38,15 +37,16 @@ var httpRPC = (function () {
                 keepalive: true
             })
                 .then(function (fullResp) {
-                var obj = fullResp.json();
                 if (!fullResp.ok)
-                    reject(obj);
+                    reject('HRRP protcol error in RPC: ' + fullResp);
                 else {
-                    return obj;
+                    return fullResp.text();
                 }
             })
-                .then(function (resp) {
-                if (resp.errorMessage) {
+                .then(function (compressed) {
+                var str = LZString.decompress(compressed);
+                var resp = JSON.parse(str);
+                if ((!resp) || resp.errorMessage) {
                     reject(resp);
                 }
                 resolve(resp.result);
