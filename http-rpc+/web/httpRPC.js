@@ -15,14 +15,14 @@ var httpRPC = (function () {
     httpRPC.prototype.setToken = function (token) {
         this.token = token;
     };
-    httpRPC.prototype.invoke = function (route, ent, method, params) {
+    httpRPC.prototype.invoke = function (route, method, params) {
         if (!params)
             params = {};
-        params.ent = ent;
         params.method = method;
         params.user = btoa(this.user);
         params.pswd = btoa(this.pswd);
         params.token = btoa(this.token);
+        params.view = window.location.href;
         var query = Object.keys(params)
             .map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]); })
             .join('&');
@@ -75,6 +75,7 @@ var httpRPC = (function () {
         try {
             if (window.ENV)
                 p['ENV'] = window.ENV;
+            p['view'] = window.location.href;
             p['appVersion'] = btoa(navigator.appVersion);
             p['userAgent'] = btoa(navigator.userAgent);
             p['platform'] = btoa(navigator.platform);
@@ -83,7 +84,7 @@ var httpRPC = (function () {
             console.log(err);
         }
         setTimeout(function () {
-            THIZ.invoke('log', 'log', 'log', p);
+            THIZ.invoke('log', 'log', p);
         }, 1);
         if (className)
             console.log(className, level, msg);

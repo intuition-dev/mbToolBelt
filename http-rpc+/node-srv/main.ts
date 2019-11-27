@@ -26,11 +26,13 @@ class Handler1 extends BaseRPCMethodHandler {
       const resp:any= {} // new response
       resp.result = multiply(a,b)
 
+      log.info(resp)
       this.ret(res, resp, 4, 3)
    }
 
 }//()
-serviceApp.routeRPC('api', new Handler1())
+const h1 = new Handler1()
+serviceApp.routeRPC('api', h1 )
 serviceApp.setLogger(handleLog)
 
 // should be class - maybe used by multiple routes
@@ -52,7 +54,6 @@ class CheckX implements iAuth {
       return new Promise( function (resolve, reject) {
          // check db to see if user and password match and then return level
          return resolve('OK') //or
-         reject('FAIL')
       })
    }//()
   

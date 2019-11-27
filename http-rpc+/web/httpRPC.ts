@@ -134,7 +134,7 @@ class httpRPC {//
 
     setTimeout(function(){
       //send to server
-      THIZ.invoke('log','log', 'log', p)
+      THIZ.invoke('log', 'log', p)
     },1)
     if(className) console.log(className, level, msg)
     else console.log(msg)

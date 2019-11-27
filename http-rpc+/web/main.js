@@ -3,7 +3,7 @@
 const rpc = new httpRPC('http', 'localhost', 8888)
 
 
-const pro = rpc.invoke('api', 'pageOne', 'multiply', {a:5, b:2})
+const pro = rpc.invoke('api', 'multiply', {a:5, b:2})
 pro.then(function(resp) {
   console.log(resp)
 })
