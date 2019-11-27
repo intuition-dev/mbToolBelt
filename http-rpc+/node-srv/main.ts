@@ -1,56 +1,52 @@
 
-const URL = require('url')
+const bunyan = require('bunyan')
+const bformat = require('bunyan-format2')  
+const formatOut = bformat({ outputMode: 'short' })
+const log = bunyan.createLogger({src: true, stream: formatOut, name: "serv"})
+
+// const URL = require('url')
 
 // from mbake
-import { BaseRPCMethodHandler, ExpressRPC, iAuth } from './Serv'
+import { BaseRPCMethodHandler, Serv, iAuth } from './Serv'
 
 let allowedDomains = []
 allowedDomains.push('one.com') // get from config.yaml, should never be '*'
 allowedDomains.push('two.org') // XXX host or local would match localhost
 
 // makes a configured express instance
-const serviceApp = new ExpressRPC()
-serviceApp.makeInstance(['*'])
+const serviceApp = new Serv(['*'])
 
-const handler = new BaseRPCMethodHandler()
+class Handler1 extends BaseRPCMethodHandler {
 
-serviceApp.routeRPC('api', 'pageOne', (req, res) => { 
-
-   const params = URL.parse(req.url, true).query
-   //console.log(params)
-   const method = params.method
-
-   if('multiply'==method) { // RPC for the page could handle several methods, eg one for each of CRUD
+   //THIZ[method](resp, params)
+   multiply(res, params) {
       let a = params.a
       let b = params.b
 
       const resp:any= {} // new response
       resp.result = multiply(a,b)
 
-      handler.ret(res, resp, 4, 3)
-   } else {
-      const resp:any= {} // new response
-      resp.errorMessage = 'mismatch'
-      handler.retErr(res, resp, 4, 3)
+      this.ret(res, resp, 4, 3)
    }
 
-})
+}//()
+serviceApp.routeRPC('api', new Handler1())
+serviceApp.setLogger(handleLog)
 
 // should be class - maybe used by multiple routes
 function multiply(a,b) {
    return a*b
 }
 
-serviceApp.handleLog(function(params) {
-   console.log(params)
-   console.log(params.msg)
-   
-})
+function handleLog( params) {
+   log.info(params)
+   log.info(params.msg)
+}
 
 serviceApp.listen(8888)
 
 // example impl
-class Check implements iAuth {
+class CheckX implements iAuth {
  
    auth(user:string, pswd:string, resp?, ctx?):Promise<string> {
       return new Promise( function (resolve, reject) {

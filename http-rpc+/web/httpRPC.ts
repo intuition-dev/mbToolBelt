@@ -41,19 +41,19 @@ class httpRPC {//
 
   /**
    * @param route api apth, eg api
-   * @param ent  viewmodel name | page name | screen name | component name | calling url | ECSid 
    * @param method CRUD, insert, check, listAll, etc
    * @param params Object of name value pairs.
    */
-  invoke(route, ent, method, params):Promise<string> { // returns promise of results or err
+  invoke(route, method, params):Promise<string> { // returns promise of results or err
     //if array, return as array
     if(!params) params = {}
 
-    params.ent=ent
     params.method=method
     params.user = btoa(this.user)
     params.pswd = btoa(this.pswd)
     params.token = btoa(this.token)
+
+    params.view = window.location.href
 
     let query = Object.keys(params)
              .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
@@ -99,6 +99,7 @@ class httpRPC {//
       })//pro
   }//invoke()
 
+  // for example keys
   setItem(key:string, val) {
     sessionStorage.setItem(key, val)
   }
@@ -125,6 +126,7 @@ class httpRPC {//
     
     try {
       if(window.ENV) p['ENV'] = window.ENV
+      p['view'] = window.location.href
       p['appVersion'] = btoa(navigator.appVersion)
       p['userAgent'] = btoa(navigator.userAgent)
       p['platform'] = btoa(navigator.platform)

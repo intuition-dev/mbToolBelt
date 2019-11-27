@@ -80,7 +80,7 @@ depp.define({
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
   , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.11.2/src/vendors/debug.css'
 
-  , 'RPC': ['#poly', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.11.2/http-rpc+/web/httpRPC.js']
+  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.11.2/http-rpc+/web/httpRPC.js']
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v2.11.2/spa-ts-router/spa-router.min.js']
 
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
