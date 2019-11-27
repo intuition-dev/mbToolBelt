@@ -1,3 +1,8 @@
+### 3.11.15
+- web comp v 2.4 bump
+- new rpc signature
+
+
 ### 2.11.2
 - underscore added
 - moved debounce and throttle to other, so you can use underscore version
