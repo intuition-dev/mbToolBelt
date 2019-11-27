@@ -179,6 +179,7 @@ function imp(moduleJs) {
    addEventListener('resize', onBrowser)
  */
  
- console.log('lh', getStyle(document.getElementsByTagName("BODY")[0], 'line-height'))
-
+depp.require('DOM',function(){
+   console.log('lh', getStyle(document.getElementsByTagName("BODY")[0], 'line-height'))
+})
  // https://tailwindcss.com/resources
