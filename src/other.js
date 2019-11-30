@@ -11,8 +11,8 @@ depp.define({
    'xterm': [
          'https://cdn.jsdelivr.net/npm/xterm@4.1.0/lib/xterm.min.js', 
          'https://cdn.jsdelivr.net/npm/xterm@4.1.0/css/xterm.css',
-         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.15/src/vendors/xterm/AttachAddon.min.js',
-         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.15/src/vendors/xterm/FitAddon.min.js'
+         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.20/src/vendors/xterm/AttachAddon.min.js',
+         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.20/src/vendors/xterm/FitAddon.min.js'
          ]
          
    ,'html2canvas': ['#poly', 'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js']
@@ -53,7 +53,9 @@ depp.define({
   , 'mobi': 'https://cdn.jsdelivr.net/npm/@mobiscroll/javascript-lite@4.6.3/dist/js/mobiscroll.javascript.min.js'
   , 'mobiCSS': 'https://cdn.jsdelivr.net/npm/@mobiscroll/javascript-lite@4.6.3/dist/css/mobiscroll.css'
 
-  , 'physics2': 'https://cdn.jsdelivr.net/npm/p2@0.7.1/src/p2.min.js'
+  , 'roughjs':'https://cdn.jsdelivr.net/npm/roughjs@3.1.0/dist/rough.min.js'
+
+  , 'matterjs': 'https://cdn.jsdelivr.net/npm/matter-js@0.14.2/build/matter.min.js'
 
   , 'jqMousewheel': ['#jquery', 'https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js']
   , 'scrollify': ['#jquery', 'https://cdn.jsdelivr.net/npm/jquery-scrollify@1.0.20/jquery.scrollify.min.js']
@@ -89,7 +91,7 @@ depp.define({
   , 'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css'
       , 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
-  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.15/src/vendors/parallaxImg.min.js'
+  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.20/src/vendors/parallaxImg.min.js'
 
   // deprectated
   , 'vexAlertFlatReq': ['https://cdn.jsdelivr.net/npm/vex-js@4.1.0/dist/js/vex.combined.min.js'
