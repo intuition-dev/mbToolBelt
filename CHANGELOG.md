@@ -1,4 +1,4 @@
-### 3.11.15
+### 3.11.26
 - web comp v 2.4 bump
 - new rpc signature
 
