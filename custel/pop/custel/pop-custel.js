@@ -98,7 +98,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
                 bot.innerText = res;
             });
         };
-        CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.20/custel/';
+        CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.26/custel/';
         return CustelsListVM;
     }());
     var cTemp = document.createElement('template');
