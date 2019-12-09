@@ -12,7 +12,7 @@ cTemp.innerHTML = `
    contain: content;
 }</style>
 
-<b>I'm Comp DOM!</b>
+<b>I'm a Cust. El</b>
 <slot></slot>
 `
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements
@@ -41,9 +41,7 @@ window.customElements.define('c-custel', class extends HTMLElement {
 
    setViewModel(vm) {// other methods 
       console.log('a ViewModel can be set here if separation is needed')
-   }
-
-
+   }//()
 })//custel
 
 })
