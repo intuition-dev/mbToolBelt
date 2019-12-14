@@ -197,7 +197,8 @@ depp.define({
 
   , 'circles': 'https://cdn.jsdelivr.net/npm/circles.js@0.0.6/circles.min.js'
 
-  , 'clientFinger':'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
+  , 'client':'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
+  , 'trace' : 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
 
   //  SASS?:
   , 'ihover': 'https://cdn.jsdelivr.net/npm/imagehover.css@1.0.0/css/imagehover.min.css'
@@ -329,7 +330,7 @@ function inView(el) { // is element in view?
  * emits 'onFontsLoaded'
  */
 function toolBeltDefault() {
-  depp.require(['poly', 'eventBus', 'mustache', 'feather-icons'], function () {
+  depp.require(['poly', 'eventBus', 'mustache', 'feather-icons', 'client', 'trace'], function () {
     reqAnif(function () {
       console.log('tBD')
       loadFonts(['Open+Sans:300,400'])
