@@ -252,7 +252,7 @@ depp.define({
 
   , 'pubnub': ['#eventBus', 'https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
-  //*** INTUITION Comps:
+  //*** INTU Comps:
   , 'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.26/custel/marq/marq-custel/marq-custel.min.js']
   , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.26/custel/contactus/custel/contactus-comp.min.js']
   , 'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.11.26/custel/spin/custel/spin-custel.min.js']

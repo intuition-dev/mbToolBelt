@@ -4,7 +4,7 @@
 #### 'Thanos has a glove. We just gave you a tool belt!'
 
 #### Please star our main project here:
-- https://github.com/intuition-dev/INTUITION
+- https://github.com/intuition-dev/INTU
 
 Listed dependencies gives you application a list of a election curated js libraries that you may chose to use/require.
 

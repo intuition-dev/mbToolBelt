@@ -14,7 +14,7 @@ So it will be displayed to the end users very quickly.
 Check it out w/ Developer Tools, including the Network Tab 'Waterfall' and set to 4g(mobile).
 
 #### Please star our main project here:
-- https://github.com/intuition-dev/INTUITION
+- https://github.com/intuition-dev/INTU
 
 ### 'Realistic'
 
