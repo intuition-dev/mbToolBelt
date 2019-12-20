@@ -83,6 +83,8 @@ depp.define({
   , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@0.6.0/browser/httpRPC.js']
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/spa-ts-router/spa-router.min.js']
 
+  , 'gmetrics':'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
+
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
   // intuDS:
