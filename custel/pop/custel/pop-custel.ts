@@ -12,7 +12,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
     // VM //////////////////////////////////////////////////////////////////////////////////////////
     class CustelsListVM { // requires poly.  
 
-        static root: string = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12/12/custel/'
+        static root: string = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/custel/'
 
         static sr
 

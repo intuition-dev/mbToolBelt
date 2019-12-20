@@ -15,5 +15,5 @@
 - TopNavBar
 - Carousel
 
-Look at https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12/12/src/toolBelt.min.js to find the component.
+Look at https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/toolBelt.min.js to find the component.
 
