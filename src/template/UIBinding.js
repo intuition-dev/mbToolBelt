@@ -2,7 +2,7 @@
 console.log('UI:')
 
 
-// var vm = new ViewModel()
+// var vm = new CrmVM()
 
 depp.require(['DOM'], function() {
     console.log('ready')

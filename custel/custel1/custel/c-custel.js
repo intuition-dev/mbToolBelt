@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 addEventListener('poly+DOM', function () {
     console.log('loaded');
     var cTemp = document.createElement('template');
-    cTemp.innerHTML = "\n<style>:host {\n   all: initial;\n   display: block;\n   contain: content;\n}</style>\n\n<b>I'm Comp DOM!</b>\n<slot></slot>\n";
+    cTemp.innerHTML = "\n<style>:host {\n   all: initial;\n   display: block;\n   contain: content;\n}</style>\n\n<b>I'm a Cust. El</b>\n<slot></slot>\n";
     window.customElements.define('c-custel', (function (_super) {
         __extends(class_1, _super);
         function class_1() {
