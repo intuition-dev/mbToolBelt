@@ -87,9 +87,6 @@ depp.define({
 
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
-  // intuDS:
-  , 'minCss': 'https://cdn.jsdelivr.net/gh/intuition-dev/intuDS@v1.0.4/src/css/main.css'
-
   , 'gridformsDefaultStyle': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.css']
   , 'gridformsJS': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.js']
 
@@ -124,7 +121,7 @@ depp.define({
   , 'jquery': ['#DOM', '#poly', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js']
 
   , 'Vanilla-DataTables': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.js'
-                         , 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.css']
+                                      , 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.css']
 
   , 'listjs': ['#eventBus', 'https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
 
@@ -168,7 +165,7 @@ depp.define({
   , 'timeago': 'https://cdn.jsdelivr.net/gh/hustcc/timeago.js@3.0.0/dist/timeago.min.js'
   , 'luxon': 'https://cdn.jsdelivr.net/npm/luxon@1.17.3/build/global/luxon.min.js'
   , 'datepickr': ['https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/flatpickr.min.js',
-      'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
+                  'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
 
   // use for validation. eg: check in VM and return 'OK' to view|binding; or return validation errors if found
   // http://validatejs.org
@@ -332,7 +329,7 @@ function inView(el) { // is element in view?
  * emits 'onFontsLoaded'
  */
 function toolBeltDefault() {
-  depp.require(['poly', 'eventBus', 'mustache', 'feather-icons', 'client', 'trace'], function () {
+  depp.require(['poly', 'eventBus', 'client', 'trace'], function () { // 'mustache', 'feather-icons',
     reqAnif(function () {
       console.log('tBD')
       loadFonts(['Open+Sans:300,400'])
