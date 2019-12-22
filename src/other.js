@@ -11,8 +11,8 @@ depp.define({
    'xterm': [
          'https://cdn.jsdelivr.net/npm/xterm@4.1.0/lib/xterm.min.js', 
          'https://cdn.jsdelivr.net/npm/xterm@4.1.0/css/xterm.css',
-         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/xterm/AttachAddon.min.js',
-         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/xterm/FitAddon.min.js'
+         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/xterm/AttachAddon.min.js',
+         'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/xterm/FitAddon.min.js'
          ]
          
    ,'html2canvas': ['#poly', 'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js']
@@ -30,10 +30,7 @@ depp.define({
   , 'surveyjs': ['jquery', 'https://surveyjs.azureedge.net/1.1.14/survey.jquery.min.js',
        'https://surveyjs.azureedge.net/1.1.14/survey.css']
 
-  , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.4.0'
-      , 'https://cdn.jsdelivr.net/npm/vega-embed@4.2.0'
-      , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.17.0/build/vega-tooltip.min.js'
-   ]
+
   //webGL
   , 'babylon': 'https://cdn.jsdelivr.net/npm/babylonjs@4.0.3/babylon.js' // is min
 
@@ -91,7 +88,7 @@ depp.define({
   , 'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css'
       , 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
-  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/parallaxImg.min.js'
+  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/parallaxImg.min.js'
 
   // deprectated
   , 'vexAlertFlatReq': ['https://cdn.jsdelivr.net/npm/vex-js@4.1.0/dist/js/vex.combined.min.js'

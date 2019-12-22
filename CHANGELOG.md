@@ -1,3 +1,7 @@
+### 3.12.15
+- vega, Design and DataTab
+
+
 ### 3.12.14
 - web comp v 2.4 bump
 - new rpc signature

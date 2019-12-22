@@ -10,7 +10,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
 
 console.log('start')
 depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
-  'eventBus':'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/EventBus.js'
+  'eventBus':'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/EventBus.js'
 })
 depp.require('eventBus') // DeventBus is the default event bus in the code
 
@@ -78,10 +78,10 @@ depp.define({
   // end poly
 
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
-  , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/debug.css'
+  , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/debug.css'
 
   , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@0.6.0/browser/httpRPC.min.js']
-  , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/spa-ts-router/spa-router.min.js']
+  , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/spa-ts-router/spa-router.min.js']
 
   , 'gmetrics':'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
 
@@ -104,6 +104,13 @@ depp.define({
   , 'smoothie': 'https://cdn.jsdelivr.net/npm/smoothie@1.35.0/smoothie.min.js'
   , 'morris': ['jquery', 'raphael', '//cdn.jsdelivr.net/gh//morrisjs/morris.js@0.5.1/morris.min.js']
   , 'justgage': ['#raphael', 'https://cdn.jsdelivr.net/npm/justgage@1.3.2/dist/justgage.min.js']
+  , 'vega': [ 'https://cdn.jsdelivr.net/npm/vega@5.9.0'
+
+            , 'https://cdn.jsdelivr.net/npm/vega-lite@4.0.2'
+
+            , 'https://cdn.jsdelivr.net/npm/vega-embed@6.2.1'
+            , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.20.0/build/vega-tooltip.min.js'
+   ]
 
   // upload libs to pick, also css or ?
   , 'filepond': ['https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.css', 'https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.js']
@@ -120,8 +127,8 @@ depp.define({
 
   , 'jquery': ['#DOM', '#poly', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js']
 
-  , 'Vanilla-DataTables': [ 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.js'
-                          , 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.css']
+  , 'Vanilla-DataTables': [ 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.js'
+                          , 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.css']
 
   , 'listjs': [ 'https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
 
@@ -131,8 +138,8 @@ depp.define({
   , 'split': 'https://cdn.jsdelivr.net/npm/split.js@1.5.11/dist/split.min.js'
 
   , 'accordion': ['#jquery'
-    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/jquery-accordion/js/jquery.accordion.min.js'
-    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
+    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/jquery-accordion/js/jquery.accordion.min.js'
+    , 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
 
   , 'emailjs': ['https://cdn.emailjs.com/sdk/2.3.2/email.min.js']
 
@@ -141,9 +148,10 @@ depp.define({
   , 'js-yaml': 'https://cdn.jsdelivr.net/npm/js-yaml@3.13.1/dist/js-yaml.min.js'
 
   // load after jquery is ready
-  , 'qunit': ['https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.css', '#jquery'
+  , 'qunit': ['#jquery', 'https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.css', 
     , 'https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.js'
     , 'https://cdn.jsdelivr.net/npm/qunit-promises@0.2.0/qunit-promises.min.js'
+    , '#validate'
   ]
 
   , 'codemirror': ['https://cdn.jsdelivr.net/npm/codemirror@5.48.4/lib/codemirror.min.css'
@@ -176,12 +184,12 @@ depp.define({
   , 'faker': 'https://cdn.jsdelivr.net/npm/faker@4.1.0/index.min.js'
 
   // https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly
-  , 'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/baseline.min.js'
-  , 'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/baseliner.js']
+  , 'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/baseline.min.js'
+  , 'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/baseliner.js']
   , 'typewriter': 'https://cdn.jsdelivr.net/npm/typewriter-effect@2.12.1/dist/core.min.js'
-  , 'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/letteringjs.min.js']
+  , 'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/letteringjs.min.js']
 
-  , 'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/jquery.flexibleArea.min.js']
+  , 'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/jquery.flexibleArea.min.js']
 
   // markdown UI
   , 'tail.writer': 'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/js/tail.writer-full.min.js'
@@ -212,13 +220,13 @@ depp.define({
   , 'snap.svg': 'https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js'
 
   //video
-  , 'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/bideo/bideo.min.js'
+  , 'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/bideo/bideo.min.js'
 
   //voice cmd
   , 'annYang': 'https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js'
 
   //FX section
-  , 'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/delighters.min.js']
+  , 'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/delighters.min.js']
   , 'odometerBounty': 'https://cdn.jsdelivr.net/npm/bounty@1.2.1/lib/bounty.js'
 
   // transitions
@@ -252,12 +260,12 @@ depp.define({
   , 'pubnub': ['https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
   //*** INTU Comps:
-  , 'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/custel/marq/marq-custel/marq-custel.min.js']
-  , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/custel/contactus/custel/contactus-comp.min.js']
-  , 'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/custel/spin/custel/spin-custel.min.js']
+  , 'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/custel/marq/marq-custel/marq-custel.min.js']
+  , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/custel/contactus/custel/contactus-comp.min.js']
+  , 'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/custel/spin/custel/spin-custel.min.js']
 
-  , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/custel/surveryitem/custel/surveyitem-comp.min.js']
-  , 'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/custel/starrating/custel/star-custel.js']
+  , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/custel/surveryitem/custel/surveyitem-comp.min.js']
+  , 'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/custel/starrating/custel/star-custel.js']
 
 })
 
@@ -382,7 +390,7 @@ function loadFonts(fontsArr) {
 }
 // END FOUT section
 
-//helps qunit not auto run //TODO: fix CRUD example
+//helps qunit not auto run 
 function loadQunit() { // you have to wait on -ready and manually QUnit.start()
   // https://api.qunitjs.com/config/QUnit.config
   return new Promise(function (resolve, reject) {
