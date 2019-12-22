@@ -12,7 +12,7 @@ console.log('start')
 depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
   'eventBus':'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/EventBus.js'
 })
-depp.require('eventBus') // DeventBus is the default event bus
+depp.require('eventBus') // DeventBus is the default event bus in the code
 
 function onDOM_() {
   depp.done('DOM')
@@ -80,7 +80,7 @@ depp.define({
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
   , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/src/vendors/debug.css'
 
-  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@0.6.0/browser/httpRPC.js']
+  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@0.6.0/browser/httpRPC.min.js']
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/spa-ts-router/spa-router.min.js']
 
   , 'gmetrics':'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
@@ -120,10 +120,10 @@ depp.define({
 
   , 'jquery': ['#DOM', '#poly', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js']
 
-  , 'Vanilla-DataTables': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.js'
-                                      , 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.css']
+  , 'Vanilla-DataTables': [ 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.js'
+                          , 'https://cdn.jsdelivr.net/gh/intuition-dev/Vanilla-DataTables@v2.0.1/src/vanilla-dataTables.min.css']
 
-  , 'listjs': ['#eventBus', 'https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
+  , 'listjs': [ 'https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
 
   // drag and drop
   , 'sortablejs': ['https://cdn.jsdelivr.net/npm/sortablejs@1.10.0-rc3/Sortable.min.js']
@@ -249,7 +249,7 @@ depp.define({
 
    ,'underscore':'https://cdn.jsdelivr.net/npm/underscore@1.9.1/underscore.min.js'
 
-  , 'pubnub': ['#eventBus', 'https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
+  , 'pubnub': ['https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
   //*** INTU Comps:
   , 'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.14/custel/marq/marq-custel/marq-custel.min.js']
@@ -307,7 +307,7 @@ function disE(evtName, msg) {
     console.log('disE', evtName)
     //dispatchEvent(new CustomEvent(evtName, { detail: msg }))
     DeventBus.dispatch(evtName, msg) // ie 11
-  }, 1)
+  },1)
 }//()
 
 function inView(el) { // is element in view?
