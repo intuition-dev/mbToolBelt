@@ -2,6 +2,7 @@
 // https://github.com/theiconic/event-bus
 
 // added code at end
+// error for Nat: was for in. Should be regular loop. 
 
 var EventBus = function () {
     this.topics = {};
@@ -84,7 +85,7 @@ var EventBus = function () {
       }
     }
   
-    for (i in listeners) { // Nat: for in. Should be regular loop. 
+    for (i in listeners) { // Nat: was for in. Should be regular loop. 
         if(listeners[i].callback)
             listeners[i].callback(data);
     }

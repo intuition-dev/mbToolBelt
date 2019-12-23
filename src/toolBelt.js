@@ -181,7 +181,7 @@ depp.define({
 
   , 'mustache': 'https://cdn.jsdelivr.net/npm/mustache@3.0.1/mustache.min.js'
 
-  , 'faker': 'https://cdn.jsdelivr.net/npm/faker@4.1.0/index.min.js'
+  , 'chance': 'https://cdn.jsdelivr.net/npm/chance@1.1.4/chance.min.js'
 
   // https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly
   , 'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.15/src/vendors/baseline.min.js'
