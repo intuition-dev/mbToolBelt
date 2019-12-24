@@ -9,7 +9,7 @@ So it will be displayed to the end users very quickly.
 
 <img src="img.png" width="100%"/>
 
-- Live [_DEMO_](http://www.intu.dev/ex/marq)
+- Live [_DEMO_](http://www.INTUITION.DEV/ex/marq)
 
 Check it out w/ Developer Tools, including the Network Tab 'Waterfall' and set to 4g(mobile).
 
@@ -46,8 +46,8 @@ And a blue collar team that supports them, for example they write and CDN host t
 ### Deeper dive
 -  A gentler intro to [Standard Custom Elements](http://github.com/intuition-dev/mbToolBelt/tree/master/custel/custel1)
 - [Intro to Web Animation API](WebAni.md)
-- We use this approach to loading: [Lazy Loading ](http://lazy.mbake.org)
+- We use this approach to loading: [Lazy Loading ](http://lazy.metabake.net)
 
 
 ## Questions?
-- http://forum.mbake.org
+- http://forum.metabake.net

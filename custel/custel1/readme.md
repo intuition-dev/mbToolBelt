@@ -52,7 +52,7 @@ So I hope it shows that Custom Elements are easy to use.
 
 ## Now lets look at how we write the component
 
-I use typescript, as it has built in support for ES5 and is well supported. (INTU.DEV, where I work also has CLI for -custel.ts files, but the .ts code for
+I use typescript, as it has built in support for ES5 and is well supported. (INTUITION.DEV, where I work also has CLI for -custel.ts files, but the .ts code for
 Custom Elements is compatible with most any .ts compiler)
 
 ```ts
@@ -115,4 +115,4 @@ equality popular.
 
 ## More realistic example:
 
-- https://www.intu.dev/ex/marq
+- https://www.INTUITION.DEV/ex/marq
