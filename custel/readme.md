@@ -3,7 +3,7 @@
 
 
 #### Please star our main project here:
-- https://github.com/intuition-dev/INTU
+- https://github.com/INTUITION-dev/INTU
 
 
 // Note: wait on DOM to avoid double cons
@@ -15,5 +15,5 @@
 - TopNavBar
 - Carousel
 
-Look at https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.16/src/toolBelt.min.js to find the component.
+Look at https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.16/src/toolBelt.min.js to find the component.
 

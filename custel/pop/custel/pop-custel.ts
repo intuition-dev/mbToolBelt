@@ -12,7 +12,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
     // VM //////////////////////////////////////////////////////////////////////////////////////////
     class CustelsListVM { // requires poly.  
 
-        static root: string = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.16/custel/'
+        static root: string = 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.16/custel/'
 
         static sr
 
@@ -130,7 +130,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
 
     }//class
 
-    // custel ////////////////////////////////////////////////////////////////////////////////////////// https://cdn.jsdelivr.net/gh/intuition-dev/intuDesignWork@v1.0.5/src/css/main.css
+    // custel ////////////////////////////////////////////////////////////////////////////////////////// https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.0.5/src/css/main.css
     var cTemp = document.createElement('template')
     cTemp.innerHTML = `
 <style>:host {
@@ -142,7 +142,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
 
 <link rel = "stylesheet"
     type = "text/css"
-    href = "https://cdn.jsdelivr.net/gh/intuition-dev/intuDesignWork@v1.0.5/src/css/main.css" />
+    href = "https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.0.5/src/css/main.css" />
 
 <a id="pop1" href="#pop" rel="modal:open" class="btn btn-b btn-sm">Pop Custom</a>
 

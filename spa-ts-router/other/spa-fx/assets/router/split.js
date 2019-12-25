@@ -1,5 +1,5 @@
 
-// http://github.com/Cekvenich/www/tree/master/srv/webroot
+// http://github.com/ Cekvenich/www/tree/master/srv/webroot
 
 SPArouter.init(onNavigate);
 function onNavigate (evt) {

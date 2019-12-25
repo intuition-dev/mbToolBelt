@@ -4,7 +4,7 @@
 #### 'Thanos has a glove. We just gave you a tool belt!'
 
 #### Please star our main project here:
-- https://github.com/intuition-dev/INTU
+- https://github.com/INTUITION-dev/INTU
 
 Listed dependencies gives you application a list of a election curated js libraries that you may chose to use/require.
 
@@ -15,7 +15,7 @@ It saves time, sets baseline for depps, defines popular/approved libs:
 
 That will emit this code:
 
-      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.12.16/src/toolBelt.min.js')
+      script(src='https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.16/src/toolBelt.min.js')
 
 It also contains polyfill and some other frequently needed functions.
 

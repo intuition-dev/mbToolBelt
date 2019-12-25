@@ -14,7 +14,7 @@ So it will be displayed to the end users very quickly.
 Check it out w/ Developer Tools, including the Network Tab 'Waterfall' and set to 4g(mobile).
 
 #### Please star our main project here:
-- https://github.com/intuition-dev/INTU
+- https://github.com/INTUITION-dev/INTU
 
 ### 'Realistic'
 
@@ -35,7 +35,7 @@ How to use on a page:
 
 I normally split the front end team into two teams. A white collar team would use the components.
 And a blue collar team that supports them, for example they write and CDN host the components. The code for components is here:
-- https://github.com/intuition-dev/mbToolBelt/tree/master/custel/marq/marq-custel
+- https://github.com/INTUITION-dev/mbToolBelt/tree/master/custel/marq/marq-custel
 
 ### Aside
 
@@ -44,7 +44,7 @@ And a blue collar team that supports them, for example they write and CDN host t
 - I'd love to know if someone can make a realist component with similar high performance: first meaningful paint.
 
 ### Deeper dive
--  A gentler intro to [Standard Custom Elements](http://github.com/intuition-dev/mbToolBelt/tree/master/custel/custel1)
+-  A gentler intro to [Standard Custom Elements](http://github.com/INTUITION-dev/mbToolBelt/tree/master/custel/custel1)
 - [Intro to Web Animation API](WebAni.md)
 - We use this approach to loading: [Lazy Loading ](http://lazy.metabake.net)
 

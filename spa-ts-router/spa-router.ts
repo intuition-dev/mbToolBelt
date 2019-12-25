@@ -1,4 +1,4 @@
-// All rights reserved by INTUITION.DEV | Cekvenich, licensed under LGPL-3.0-only
+// All rights reserved by INTUITION.DEV |  Cekvenich, licensed under LGPL-3.0-only
 // Alternative license available 
 // Requires jQuery, Axios
 
