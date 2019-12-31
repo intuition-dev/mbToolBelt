@@ -85,7 +85,7 @@ var EventBus = function () {
       }
     }
   
-    for (i in listeners) { // Nat: was for in. Should be regular loop. 
+    for (i in listeners) { // Nat fix:
         if(listeners[i].callback)
             listeners[i].callback(data);
     }

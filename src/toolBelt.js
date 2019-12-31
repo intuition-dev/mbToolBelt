@@ -178,6 +178,7 @@ depp.define({
   // use for validation. eg: check in VM and return 'OK' to view|binding; or return validation errors if found
   // http://validatejs.org
   , 'validate': 'https://cdn.jsdelivr.net/npm/validate.js@0.13.1/validate.min.js'
+  , 'v8n':'https://cdn.jsdelivr.net/npm/v8n@1.3.3/dist/v8n.min.js'
 
   , 'mustache': 'https://cdn.jsdelivr.net/npm/mustache@3.0.1/mustache.min.js'
 
