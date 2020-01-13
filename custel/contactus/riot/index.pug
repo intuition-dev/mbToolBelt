@@ -16,18 +16,15 @@ contactus-comp
       button#sendBut.btn.btn-primary.float-right.mt-2 Send Message
 
    script.
-      loadVexAlertFlat() // request load of wox (1 of 2)
+      console.log('cont')
+      loadVexAlertFlat() 
       // define dependencies inside the comp
       if(!depp.isDefined('contactus-comp_')) {
             depp.define({ 'contactus-comp_': [ 
-            //- '#disableAutoFill',  // has jq
-            '#DOM', 
-            //- '#poly', 
-            'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js',
-            'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js',
-            '#emailjs',
-            '#validate',
-            '#loadedVexAlertFlat' // wait on load to finish for wox (2 of 2): due to setting css
+            'DOMDelayed', 
+            'disableAutoFill', 
+            'emailjs',
+            'validate',
             ]
          })
       }

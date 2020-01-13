@@ -1,17 +1,14 @@
 
 riot.tag2('contactus-comp', '<form class="form-comp grid-form" id="mailFrm"> <fieldset> <legend>{this.opts.legend_title}</legend> <div data-row-span="2"> <div data-field-span="1"> <label>Name</label> <input id="name" type="text" name="name"> </div> <div data-field-span="1"> <label>E-mail</label> <input id="email" name="email" type="email"> </div> </div> <div data-row-span="1"> <div data-field-span="1"> <label>Message</label> <textarea name="msg" type=""></textarea> </div> </div> </fieldset> <button class="btn btn-primary float-right mt-2" id="sendBut">Send Message</button> </form>', '', '', function(opts) {
+    console.log('cont')
     loadVexAlertFlat()
 
     if(!depp.isDefined('contactus-comp_')) {
           depp.define({ 'contactus-comp_': [
-
-          '#DOM',
-
-          'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js',
-          'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js',
-          '#emailjs',
-          '#validate',
-          '#loadedVexAlertFlat'
+          'DOMDelayed',
+          'disableAutoFill',
+          'emailjs',
+          'validate',
           ]
        })
     }

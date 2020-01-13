@@ -264,7 +264,7 @@ depp.define({
 
   //*** INTU Comps:
   , 'marq-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/marq/marq-custel/marq-custel.min.js']
-  , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/contactus/custel/contactus-comp.min.js']
+  , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/contactus/riot/contactus-comp.min.js']
   , 'spin-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/spin/custel/spin-custel.min.js']
 
   , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/surveryitem/custel/surveyitem-comp.min.js']
