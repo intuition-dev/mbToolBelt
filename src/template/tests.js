@@ -9,9 +9,7 @@ var TestVM1 = (function () {
     function TestVM1() {
         console.log('testVM1');
         TestVM1.listener = DeventBus.addListener('onUData', TestVM1.onVM1Data);
-        depp.define({ 'vm1': '/api/UsersVM.js',
-            'chance': 'https://cdn.jsdelivr.net/npm/chance@1.1.4/chance.min.js'
-        });
+        depp.define({ 'vm1': '/api/UsersVM.js' });
         depp.require(['vm1', 'chance', 'RPC', 'client']);
         QUnit.test("hello test", function (assert_) {
             TestVM1.assert = assert_;
