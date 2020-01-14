@@ -2,3 +2,10 @@ basedir: .
 
 
 pretty: true
+
+emailjs_id: ""
+template_id: "" 
+service_id: ""
+legend_title: "For inquiries, please use the below submission form:"
+reply_to: ''
+to_name: 'Joe'
