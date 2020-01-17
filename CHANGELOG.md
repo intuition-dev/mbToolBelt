@@ -61,7 +61,7 @@
 - rpc.js
 
 ###  1.9.20
-- moved data methods to view model, -f
+- moved data methods to ViewModel, -f
 
 ###  1.9.19
 - change to src
