@@ -10,7 +10,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
 
 console.log('start')
 depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
-  'eventBus':'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/EventBus.js'
+  'eventBus': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/EventBus.js'
 })
 depp.require('eventBus') // DeventBus is the default event bus in the code
 
@@ -55,8 +55,8 @@ function polyIO() { // callback step 3
 
 depp.define({
 
-//  'webcomponents-loader': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-loader.js'
-// https://github.com/webcomponents/webcomponentsjs
+  //  'webcomponents-loader': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-loader.js'
+  // https://github.com/webcomponents/webcomponentsjs
   'es5-adapter': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/custom-elements-es5-adapter.js'
 
   , 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features=fetch%2CWebAnimations%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.map%2CIntersectionObserver%2CIntersectionObserverEntry%2Cconsole.trace%2Cconsole.debug%2CHTMLTemplateElement%2CrequestAnimationFrame%2CPromise%2CCustomEvent'
@@ -71,7 +71,7 @@ depp.define({
   ]
 
   , 'poly-dialog': ['https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.min.js'
-                   , 'https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.min.js']
+    , 'https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.min.js']
 
   // check "ResizeObserver" in window
   , 'resize-observer-poly': 'https://cdn.jsdelivr.net/gh/que-etc/resize-observer-polyfill@v1.5.1/dist/ResizeObserver.min.js'
@@ -83,7 +83,7 @@ depp.define({
   , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/httpRPC@1.1.2/src/node-srv/browser/httpRPC.min.js']
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/spa-ts-router/spa-router.min.js']
 
-  , 'gmetrics':'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
+  , 'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
 
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
@@ -108,16 +108,16 @@ depp.define({
 
   , 'jqMapa': ['#jquery', '#raphael', 'https://cdn.jsdelivr.net/npm/jquery-mapael@2.2.0/js/jquery.mapael.min.js']
   , 'raphael': 'https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js'
-  
+
   , 'odometerBounty': 'https://cdn.jsdelivr.net/npm/bounty@1.2.1/lib/bounty.js'
-  
-  , 'vega': [ 'https://cdn.jsdelivr.net/npm/vega@5.9.0'
 
-            , 'https://cdn.jsdelivr.net/npm/vega-lite@4.0.2'
+  , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.9.0'
 
-            , 'https://cdn.jsdelivr.net/npm/vega-embed@6.2.1'
-            , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.20.0/build/vega-tooltip.min.js'
-   ]
+    , 'https://cdn.jsdelivr.net/npm/vega-lite@4.0.2'
+
+    , 'https://cdn.jsdelivr.net/npm/vega-embed@6.2.1'
+    , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.20.0/build/vega-tooltip.min.js'
+  ]
 
   // upload libs to pick, also css or ?
   , 'filepond': ['https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.css', 'https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.js']
@@ -125,7 +125,7 @@ depp.define({
 
   //intro steps
   , 'hopscotch': ['https://cdn.jsdelivr.net/npm/hopscotch@0.3.1/dist/js/hopscotch.min.js'
-               , 'https://cdn.jsdelivr.net/npm/hopscotch@0.3.1/dist/css/hopscotch.min.css']
+    , 'https://cdn.jsdelivr.net/npm/hopscotch@0.3.1/dist/css/hopscotch.min.css']
 
   // gesture
   , 'zingtouch': 'https://cdn.jsdelivr.net/npm/zingtouch@1.0.6/index.min.js'
@@ -134,10 +134,10 @@ depp.define({
 
   , 'jquery': ['#DOM', '#poly', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js']
 
-  , 'Vanilla-DataTables': [ 'https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.js'
-                          , 'https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.css']
+  , 'Vanilla-DataTables': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.js'
+    , 'https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.css']
 
-  , 'listjs': [ 'https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
+  , 'listjs': ['https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
 
   // drag and drop
   , 'sortablejs': ['https://cdn.jsdelivr.net/npm/sortablejs@1.10.0-rc3/Sortable.min.js']
@@ -155,24 +155,24 @@ depp.define({
   , 'js-yaml': 'https://cdn.jsdelivr.net/npm/js-yaml@3.13.1/dist/js-yaml.min.js'
 
   // load after jquery is ready
-  , 'qunit': ['#jquery', 'https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.css', 
+  , 'qunit': ['#jquery', 'https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.css',
     , 'https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.js'
     , 'https://cdn.jsdelivr.net/npm/qunit-promises@0.2.0/qunit-promises.min.js'
     , '#validate'
   ]
 
   , 'codemirror': ['https://cdn.jsdelivr.net/npm/codemirror@5.48.4/lib/codemirror.min.css'
-        , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/lib/codemirror.min.js'
-        , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/markdown/markdown.min.js'
-        , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/yaml/yaml.min.js'
-        , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/pug/pug.min.js'
-      ]
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/lib/codemirror.min.js'
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/markdown/markdown.min.js'
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/yaml/yaml.min.js'
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/pug/pug.min.js'
+  ]
 
   , 'hotkeys': 'https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.1/dist/hotkeys.min.js'
 
   , 'select2': [
-        'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/css/select2.min.css',
-        'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/js/select2.min.js']
+    'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/css/select2.min.css',
+    'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/js/select2.min.js']
 
   , 'feather-icons': 'https://cdn.jsdelivr.net/npm/feather-icons@4.24.1/dist/feather.min.js'
 
@@ -180,12 +180,12 @@ depp.define({
   , 'timeago': 'https://cdn.jsdelivr.net/gh/hustcc/timeago.js@3.0.0/dist/timeago.min.js'
   , 'luxon': 'https://cdn.jsdelivr.net/npm/luxon@1.17.3/build/global/luxon.min.js'
   , 'datepickr': ['https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/flatpickr.min.js',
-                  'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
+    'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
 
   // use for validation. eg: check in VM and return 'OK' to view|binding; or return validation errors if found
   // http://validatejs.org
   , 'validate': 'https://cdn.jsdelivr.net/npm/validate.js@0.13.1/validate.min.js'
-  , 'v8n':'https://cdn.jsdelivr.net/npm/v8n@1.3.3/dist/v8n.min.js'
+  , 'v8n': 'https://cdn.jsdelivr.net/npm/v8n@1.3.3/dist/v8n.min.js'
 
   , 'mustache': 'https://cdn.jsdelivr.net/npm/mustache@3.0.1/mustache.min.js'
 
@@ -210,8 +210,8 @@ depp.define({
     , 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css'
     , 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css']
 
-  , 'client':'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
-  , 'trace' : 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
+  , 'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
+  , 'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
 
   //  SASS?:
   , 'ihover': 'https://cdn.jsdelivr.net/npm/imagehover.css@1.0.0/css/imagehover.min.css'
@@ -233,7 +233,7 @@ depp.define({
 
   //FX section
   , 'deli': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/delighters.min.js']
-  
+
   // transitions
   , 'slider': ['https://cdn.jsdelivr.net/gh/joelambert/Flux-Slider@v1.4.4/js/flux.min.js']
 
@@ -258,13 +258,12 @@ depp.define({
 
   , 'stripe': 'https://js.stripe.com/v3/'
 
-   ,'underscore':'https://cdn.jsdelivr.net/npm/underscore@1.9.2/underscore.min.js'
+  , 'underscore': 'https://cdn.jsdelivr.net/npm/underscore@1.9.2/underscore.min.js'
 
   , 'pubnub': ['https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
   //*** INTU Comps:
   , 'marq-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/marq/marq-custel/marq-custel.min.js']
-  , 'contactus-comp': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/contactus/riot/contactus-comp.min.js']
   , 'spin-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/spin/custel/spin-custel.min.js']
 
   , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/surveryitem/custel/surveyitem-comp.min.js']
@@ -318,7 +317,7 @@ function disE(evtName, msg) {
     console.log('disE', evtName)
     //dispatchEvent(new CustomEvent(evtName, { detail: msg }))
     DeventBus.dispatch(evtName, msg) // ie 11
-  },1)
+  }, 1)
 }//()
 
 function inView(el) { // is element in view?

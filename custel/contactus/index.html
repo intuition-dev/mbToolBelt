@@ -19,32 +19,124 @@
     <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/other.min.js"></script>
     <script>toolBeltDefault() </script>
-    <script src="//cdn.jsdelivr.net/npm/riot@3.13.2/riot.min.js"></script>
   </head>
   <body>
     <p>oh hi</p>
     <div class="container">
       <div class="columns">
         <div class="column col-10 col-mx-auto pt-2">
-          <contactus-comp emailjs_id="user_Ml0VMHTbgatOE8QpYmnmb" template_id="info" service_id="gmail" legend_title="For inquiries, please use the below submission form:"></contactus-comp>
+          <form class="form-comp grid-form" id="mailFrm">
+            <fieldset>
+              <legend>For inquiries, please use the below submission form:</legend>
+              <div data-row-span="2">
+                <div data-field-span="1">
+                  <label>Name</label>
+                  <input id="name" type="text" name="name">
+                </div>
+                <div data-field-span="1">
+                  <label>E-mail</label>
+                  <input id="email" type="email" name="email">
+                </div>
+              </div>
+              <div data-row-span="1">
+                <div data-field-span="1">
+                  <label>Message</label>
+                  <textarea name="msg" type=""></textarea>
+                </div>
+              </div>
+            </fieldset>
+            <button class="btn btn-primary float-right mt-2" id="sendBut">Send Message</button>
+          </form>
+          <script>
+            console.log('cont')
+            loadVexAlertFlat() 
+            
+            depp.require(['DOMDelayed','disableAutoFill', 'emailjs', 'validate'], function(){
+               onMount()
+            })// start loading asap
+            
+            
+            var _this = this
+            
+            function onMount() {
+               console.log('mount!!')
+               var emailjs_id = ''
+               var template_id = ''
+               var service_id = ''
+               var reply_to = ''
+               var to_name = 'Joe'
+               
+               emailjs.init(emailjs_id);
+               $('#mailFrm').disableAutoFill()
+            
+               $('#mailFrm').on('submit', function(e) {
+                  e.preventDefault(); 
+                  
+                  console.log('klik')
+                  var msg = val()
+            
+                  if(msg==='OK') {
+                        //- console.info('send')
+                        var template = {
+                              reply_to: reply_to,
+                              from_name:  $('#name').val(),
+                              to_name: typeof to_name !=='undefined' ? to_name : '',
+                              from_email:  $('#email').val(),
+                              message_html: $("textarea[name='msg']").val(),
+                        }
+                        //- console.info(template)
+                        emailjs.send(service_id, template_id, template )
+                           .then(function(response) {
+                              vex.dialog.confirm({ message: 'Your message has been sent', callback: function(){} })//vexAlert
+                              
+                              $("#name, #email, textarea[name='msg']").val('')
+            
+                              console.log('SUCCESS!', response.status, response.text);
+                           }, function(error) {
+                              vex.dialog.confirm({ message: 'Something went wrong', callback: function(){} })//vexAlert
+                              $("#name, #email, textarea[name='msg']").val('')
+                              console.log('FAILED...', error)
+                           })
+            
+                        
+                  } else {
+                     console.info('wrong', msg)
+                        vex.dialog.confirm({ message: msg, callback: function(){} })//vexAlert
+                  }
+               })
+            }
+            
+            function val() {
+               console.log('val')
+               var form = $('#mailFrm');
+            
+               var name = form.find('#name').attr('name');
+               var email = form.find('#email').attr('name');
+            
+               var constraints = {};
+               constraints[name] = {
+                  presence: true
+               };
+               constraints[email] = {
+                  presence: true,
+                  email: true
+               };
+               constraints['msg'] = {
+                  presence: true
+               };
+            
+               var errors = validate(form, constraints, {format: "flat"});
+               
+               if(errors){
+                  return errors;
+               } else {
+                  return 'OK';
+               }
+            
+            }
+          </script>
         </div>
       </div>
     </div>
-    <script>
-      depp.define({'contactus-comp2':'/custel/contactus/riot/contactus-comp.js'})
-      
-      // put here since, it's removed from toolbelt.js
-      function mountComp(compName) {
-         return new Promise(function (resolve, reject) {
-               depp.require(compName, function () { // load comp
-                  riot.mount(compName)
-                  console.log('ENV', window.ENV, compName )
-                  resolve()
-               })
-         })//pro
-      }
-      
-      mountComp('contactus-comp2') 
-    </script>
-  <!-- mB v7.12.100 on 2020-01-13T21:57:22.419Z --></body>
+  <!-- mB v7.12.100 on 2020-01-14T11:32:40.554Z --></body>
 </html>
