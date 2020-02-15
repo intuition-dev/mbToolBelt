@@ -80,22 +80,20 @@ depp.define({
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
   , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/debug.css'
 
-  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/httpRPC@1.1.3/src/node-srv/browser/httpRPC.min.js']
+  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@1.1.5/browser/httpRPC.min.js']
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/spa-ts-router/spa-router.min.js']
 
   , 'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
 
   , 'platform':'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js'
   , 'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
-
-  , 'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
   
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
   , 'gridformsDefaultStyle': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.css']
   , 'gridformsJS': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.js']
 
-  //removes FOUT if you don't put font family in top (then load other, then font, after font: full style)
+  //removes FOUT 
   , 'fontloader': ['#eventBus', 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
 
   // Use for context, SPA and complex apps.jakesgordon requires Commercial License 
