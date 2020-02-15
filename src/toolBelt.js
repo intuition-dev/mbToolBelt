@@ -10,7 +10,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
 
 console.log('start')
 depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
-  'eventBus': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/EventBus.js'
+  'eventBus': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/EventBus.js'
 })
 depp.require('eventBus') // DeventBus is the default event bus in the code
 
@@ -78,13 +78,18 @@ depp.define({
   // end poly
 
   , 'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js']
-  , 'debugCSS': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/debug.css'
+  , 'debugCSS': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/debug.css'
 
   , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/httpRPC@1.1.3/src/node-srv/browser/httpRPC.min.js']
-  , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/spa-ts-router/spa-router.min.js']
+  , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0spa-ts-router/spa-router.min.js']
 
   , 'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
 
+  , 'platform':'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js'
+  , 'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
+
+  , 'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
+  
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
 
   , 'gridformsDefaultStyle': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.css']
@@ -93,11 +98,12 @@ depp.define({
   //removes FOUT if you don't put font family in top (then load other, then font, after font: full style)
   , 'fontloader': ['#eventBus', 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
 
-  // Use for context, SPA and complex apps. Commercial License # Cekvenich
+  // Use for context, SPA and complex apps.jakesgordon requires Commercial License 
   , 'state-machine': ['#eventBus', 'https://cdn.jsdelivr.net/npm/javascript-state-machine@3.1.0/lib/state-machine.min.js']
 
   , 'jqFlip': ['#jquery', 'https://cdn.jsdelivr.net/gh/nnattawat/flip@v1.1.2/dist/jquery.flip.min.js']
 
+  //todo: port
   , 'instantpage': ['#poly', 'https://cdn.jsdelivr.net/npm/instant.page.es5@2.0.0/instantpage.es5.js']
 
   // charts
@@ -109,15 +115,16 @@ depp.define({
   , 'jqMapa': ['#jquery', '#raphael', 'https://cdn.jsdelivr.net/npm/jquery-mapael@2.2.0/js/jquery.mapael.min.js']
   , 'raphael': 'https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js'
 
+  , 'snap.svg': 'https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js'
+
   , 'odometerBounty': 'https://cdn.jsdelivr.net/npm/bounty@1.2.1/lib/bounty.js'
 
-  , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.9.0'
-
-    , 'https://cdn.jsdelivr.net/npm/vega-lite@4.0.2'
-
-    , 'https://cdn.jsdelivr.net/npm/vega-embed@6.2.1'
-    , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.20.0/build/vega-tooltip.min.js'
-  ]
+  , 'xterm': [
+      'https://cdn.jsdelivr.net/npm/xterm@4.4.0/lib/xterm.min.js', 
+      'https://cdn.jsdelivr.net/npm/xterm@4.4.0/css/xterm.css',
+      'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/xterm/AttachAddon.min.js',
+      'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/xterm/FitAddon.min.js'
+    ]
 
   // upload libs to pick, also css or ?
   , 'filepond': ['https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.css', 'https://cdn.jsdelivr.net/npm/filepond@4.4.9/dist/filepond.min.js']
@@ -125,7 +132,7 @@ depp.define({
 
   //intro steps
   , 'hopscotch': ['https://cdn.jsdelivr.net/npm/hopscotch@0.3.1/dist/js/hopscotch.min.js'
-    , 'https://cdn.jsdelivr.net/npm/hopscotch@0.3.1/dist/css/hopscotch.min.css']
+  , 'https://cdn.jsdelivr.net/npm/hopscotch@0.3.1/dist/css/hopscotch.min.css']
 
   // gesture
   , 'zingtouch': 'https://cdn.jsdelivr.net/npm/zingtouch@1.0.6/index.min.js'
@@ -145,12 +152,12 @@ depp.define({
   , 'split': 'https://cdn.jsdelivr.net/npm/split.js@1.5.11/dist/split.min.js'
 
   , 'accordion': ['#jquery'
-    , 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/jquery-accordion/js/jquery.accordion.min.js'
-    , 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
+    , 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/jquery-accordion/js/jquery.accordion.min.js'
+    , 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/jquery-accordion/css/jquery.accordion.min.css']
 
   , 'emailjs': ['https://cdn.emailjs.com/sdk/2.3.2/email.min.js']
 
-  , 'pagination': ['#jquery', 'https://cdn.jsdelivr.net/npm/paginationjs@2.1.4/dist/pagination.min.js']
+  , 'pagination': ['#jquery', 'https://cdn.jsdelivr.net/npm/paginationjs@2.1.5/dist/pagination.min.js']
 
   , 'js-yaml': 'https://cdn.jsdelivr.net/npm/js-yaml@3.13.1/dist/js-yaml.min.js'
 
@@ -161,46 +168,47 @@ depp.define({
     , '#validate'
   ]
 
-  , 'codemirror': ['https://cdn.jsdelivr.net/npm/codemirror@5.48.4/lib/codemirror.min.css'
-    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/lib/codemirror.min.js'
-    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/markdown/markdown.min.js'
-    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/yaml/yaml.min.js'
-    , 'https://cdn.jsdelivr.net/npm/codemirror@5.48.4/mode/pug/pug.min.js'
+  , 'codemirror': ['https://cdn.jsdelivr.net/npm/codemirror@5.51.0/lib/codemirror.min.css'
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/lib/codemirror.min.js'
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/mode/markdown/markdown.min.js'
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/mode/yaml/yaml.min.js'
+    , 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/mode/pug/pug.min.js'
   ]
 
   , 'hotkeys': 'https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.1/dist/hotkeys.min.js'
 
   , 'select2': [
-    'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/css/select2.min.css',
-    'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/js/select2.min.js']
+      'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/css/select2.min.css',
+      'https://cdn.jsdelivr.net/gh/select2/select2@4.0.10/dist/js/select2.min.js']
 
   , 'feather-icons': 'https://cdn.jsdelivr.net/npm/feather-icons@4.24.1/dist/feather.min.js'
 
   // try to use 'long' linuxtime for service | api calls 
   , 'timeago': 'https://cdn.jsdelivr.net/gh/hustcc/timeago.js@3.0.0/dist/timeago.min.js'
-  , 'luxon': 'https://cdn.jsdelivr.net/npm/luxon@1.17.3/build/global/luxon.min.js'
+  , 'luxon':   'https://cdn.jsdelivr.net/npm/luxon@1.22.0/build/global/luxon.min.js'
+  // flatpickr
   , 'datepickr': ['https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/flatpickr.min.js',
-    'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
+                  'https://cdn.jsdelivr.net/npm/flatpickr@4.6.3/dist/themes/airbnb.css']
 
   // use for validation. eg: check in VM and return 'OK' to view|binding; or return validation errors if found
   // http://validatejs.org
   , 'validate': 'https://cdn.jsdelivr.net/npm/validate.js@0.13.1/validate.min.js'
-  , 'v8n': 'https://cdn.jsdelivr.net/npm/v8n@1.3.3/dist/v8n.min.js'
+  , 'v8n':      'https://cdn.jsdelivr.net/npm/v8n@1.3.3/dist/v8n.min.js'
 
   , 'mustache': 'https://cdn.jsdelivr.net/npm/mustache@3.0.1/mustache.min.js'
 
   , 'chance': 'https://cdn.jsdelivr.net/npm/chance@1.1.4/chance.min.js'
 
   // https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly
-  , 'baseline': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/baseline.min.js'
-  , 'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/baseliner.js']
+  , 'baseline': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/baseline.min.js'
+  , 'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/baseliner.js']
   , 'typewriter': 'https://cdn.jsdelivr.net/npm/typewriter-effect@2.12.1/dist/core.min.js'
-  , 'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/letteringjs.min.js']
+  , 'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/letteringjs.min.js']
 
-  , 'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/jquery.flexibleArea.min.js']
+  , 'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/jquery.flexibleArea.min.js']
 
   // markdown UI
-  , 'tail.writer': 'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/js/tail.writer-full.min.js'
+  , 'tail.writer':      'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/js/tail.writer-full.min.js'
   , 'tail.writerWhite': 'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/css/tail.writes-white.css'
 
   //check box
@@ -210,8 +218,6 @@ depp.define({
     , 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css'
     , 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css']
 
-  , 'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
-  , 'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
 
   //  SASS?:
   , 'ihover': 'https://cdn.jsdelivr.net/npm/imagehover.css@1.0.0/css/imagehover.min.css'
@@ -223,22 +229,19 @@ depp.define({
   , 'load-image': 'https://cdn.jsdelivr.net/npm/blueimp-load-image@2.23.0/js/load-image.min.js'
   , 'glfx': ['https://cdn.jsdelivr.net/npm/glfx@0.0.4/glfx.min.js'] // eg tilt shift
 
-  , 'snap.svg': 'https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js'
-
   //video
-  , 'bideo': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/bideo/bideo.min.js'
+  , 'bideo': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/bideo/bideo.min.js'
 
   //voice cmd
   , 'annYang': 'https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js'
 
   //FX section
-  , 'deli': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/delighters.min.js']
+  , 'deli': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/delighters.min.js']
 
   // transitions
   , 'slider': ['https://cdn.jsdelivr.net/gh/joelambert/Flux-Slider@v1.4.4/js/flux.min.js']
 
   , 'zenscroll': ['https://cdn.jsdelivr.net/npm/zenscroll@4.0.2/zenscroll-min.js']
-
 
   // simple FTS: 
   , 'fuse': 'https://cdn.jsdelivr.net/npm/fuse.js@3.4.4/dist/fuse.min.js'
@@ -263,11 +266,11 @@ depp.define({
   , 'pubnub': ['https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
 
   //*** INTU Comps:
-  , 'marq-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/marq/marq-custel/marq-custel.min.js']
-  , 'spin-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/spin/custel/spin-custel.min.js']
+  , 'marq-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0custel/marq/marq-custel/marq-custel.min.js']
+  , 'spin-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0custel/spin/custel/spin-custel.min.js']
 
-  , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/surveryitem/custel/surveyitem-comp.min.js']
-  , 'star-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/custel/starrating/custel/star-custel.js']
+  , 'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0custel/surveryitem/custel/surveyitem-comp.min.js']
+  , 'star-custel': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0custel/starrating/custel/star-custel.js']
 
 })
 
@@ -339,7 +342,7 @@ function inView(el) { // is element in view?
  * emits 'onFontsLoaded'
  */
 function toolBeltDefault() {
-  depp.require(['poly', 'eventBus', 'client', 'trace'], function () { // 'mustache', 'feather-icons',
+  depp.require(['poly', 'eventBus', 'platform', 'trace'], function () { // 'mustache', 'feather-icons',
     reqAnif(function () {
       console.log('tBD')
       loadFonts(['Open+Sans:300,400'])

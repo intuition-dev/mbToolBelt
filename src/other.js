@@ -8,13 +8,14 @@
 
 depp.define({
 
-   'xterm': [
-         'https://cdn.jsdelivr.net/npm/xterm@4.1.0/lib/xterm.min.js', 
-         'https://cdn.jsdelivr.net/npm/xterm@4.1.0/css/xterm.css',
-         'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/xterm/AttachAddon.min.js',
-         'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/xterm/FitAddon.min.js'
-         ]
-         
+  'vega': ['https://cdn.jsdelivr.net/npm/vega@5.9.0'
+
+    , 'https://cdn.jsdelivr.net/npm/vega-lite@4.0.2'
+
+    , 'https://cdn.jsdelivr.net/npm/vega-embed@6.2.1'
+    , 'https://cdn.jsdelivr.net/npm/vega-tooltip@0.20.0/build/vega-tooltip.min.js'
+  ]
+
    ,'html2canvas': ['#poly', 'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js']
 
    ,'awesomplete': ['https://cdn.jsdelivr.net/gh/leaverou/awesomplete@v1.1.5/awesomplete.min.css',
@@ -88,7 +89,7 @@ depp.define({
   , 'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css'
       , 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
-  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.12.100/src/vendors/parallaxImg.min.js'
+  , 'parallaxImg': 'https://cdn.jsdelivr.net/gh/INTUITION-dev/mbToolBelt@v3.14.0src/vendors/parallaxImg.min.js'
 
   // deprectated
   , 'vexAlertFlatReq': ['https://cdn.jsdelivr.net/npm/vex-js@4.1.0/dist/js/vex.combined.min.js'
