@@ -1,6 +1,8 @@
 
 // https://github.com/theiconic/event-bus
 
+// This is used for FLUX
+
 // added code at end
 // error for Nat: was for in. Should be regular loop. 
 
