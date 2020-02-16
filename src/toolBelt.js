@@ -85,7 +85,8 @@ depp.define({
 
   , 'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
 
-  , 'platform':'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js'
+  , 'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
+  , 'fontfaceobserver':'https://cdn.jsdelivr.net/npm/fontfaceobserver@2.1.0/fontfaceobserver.standalone.min.js'
   , 'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
   
   , 'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js'
@@ -340,7 +341,7 @@ function inView(el) { // is element in view?
  * emits 'onFontsLoaded'
  */
 function toolBeltDefault() {
-  depp.require(['poly', 'eventBus', 'platform', 'trace'], function () { // 'mustache', 'feather-icons',
+  depp.require(['poly', 'eventBus', 'client', 'trace'], function () { // 'mustache', 'feather-icons',
     reqAnif(function () {
       console.log('tBD')
       loadFonts(['Open+Sans:300,400'])
