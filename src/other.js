@@ -8,9 +8,7 @@
 
 depp.define({
 
-   'platform':'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js'
-
-  , 'vega': ['https://cdn.jsdelivr.net/npm/vega@5.9.0'
+  'vega': ['https://cdn.jsdelivr.net/npm/vega@5.9.0'
 
     , 'https://cdn.jsdelivr.net/npm/vega-lite@4.0.2'
 
