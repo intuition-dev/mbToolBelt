@@ -81,7 +81,7 @@ depp.define({
   , 'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/debug.css'
 
   , 'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/spa-ts-router/spa-router.min.js']
-  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@1.1.7/browser/httpRPC.min.js']
+  , 'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@1.1.8/browser/httpRPC.min.js']
   , 'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
 
   , 'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
