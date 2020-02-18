@@ -8,7 +8,9 @@
 
 depp.define({
 
-  'vega': ['https://cdn.jsdelivr.net/npm/vega@5.9.0'
+  'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
+
+  ,'vega': ['https://cdn.jsdelivr.net/npm/vega@5.9.0'
 
     , 'https://cdn.jsdelivr.net/npm/vega-lite@4.0.2'
 
@@ -23,8 +25,6 @@ depp.define({
    ]
 
    , 'isJs': 'https://cdn.jsdelivr.net/gh/arasatasaygin/is.js@v0.9.0/is.min.js'
-
-  , 'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
 
   , 'jsForm': ['https://cdn.jsdelivr.net/npm/jquery.jsForm@1.4.0/src/jquery.jsForm.min.js']
 
