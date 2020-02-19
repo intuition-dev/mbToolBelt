@@ -1,5 +1,5 @@
-// All rights reserved by INTUITION.DEV |  Cekvenich, licensed under LGPL-3.0-only
-// Alternative license available 
+// All rights reserved by INTUITION.DEV |  Cekvenich, licensed under GPL-3.0-only
+
 // Requires jQuery, Axios
 
 declare let $: any
