@@ -106,6 +106,9 @@ depp.define({
   //todo: port
   , 'instantpage': ['#poly', 'https://cdn.jsdelivr.net/npm/instant.page.es5@2.0.0/instantpage.es5.js']
 
+  // layout
+  , 'masonry':'https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/masonry.min.js'
+
   // charts
   , 'smoothie': 'https://cdn.jsdelivr.net/npm/smoothie@1.35.0/smoothie.min.js'
   , 'morris': ['jquery', 'raphael', '//cdn.jsdelivr.net/gh//morrisjs/morris.js@0.5.1/morris.min.js']
