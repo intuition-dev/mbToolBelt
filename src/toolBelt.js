@@ -51,7 +51,7 @@ depp.define({
 
     ,
     'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/spa-ts-router/spa-router.min.js'],
-    'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@1.1.9/browser/httpRPC.min.js'],
+    'RPC': ['#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@1.1.9/browser/httpRPC.min.js'],
     'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
 
 
@@ -83,7 +83,7 @@ depp.define({
 
     //todo: port
     ,
-    'instantpage': ['#poly', 'https://cdn.jsdelivr.net/npm/instant.page.es5@2.0.0/instantpage.es5.js']
+    'instantpage': ['https://instant.page/3.0.0']
 
     // layout
     ,
@@ -131,7 +131,7 @@ depp.define({
     'autoComplete': 'https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@5.0.0/dist/js/autoComplete.min.js'
 
     ,
-    'jquery': ['#DOM', '#poly', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js']
+    'jquery': ['#DOM', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js']
 
     ,
     'Vanilla-DataTables': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.js', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.css']
@@ -359,7 +359,7 @@ function inView(el) { // is element in view?
  * emits 'onFontsLoaded'
  */
 function toolBeltDefault() {
-    depp.require(['eventBus', 'trace'], function() { // 'mustache', 'feather-icons',
+    depp.require(['DOMDelayed'], function() { // 'mustache', 'feather-icons',
             reqAnif(function() {
                     console.log('tBD')
                     loadFonts(['Open+Sans:300,400'])
@@ -448,6 +448,15 @@ function renderMustache(root, id, data) {
     let template = root.getElementById(id).innerHTML
     return Mustache.render(template, data)
 }
+
+var supportsES6 = function() {
+    try {
+        new Function("(a = 0) => a")
+        return true
+    } catch (err) {
+        return false
+    }
+}()
 
 function fetchItems(items) { // requires poly.  
     return new Promise(function(resolve, reject) {
