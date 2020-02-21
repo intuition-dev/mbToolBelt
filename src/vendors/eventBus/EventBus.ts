@@ -131,12 +131,7 @@ var EventBus = function () {
     this.topic.removeListener(this);
   };
   
-  /* istanbul ignore next */
-  if (typeof module === 'object' && typeof module.exports === 'object') {
-    module.exports = EventBus;
-  } else {
-    window.EventBus = EventBus;
-  }
+ 
   
   // added this:
   window.eventBus = new EventBus()
