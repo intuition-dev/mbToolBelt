@@ -14,29 +14,34 @@
     .blur { -webkit-filter:blur(2px);filter:blur(2px); }
     
   </style>
-  <script src="https://cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v1.9.15/toolBelt/toolBelt.min.js"></script>
-  <script>//toolBeltDefault() </script>
+  <script src="https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/src/toolBelt.min.js"></script>
 </head>
 <body>
-  <p>oh hi</p>
+  <p>in pg</p>
   <c-custel id="c1">
     <p>Slot In</p>
   </c-custel>
+  <script>
+    toolBeltDefault() 
+    
+  </script>
   <script src="/custel/c-custel.js"></script>
   <script>
     // send message to comp
     let c1 = document.getElementById('c1')
     c1.setAttribute('bla', 2) // call to the comp's property
     
-    //use Custom Events example to receive messages from comp
-    addEventListener('c-custel-x', function (evt) {
-       console.log('pg received message', evt.detail)
+    // example receive messages from comp
+    depp.require(['eventBus'], function() {
+       DeventBus.addListener('c-custel-x', function(evt) {
+          console.log('**pg received message**', evt)
     
-       let c = document.getElementById('c1')
-       c.setViewModel(null)
+          let c = document.getElementById('c1')
+          c.setViewModel(null)
+       })
+    })
     
-    })   
     
     console.log('pg')
   </script>
-<!-- mB v6.09.15 on 2019-09-13T16:33:31.760Z --></body>
+<!-- mB v8.2.1 on 2020-02-21T17:00:44.409Z --></body>

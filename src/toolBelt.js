@@ -1,8 +1,8 @@
 //Thanos has a glove. We just gave you a tool belt!:
 
 /* This file is a toolbelt, a curated list of libs to use when a need arises. 
- And it has auto poly fill for: promise, fetch, CustomEvents, and Standard Custom Elements - for IE 11 and Modern browsers
- Also tries for a bit of prep in case of Electron or Cordova/PhoneGap.
+
+Also tries for a bit of prep in case of Electron or Cordova/PhoneGap.
  And fight FOUT
 
 Any locally hosted lib is because we can't find it on a CDN or they have poor builds so we have to host
@@ -13,7 +13,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
 
 console.log('start')
 depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
-    'eventBus': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/src/vendors/EventBus.js'
+    'eventBus': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/src/vendors/eventBus/EventBus.js'
 })
 depp.require('eventBus') // DeventBus is the default event bus in the code
 
@@ -29,9 +29,7 @@ depp.define({
     // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver CIntersectionObserverEntry
     // console.trace HTMLTemplateElement requestAnimationFrame CustomEvent'
 
-    'poly-11+': [
-        // and closest ie11 - don't use v3
-        , 'https://cdn.jsdelivr.net/npm/element-closest@2.0.2/element-closest.min.js'
+    'poly-11+': [, 'https://cdn.jsdelivr.net/npm/element-closest@2.0.2/element-closest.min.js'
         // fit-images css
         , 'https://cdn.jsdelivr.net/gh/fregante/object-fit-images@v3.2.3/dist/ofi.min.js'
         //poly for sticky
@@ -336,7 +334,7 @@ function disE(evtName, msg) {
     setTimeout(function() {
         console.log('disE', evtName)
             //dispatchEvent(new CustomEvent(evtName, { detail: msg }))
-        DeventBus.dispatch(evtName, msg) // ie 11
+        DeventBus.dispatch(evtName, msg)
     }, 1)
 } //()
 
@@ -363,7 +361,7 @@ function toolBeltDefault() {
             reqAnif(function() {
                     console.log('tBD')
                     loadFonts(['Open+Sans:300,400'])
-                    depp.require(['instantpage'])
+                        //depp.require(['instantpage'])
                         //loadFonts(['Open+Sans:300,300i,400', 'PT+Serif:400,700i', 'Marmelad'])
                 }) //ani
         }) //req
@@ -371,16 +369,15 @@ function toolBeltDefault() {
 
 // DOMDelayed: auto loads fontLoader
 depp.require(['DOM', 'eventBus'], function() {
-        console.log('dD')
         setTimeout(function() { // at end
                 reqAnif(function() {
 
                         // for custom elements use tis event:
                         depp.done('DOMDelayed')
+                        console.log('dD')
 
                         setTimeout(function() { // wait again
                             depp.require('fontloader')
-
                         }, 1)
 
                     }) // wait ani

@@ -2,10 +2,14 @@ head
    include headFrag
 
 body
-   p oh hi
+
+   p in pg
    
    c-custel#c1
       p Slot In
+
+   script.
+      toolBeltDefault() 
 
    script(src='/custel/c-custel.js')
 
@@ -14,14 +18,16 @@ body
       let c1 = document.getElementById('c1')
       c1.setAttribute('bla', 2) // call to the comp's property
       
-      //use Custom Events example to receive messages from comp
-      addEventListener('c-custel-x', function (evt) {
-         console.log('pg received message', evt.detail)
+      // example receive messages from comp
+      depp.require(['eventBus'], function() {
+         DeventBus.addListener('c-custel-x', function(evt) {
+            console.log('**pg received message**', evt)
 
-         let c = document.getElementById('c1')
-         c.setViewModel(null)
+            let c = document.getElementById('c1')
+            c.setViewModel(null)
+         })
+      })
 
-      })   
 
       console.log('pg')
 

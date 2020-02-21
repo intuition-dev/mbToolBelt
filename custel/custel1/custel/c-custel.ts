@@ -1,6 +1,4 @@
 
-// after any needed poly fills are loaded
-addEventListener('DOMDelayed', function() {// wait on DOM to avoid double cons
 
 console.log('loaded')
 
@@ -18,6 +16,8 @@ cTemp.innerHTML = `
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements
 window.customElements.define('c-custel', class extends HTMLElement {
    sr // shadow root var
+   // could hold state, but I use View Model
+   state = {}
    constructor() {
       super()
       console.log('cons c 1')
@@ -30,18 +30,19 @@ window.customElements.define('c-custel', class extends HTMLElement {
       })//click
 
       //example of sending message
-      dispatchEvent(new CustomEvent('c-custel-x', { detail: { a: 'b', c: 'd' } }))
+      depp.require(['eventBus'], function() {
+         DeventBus.dispatch('c-custel-x', { a: 'b', c: 'd' }) 
+      })
    }//cons
 
    //register properties w/ reflection to attributes, and get pg message or get attribute
-   static get observedAttributes() { return ['bla'] }
+   static get observedAttributes() { return ['bla', 'doc'] }
    attributeChangedCallback(aName, oldVal, newVal) { // handler
       console.log('custel received message', aName, newVal)
    }//()
 
    setViewModel(vm) {// other methods 
-      console.log('a ViewModel can be set here if separation is needed')
+      console.log('a ViewModel can be set if separation is required')
    }//()
 })//custel
 
-})

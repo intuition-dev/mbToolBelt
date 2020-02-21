@@ -3,9 +3,7 @@
 
 Over the years there were many .js libraries related to components that come and go.
 Examples include React, Vue, Angular, etc. And they all lost out to the native: the component API built into the browser.
-Modern browsers has built in support for standard Custom Elements/ native custom elements, with polyfills available for IE11. 
-
-It works in IE 11 and modern browsers.
+Modern browsers has built in support for standard Custom Elements.
 
 // Note: wait on DOM to avoid double cons
 
@@ -41,7 +39,7 @@ I use a classic .js loader, not modules. Use any script loader you like(I usee d
 So in the first line of the script, I define the location of my Custom Element: /custel/c-custel.js. (Normally you'd load it of a CDN(and obfuscated so page write
 is focused on using it), in same way you would load a jQuery plugins).
 
-In the second script line I load it - and normally that is it. (Also I wait for the poly fill, needed for IE11 and since we are doing ES5, also needed for modern browsers).
+
 
 In this case I also programmatically set an attribute - just an example.
 
@@ -51,9 +49,6 @@ So I hope it shows that Custom Elements are easy to use.
 
 
 ## Now lets look at how we write the component
-
-I use typescript, as it has built in support for ES5 and is well supported. (INTUITION.DEV, where I work also has CLI for -custel.ts files, but the .ts code for
-Custom Elements is compatible with most any .ts compiler)
 
 ```ts
    var cTemp = document.createElement('template')
@@ -91,20 +86,6 @@ We then define the component with some constructor boiler plate code.
 I added a clicked event - handles a click on the component. Also it will dispatch an event to a page; and last lines are to receive
 a message from the page scripts. 
 
-## Transpile(ES5)
-
-Since it is typescript, it is to easy to make into ES5 - so I won't cover it.
-In the past you may have expected to use some component packing or tree shaking - I think there is no need, or value in that. Like I mentioned, I use a
-classic script loader. Standard Custom Element have higher developer productivity relative to old way of doing things.
-
-The hardest thing was the polyfills that work for both IE11 and modern browsers, but webcomponents-loader.js is explained on this page:
-- https://github.com/webcomponents/webcomponentsjs
-
-I check to see is it is modern or legacy browser like this:
-```js
-   var Custom Elementsupport = 'customElements' in window
-```
-and proceed according to the instructions on the link in this section.
 
 ## Notes
 
