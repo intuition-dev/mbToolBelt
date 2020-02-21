@@ -1,31 +1,27 @@
-var My1VM = (function () {
-    function My1VM() {
+class My1VM {
+    constructor() {
         this.rpc = new httpRPC('http', 'localhost', 8888);
-        var THIZ = this;
+        let THIZ = this;
         DeventBus.addListener('uFetch', function (arg) {
             THIZ.fetch(arg.srch, arg.o);
         });
     }
-    My1VM.prototype.fetch = function (srch, o) {
+    fetch(srch, o) {
         var _rpcS = Date.now();
-        var args = {};
+        let args = {};
         console.log('fetch', args);
         this.rpc.invoke('uapi', 'srch', args)
             .then(function (resp) {
             console.log(Date.now() - _rpcS);
             DeventBus.dispatch('onUData', resp);
         });
-    };
-    My1VM.prototype.validate = function () {
+    }
+    validate() {
         return 'OK';
-    };
-    My1VM.prototype.log = function () {
-        var a = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            a[_i] = arguments[_i];
-        }
-    };
-    My1VM.prototype.genGUID = function () {
+    }
+    log(...a) {
+    }
+    genGUID() {
         var d = new Date().getTime();
         if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
             d += performance.now();
@@ -35,8 +31,8 @@ var My1VM = (function () {
             d = Math.floor(d / 16);
             return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
         });
-    };
-    My1VM.removeAllStore = function () {
+    }
+    static removeAllStore() {
         var cookies = document.cookie.split("; ");
         for (var c = 0; c < cookies.length; c++) {
             var d = window.location.hostname.split(".");
@@ -53,9 +49,8 @@ var My1VM = (function () {
         }
         localStorage.clear();
         sessionStorage.clear();
-    };
-    return My1VM;
-}());
+    }
+}
 depp.require(['eventBus', 'RPC', 'trace'], function () {
     console.log('VM ready');
     new My1VM();

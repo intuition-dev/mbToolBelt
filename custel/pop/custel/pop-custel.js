@@ -1,20 +1,7 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK'], function () {
+depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK'], function() {
     console.log('loading');
-    var CustelsListVM = (function () {
-        function CustelsListVM(sr) {
+    class CustelsListVM {
+        constructor(sr) {
             CustelsListVM.sr = sr;
             Split([sr.querySelector('#popLeft'), sr.querySelector('#popRight')], { sizes: [32, 68] });
             CustelsListVM.dat();
@@ -23,106 +10,187 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             var paste = CustelsListVM.sr.getElementById('paste');
             paste.addEventListener('click', CustelsListVM.paste);
         }
-        CustelsListVM.paste = function () {
-            var bot = CustelsListVM.sr.getElementById('popBot');
+        static paste() {
+            let bot = CustelsListVM.sr.getElementById('popBot');
             disE('POP-CUSTEL', bot.innerText);
-            setTimeout(function () {
+            setTimeout(function() {
                 CustelsListVM.sr.querySelector('#dialog1').close();
             }, 1000 / 30);
-        };
-        CustelsListVM.fetchCode = function (custel) {
-            return new Promise(function (resolve, reject) {
-                var path = CustelsListVM.root + custel + '/code.pug';
+        }
+        static fetchCode(custel) {
+            return new Promise(function(resolve, reject) {
+                const path = CustelsListVM.root + custel + '/code.pug';
                 console.log(path);
                 fetch(path, {
-                    cache: 'default',
-                    keepalive: true
-                }).then(function (fullResp) {
-                    if (!fullResp.ok)
-                        reject(fullResp.statusText);
-                    resolve(fullResp.text());
-                })
-                    .catch(function (err) {
-                    console.log(err);
-                    reject(err);
-                });
+                        cache: 'default',
+                        keepalive: true
+                    }).then(function(fullResp) {
+                        if (!fullResp.ok)
+                            reject(fullResp.statusText);
+                        resolve(fullResp.text());
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                        reject(err);
+                    });
             });
-        };
-        CustelsListVM.fetchCustels = function () {
-            return new Promise(function (resolve, reject) {
+        }
+        static fetchCustels() {
+            return new Promise(function(resolve, reject) {
                 fetch(CustelsListVM.root + '/custels.yaml', {
-                    cache: 'default',
-                    keepalive: true
-                }).then(function (fullResp) {
-                    if (!fullResp.ok)
-                        reject(fullResp.statusText);
-                    return fullResp.text();
-                }).then(function (ys) {
-                    var y = jsyaml.safeLoad(ys);
-                    resolve(y);
-                })
-                    .catch(function (err) {
-                    console.log(err);
-                    reject(err);
-                });
+                        cache: 'default',
+                        keepalive: true
+                    }).then(function(fullResp) {
+                        if (!fullResp.ok)
+                            reject(fullResp.statusText);
+                        return fullResp.text();
+                    }).then(function(ys) {
+                        let y = jsyaml.safeLoad(ys);
+                        resolve(y);
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                        reject(err);
+                    });
             });
-        };
-        CustelsListVM.dat = function () {
+        }
+        static dat() {
             console.log('dat');
-            var pro = CustelsListVM.fetchCustels();
-            pro.then(function (dat) {
+            let pro = CustelsListVM.fetchCustels();
+            pro.then(function(dat) {
                 CustelsListVM.onData(dat.els);
             });
-        };
-        CustelsListVM.onData = function (data) {
+        }
+        static onData(data) {
             var options = {
                 valueNames: ['desc', { data: ['name'] }],
-                item: "<tr data-name> \n                     <td class=\"desc\"></td>\n                   </tr>"
+                item: `<tr data-name> 
+                     <td class="desc"></td>
+                   </tr>`
             };
-            var custListEl = CustelsListVM.sr.getElementById('custLst');
+            let custListEl = CustelsListVM.sr.getElementById('custLst');
             CustelsListVM.custelList = new List(custListEl, options, data);
-        };
-        CustelsListVM.onLeftClick = function (el) {
-            var selector = 'tr';
+        }
+        static onLeftClick(el) {
+            const selector = 'tr';
             var iel = el.target.closest(selector);
             if (!iel)
                 return;
             var id = iel.getAttribute('data-name');
             console.log(id);
-            var proB = CustelsListVM.fetchCode(id);
+            let proB = CustelsListVM.fetchCode(id);
             CustelsListVM.setText(proB);
-        };
-        CustelsListVM.setText = function (proBot) {
-            var bot = CustelsListVM.sr.getElementById('popBot');
-            proBot.then(function (res) {
+        }
+        static setText(proBot) {
+            let bot = CustelsListVM.sr.getElementById('popBot');
+            proBot.then(function(res) {
                 bot.innerText = res;
             });
-        };
-        CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/custel/';
-        return CustelsListVM;
-    }());
+        }
+    }
+    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/custel/';
     var cTemp = document.createElement('template');
-    cTemp.innerHTML = "\n<style>:host {\n    all: initial;\n    display: block;\n    contain: content;\n\n}</style>\n\n<link rel = \"stylesheet\"\n    type = \"text/css\"\n    href = \"https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.0.5/src/css/main.css\" />\n\n<a id=\"pop1\" href=\"#pop\" rel=\"modal:open\" class=\"btn btn-b btn-sm\">Pop Custom</a>\n\n<style>\n\n#dialog1 {\n    width: 800px;\n    height: 450px;\n}\n\n#custLst {\n    max-width: 300px;\n}\n\n.gutter {\n    background-color: #eee;\n    background-repeat: no-repeat;\n    background-position: 50%;\n}\n.gutter.gutter-horizontal {\n    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');\n    cursor: col-resize;\n}\n.gutter.gutter-vertical {\n    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');\n    cursor: row-resize;\n}\n.split {\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n\n    overflow-y: auto;\n    overflow-x: hidden;\n    background-color: #fff;\n}\n.split, .gutter.gutter-horizontal {\n    float: left;\n    height: 360px;\n}\n.gutter.gutter-horizontal {\n    cursor: ew-resize;\n}\n</style>\n\n<dialog id=\"dialog1\">\n    <p>Select Element:</p>\n    <hr>\n\n    <div class=\"split\" id=\"popLeft\">\n        <div id=\"custLst\">\n            <input class=\"search smooth\" placeholder=\"Search\"/>\n            <button class=\"sort btn btn-a btn-sm\" data-sort=\"name\">Sort</button>\n            <hr>\n            <table class=\"table\">\n                <thead>\n                    <tr><th>Elements</th></tr>\n                </thead>\n                <tbody class=\"list\">\n                </tbody>\n            </table>\n        </div>\n    </div>\n    \n    <div class=\"split\" id=\"popRight\">\n        <pre><div id=\"popBot\"></div></pre>\n    </div>\n\n   <hr/>\n   <button id=\"close1\" class=\"btn btn-a btn-sm\" >Close</button>\n   <button id=\"paste\"  class=\"btn btn-b btn-sm\">Paste</button>\n</dialog>\n";
-    window.customElements.define('pop-custel', (function (_super) {
-        __extends(class_1, _super);
-        function class_1() {
-            var _this = _super.call(this) || this;
+    cTemp.innerHTML = `
+<style>:host {
+    all: initial;
+    display: block;
+    contain: content;
+
+}</style>
+
+<link rel = "stylesheet"
+    type = "text/css"
+    href = "https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.0.5/src/css/main.css" />
+
+<a id="pop1" href="#pop" rel="modal:open" class="btn btn-b btn-sm">Pop Custom</a>
+
+<style>
+
+#dialog1 {
+    width: 800px;
+    height: 450px;
+}
+
+#custLst {
+    max-width: 300px;
+}
+
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
+.gutter.gutter-vertical {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+    cursor: row-resize;
+}
+.split {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+.split, .gutter.gutter-horizontal {
+    float: left;
+    height: 360px;
+}
+.gutter.gutter-horizontal {
+    cursor: ew-resize;
+}
+</style>
+
+<dialog id="dialog1">
+    <p>Select Element:</p>
+    <hr>
+
+    <div class="split" id="popLeft">
+        <div id="custLst">
+            <input class="search smooth" placeholder="Search"/>
+            <button class="sort btn btn-a btn-sm" data-sort="name">Sort</button>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr><th>Elements</th></tr>
+                </thead>
+                <tbody class="list">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="split" id="popRight">
+        <pre><div id="popBot"></div></pre>
+    </div>
+
+   <hr/>
+   <button id="close1" class="btn btn-a btn-sm" >Close</button>
+   <button id="paste"  class="btn btn-b btn-sm">Paste</button>
+</dialog>
+`;
+    window.customElements.define('pop-custel', class extends HTMLElement {
+        constructor() {
+            super();
             console.log('cons');
-            _this.sr = _this.attachShadow({ mode: 'closed' });
-            _this.sr.appendChild(cTemp.content.cloneNode(true));
-            _this.vm = new CustelsListVM(_this.sr);
-            var THIZ = _this;
-            var pop = _this.sr.querySelector('#pop1');
+            this.sr = this.attachShadow({ mode: 'closed' });
+            this.sr.appendChild(cTemp.content.cloneNode(true));
+            this.vm = new CustelsListVM(this.sr);
+            let THIZ = this;
+            let pop = this.sr.querySelector('#pop1');
             THIZ.dialog = THIZ.sr.querySelector('#dialog1');
-            pop.addEventListener('click', function (e) {
+            pop.addEventListener('click', function(e) {
                 THIZ.dialog.showModal();
             });
-            var close = _this.sr.querySelector('#close1');
-            close.addEventListener('click', function (e) {
+            let close = this.sr.querySelector('#close1');
+            close.addEventListener('click', function(e) {
                 THIZ.dialog.close();
             });
-            return _this;
         }
-        return class_1;
-    }(HTMLElement)));
+    });
 });

@@ -13,7 +13,7 @@ Any locally hosted lib is because we can't find it on a CDN or they have poor bu
 
 console.log('start')
 depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
-    'eventBus': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/EventBus.js'
+    'eventBus': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/EventBus.js'
 })
 depp.require('eventBus') // DeventBus is the default event bus in the code
 
@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', onDOM_, false)
 
 depp.define({
 
-    // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver CIntersectionObserverEntry console.trace HTMLTemplateElement requestAnimationFrame CustomEvent'
+    // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver CIntersectionObserverEntry
+    // console.trace HTMLTemplateElement requestAnimationFrame CustomEvent'
 
     'poly-11+': [
         // and closest ie11 - don't use v3
@@ -47,11 +48,11 @@ depp.define({
 
     ,
     'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js'],
-    'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/debug.css'
+    'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/debug.css'
 
     ,
-    'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/spa-ts-router/spa-router.min.js'],
-    'RPC': ['#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@1.1.9/browser/httpRPC.min.js'],
+    'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/spa-ts-router/spa-router.min.js'],
+    'RPC': ['#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@2.2.0/browser/httpRPC.min.js'],
     'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
 
 
@@ -110,8 +111,8 @@ depp.define({
     'xterm': [
         'https://cdn.jsdelivr.net/npm/xterm@4.4.0/lib/xterm.min.js',
         'https://cdn.jsdelivr.net/npm/xterm@4.4.0/css/xterm.css',
-        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/xterm/AttachAddon.min.js',
-        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/xterm/FitAddon.min.js'
+        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/xterm/AttachAddon.min.js',
+        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/xterm/FitAddon.min.js'
     ]
 
     // upload libs to pick, also css or ?
@@ -147,7 +148,7 @@ depp.define({
     'split': 'https://cdn.jsdelivr.net/npm/split.js@1.5.11/dist/split.min.js'
 
     ,
-    'accordion': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/jquery-accordion/js/jquery.accordion.min.js', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
+    'accordion': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/jquery-accordion/js/jquery.accordion.min.js', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
 
     ,
     'emailjs': ['https://cdn.emailjs.com/sdk/2.4.1/email.min.js']
@@ -201,13 +202,13 @@ depp.define({
 
     // https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly
     ,
-    'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/baseline.min.js',
-    'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/baseliner.js'],
+    'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/baseline.min.js',
+    'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/baseliner.js'],
     'typewriter': 'https://cdn.jsdelivr.net/npm/typewriter-effect@2.12.1/dist/core.min.js',
-    'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/letteringjs.min.js']
+    'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/letteringjs.min.js']
 
     ,
-    'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/jquery.flexibleArea.min.js']
+    'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/jquery.flexibleArea.min.js']
 
     // markdown UI
     ,
@@ -236,7 +237,7 @@ depp.define({
 
     //video
     ,
-    'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/bideo/bideo.min.js'
+    'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/bideo/bideo.min.js'
 
     //voice cmd
     ,
@@ -244,7 +245,7 @@ depp.define({
 
     //FX section
     ,
-    'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/delighters.min.js']
+    'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/delighters.min.js']
 
     // transitions
     ,
@@ -282,12 +283,11 @@ depp.define({
 
     //*** INTU Comps:
     ,
-    'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/custel/marq/marq-custel/marq-custel.min.js'],
-    'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/custel/spin/custel/spin-custel.min.js']
+    'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/custel/marq/marq-custel/marq-custel.min.js'],
+    'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/custel/spin/custel/spin-custel.min.js']
 
     ,
-    'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/custel/surveryitem/custel/surveyitem-comp.min.js'],
-    'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/custel/starrating/custel/star-custel.js']
+    'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/custel/starrating/custel/star-custel.js']
 
 })
 

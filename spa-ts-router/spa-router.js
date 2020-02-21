@@ -1,8 +1,7 @@
 console.info('spa router');
-var SPArouter = (function () {
-    function SPArouter() {
-    }
-    SPArouter.loadHtml = function (toHref, fromHref, back_) {
+class SPArouter {
+    constructor() { }
+    static loadHtml(toHref, fromHref, back_) {
         if (!back_) {
             try {
                 history.pushState({ url: toHref }, '', toHref);
@@ -12,24 +11,24 @@ var SPArouter = (function () {
             }
         }
         SPArouter.disE({ type: SPArouter.NavSTART, toHref: toHref, fromHref: fromHref, back: back_ });
-        var url = toHref;
+        let url = toHref;
         console.info(url);
         axios.get(url).then(function (txt) {
-            var $html = $('<html></html>').append($(txt.data));
-            var title = $html.find('title').first().text();
+            let $html = $('<html></html>').append($(txt.data));
+            let title = $html.find('title').first().text();
             document.title = title;
-            var newContent = $html.find(SPArouter.zone).html();
+            let newContent = $html.find(SPArouter.zone).html();
             SPArouter.fROOTfix();
             SPArouter.disE({ type: SPArouter.NavDONE, toHref: toHref, fromHref: fromHref, newContent: newContent, $html: $html, back: back_ });
         }).catch(function (er) {
             console.info('error', er);
             SPArouter.disE({ type: SPArouter.ERR, err: er });
         });
-    };
-    SPArouter.appendQueryString = function (url, queryVars) {
-        var firstSeparator = (url.indexOf('?') == -1 ? '?' : '&');
-        var queryStringParts = new Array();
-        for (var key in queryVars) {
+    }
+    static appendQueryString(url, queryVars) {
+        let firstSeparator = (url.indexOf('?') == -1 ? '?' : '&');
+        let queryStringParts = new Array();
+        for (let key in queryVars) {
             try {
                 queryStringParts.push(key + '=' + queryVars[key]);
             }
@@ -37,15 +36,15 @@ var SPArouter = (function () {
                 console.info('q', err);
             }
         }
-        var queryString = queryStringParts.join('&');
+        let queryString = queryStringParts.join('&');
         return url + firstSeparator + queryString;
-    };
-    SPArouter.disE = function (msg) {
+    }
+    static disE(msg) {
         setTimeout(function () {
             dispatchEvent(new CustomEvent('nav', { detail: msg }));
         }, 1);
-    };
-    SPArouter.checkPlatform = function () {
+    }
+    static checkPlatform() {
         var native = false;
         if (document.URL.indexOf('http://') === -1
             && document.URL.indexOf('https://') === -1) {
@@ -66,16 +65,16 @@ var SPArouter = (function () {
         if (SPArouter.isFile) {
             SPArouter.watchATags();
         }
-    };
-    SPArouter.fROOTfix = function () {
+    }
+    static fROOTfix() {
         if (SPArouter.isFile) {
             $('a').each(function (index, value) {
-                var hasQuery = this.href.includes('?');
-                var hasAnchor = this.href.includes('#');
+                let hasQuery = this.href.includes('?');
+                let hasAnchor = this.href.includes('#');
                 if (this.href.includes('index.html'))
                     return;
-                var splitSymbol = hasQuery ? '?' : (hasAnchor ? '#' : null);
-                var urlParts = this.href.split(splitSymbol);
+                let splitSymbol = hasQuery ? '?' : (hasAnchor ? '#' : null);
+                const urlParts = this.href.split(splitSymbol);
                 if (urlParts[0].slice(-1) == '/') {
                     $(this).attr('href', urlParts[0] + 'index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
                 }
@@ -84,43 +83,43 @@ var SPArouter = (function () {
                 }
             });
         }
-    };
-    SPArouter.watchATags = function () {
-        var target = document.querySelector('body');
-        var debounce;
-        var config = {
+    }
+    static watchATags() {
+        const target = document.querySelector('body');
+        let debounce;
+        const config = {
             childList: true,
             subtree: true
         };
         function subscriber(mutations) {
-            mutations.forEach(function (mutation) {
+            mutations.forEach((mutation) => {
                 if (mutation.addedNodes.length) {
                     clearTimeout(debounce);
-                    debounce = setTimeout(function () {
+                    debounce = setTimeout(() => {
                         console.log('mutation');
                         SPArouter.fROOTfix();
                     }, 0);
                 }
             });
         }
-        var observer = new MutationObserver(subscriber);
+        const observer = new MutationObserver(subscriber);
         observer.observe(target, config);
-    };
-    SPArouter.init = function (foo) {
+    }
+    static init(foo) {
         SPArouter.checkPlatform();
         addEventListener('nav', foo);
         $(window).on('popstate', function (e) {
-            var state = e.originalEvent.state;
+            let state = e.originalEvent.state;
             if (state !== null) {
                 e.preventDefault();
-                var oldUrl = sessionStorage.getItem('oldUrl');
+                let oldUrl = sessionStorage.getItem('oldUrl');
                 sessionStorage.setItem('oldUrl', state.url);
                 SPArouter.loadHtml(state.url, oldUrl, true);
             }
         });
         $(document).on('click', 'a', function (e) {
-            var anchor = $(e.currentTarget);
-            var href = anchor.prop('href');
+            let anchor = $(e.currentTarget);
+            let href = anchor.prop('href');
             console.info(href);
             if (!href || href.length < 1) {
                 return;
@@ -128,11 +127,11 @@ var SPArouter = (function () {
             if (anchor.is('.norouter'))
                 return;
             e.preventDefault();
-            var fromHref = window.location.href;
+            let fromHref = window.location.href;
             sessionStorage.setItem('oldUrl', href);
             SPArouter.loadHtml(href, fromHref, null);
         });
-        var pg = window.location.href;
+        let pg = window.location.href;
         try {
             history.pushState({ url: pg }, '', pg);
         }
@@ -140,10 +139,9 @@ var SPArouter = (function () {
             console.info('no push state on file//', err);
         }
         sessionStorage.setItem('oldUrl', pg);
-    };
-    SPArouter.zone = '#router';
-    SPArouter.NavSTART = '_nav-start';
-    SPArouter.NavDONE = '_nav-loaded';
-    SPArouter.ERR = '_nav-ERR';
-    return SPArouter;
-}());
+    }
+}
+SPArouter.zone = '#router';
+SPArouter.NavSTART = '_nav-start';
+SPArouter.NavDONE = '_nav-loaded';
+SPArouter.ERR = '_nav-ERR';

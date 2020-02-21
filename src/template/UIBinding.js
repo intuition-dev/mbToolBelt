@@ -1,18 +1,17 @@
 console.log('UI:');
-var UIBinding = (function () {
-    function UIBinding() {
+class UIBinding {
+    constructor() {
         document.getElementById("srchBut").addEventListener("click", function () {
             console.log('klk');
-            var arg = {};
+            let arg = {};
             DeventBus.dispatch('uFetch', arg);
         });
         DeventBus.addListener('onUData', UIBinding.onData);
     }
-    UIBinding.onData = function (data) {
+    static onData(data) {
         console.log('onData');
-    };
-    return UIBinding;
-}());
+    }
+}
 depp.require(['DOM', 'eventBus'], function () {
     console.log('UI loaded');
     new UIBinding();
