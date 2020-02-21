@@ -43,6 +43,7 @@ b,strong{font-weight:bolder;}
          this.tmpl = cTemp.innerHTML
 
          const THIZ = this
+         // to do:FIX
          addEventListener('spin-start', function (e) {
             THIZ.spin()
          })

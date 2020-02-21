@@ -1,26 +1,25 @@
 console.info('spa router');
 class SPArouter {
-    constructor() { }
+    constructor() {}
     static loadHtml(toHref, fromHref, back_) {
         if (!back_) {
             try {
                 history.pushState({ url: toHref }, '', toHref);
-            }
-            catch (err) {
+            } catch (err) {
                 console.info('no push state on file//');
             }
         }
         SPArouter.disE({ type: SPArouter.NavSTART, toHref: toHref, fromHref: fromHref, back: back_ });
         let url = toHref;
         console.info(url);
-        axios.get(url).then(function (txt) {
+        axios.get(url).then(function(txt) {
             let $html = $('<html></html>').append($(txt.data));
             let title = $html.find('title').first().text();
             document.title = title;
             let newContent = $html.find(SPArouter.zone).html();
             SPArouter.fROOTfix();
             SPArouter.disE({ type: SPArouter.NavDONE, toHref: toHref, fromHref: fromHref, newContent: newContent, $html: $html, back: back_ });
-        }).catch(function (er) {
+        }).catch(function(er) {
             console.info('error', er);
             SPArouter.disE({ type: SPArouter.ERR, err: er });
         });
@@ -31,8 +30,7 @@ class SPArouter {
         for (let key in queryVars) {
             try {
                 queryStringParts.push(key + '=' + queryVars[key]);
-            }
-            catch (err) {
+            } catch (err) {
                 console.info('q', err);
             }
         }
@@ -40,14 +38,14 @@ class SPArouter {
         return url + firstSeparator + queryString;
     }
     static disE(msg) {
-        setTimeout(function () {
-            dispatchEvent(new CustomEvent('nav', { detail: msg }));
+        setTimeout(function() {
+            //dispatchEvent(new CustomEvent('nav', { detail: msg }));
         }, 1);
     }
     static checkPlatform() {
         var native = false;
-        if (document.URL.indexOf('http://') === -1
-            && document.URL.indexOf('https://') === -1) {
+        if (document.URL.indexOf('http://') === -1 &&
+            document.URL.indexOf('https://') === -1) {
             native = true;
         }
         var isFile = window.location.protocol == 'file:';
@@ -58,8 +56,7 @@ class SPArouter {
                 delete window.exports;
                 delete window.module;
                 console.log('fixed for non http/native');
-            }
-            catch (err) { }
+            } catch (err) {}
         }
         SPArouter.isFile = native || isFile;
         if (SPArouter.isFile) {
@@ -68,7 +65,7 @@ class SPArouter {
     }
     static fROOTfix() {
         if (SPArouter.isFile) {
-            $('a').each(function (index, value) {
+            $('a').each(function(index, value) {
                 let hasQuery = this.href.includes('?');
                 let hasAnchor = this.href.includes('#');
                 if (this.href.includes('index.html'))
@@ -77,8 +74,7 @@ class SPArouter {
                 const urlParts = this.href.split(splitSymbol);
                 if (urlParts[0].slice(-1) == '/') {
                     $(this).attr('href', urlParts[0] + 'index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
-                }
-                else {
+                } else {
                     $(this).attr('href', urlParts[0] + '/index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
                 }
             });
@@ -91,6 +87,7 @@ class SPArouter {
             childList: true,
             subtree: true
         };
+
         function subscriber(mutations) {
             mutations.forEach((mutation) => {
                 if (mutation.addedNodes.length) {
@@ -108,7 +105,7 @@ class SPArouter {
     static init(foo) {
         SPArouter.checkPlatform();
         addEventListener('nav', foo);
-        $(window).on('popstate', function (e) {
+        $(window).on('popstate', function(e) {
             let state = e.originalEvent.state;
             if (state !== null) {
                 e.preventDefault();
@@ -117,7 +114,7 @@ class SPArouter {
                 SPArouter.loadHtml(state.url, oldUrl, true);
             }
         });
-        $(document).on('click', 'a', function (e) {
+        $(document).on('click', 'a', function(e) {
             let anchor = $(e.currentTarget);
             let href = anchor.prop('href');
             console.info(href);
@@ -134,8 +131,7 @@ class SPArouter {
         let pg = window.location.href;
         try {
             history.pushState({ url: pg }, '', pg);
-        }
-        catch (err) {
+        } catch (err) {
             console.info('no push state on file//', err);
         }
         sessionStorage.setItem('oldUrl', pg);

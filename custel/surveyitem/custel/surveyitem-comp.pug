@@ -29,15 +29,9 @@ surveyitem-comp
             disE(THIZ.ID, sel)
          })
       })
-      function disE(ID, sel) {
-         console.log(ID, sel)
-         dispatchEvent(new CustomEvent('surveyitem-comp', { detail: {
-            id: ID, selected: sel
-         } } ) )
-      }
+ 
 
       init(question, arr, ID, foo) {
-         addEventListener('surveyitem-comp', foo)
 
          THIZ.name = makeid() // each radio group needs a unique name
          THIZ.ID = ID         
