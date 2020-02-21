@@ -1,4 +1,4 @@
-depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK'], function() {
+depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK'], function () {
     console.log('loading');
     class CustelsListVM {
         constructor(sr) {
@@ -13,51 +13,51 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
         static paste() {
             let bot = CustelsListVM.sr.getElementById('popBot');
             disE('POP-CUSTEL', bot.innerText);
-            setTimeout(function() {
+            setTimeout(function () {
                 CustelsListVM.sr.querySelector('#dialog1').close();
             }, 1000 / 30);
         }
         static fetchCode(custel) {
-            return new Promise(function(resolve, reject) {
+            return new Promise(function (resolve, reject) {
                 const path = CustelsListVM.root + custel + '/code.pug';
                 console.log(path);
                 fetch(path, {
-                        cache: 'default',
-                        keepalive: true
-                    }).then(function(fullResp) {
-                        if (!fullResp.ok)
-                            reject(fullResp.statusText);
-                        resolve(fullResp.text());
-                    })
-                    .catch(function(err) {
-                        console.log(err);
-                        reject(err);
-                    });
+                    cache: 'default',
+                    keepalive: true
+                }).then(function (fullResp) {
+                    if (!fullResp.ok)
+                        reject(fullResp.statusText);
+                    resolve(fullResp.text());
+                })
+                    .catch(function (err) {
+                    console.log(err);
+                    reject(err);
+                });
             });
         }
         static fetchCustels() {
-            return new Promise(function(resolve, reject) {
+            return new Promise(function (resolve, reject) {
                 fetch(CustelsListVM.root + '/custels.yaml', {
-                        cache: 'default',
-                        keepalive: true
-                    }).then(function(fullResp) {
-                        if (!fullResp.ok)
-                            reject(fullResp.statusText);
-                        return fullResp.text();
-                    }).then(function(ys) {
-                        let y = jsyaml.safeLoad(ys);
-                        resolve(y);
-                    })
-                    .catch(function(err) {
-                        console.log(err);
-                        reject(err);
-                    });
+                    cache: 'default',
+                    keepalive: true
+                }).then(function (fullResp) {
+                    if (!fullResp.ok)
+                        reject(fullResp.statusText);
+                    return fullResp.text();
+                }).then(function (ys) {
+                    let y = jsyaml.safeLoad(ys);
+                    resolve(y);
+                })
+                    .catch(function (err) {
+                    console.log(err);
+                    reject(err);
+                });
             });
         }
         static dat() {
             console.log('dat');
             let pro = CustelsListVM.fetchCustels();
-            pro.then(function(dat) {
+            pro.then(function (dat) {
                 CustelsListVM.onData(dat.els);
             });
         }
@@ -83,12 +83,12 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
         }
         static setText(proBot) {
             let bot = CustelsListVM.sr.getElementById('popBot');
-            proBot.then(function(res) {
+            proBot.then(function (res) {
                 bot.innerText = res;
             });
         }
     }
-    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/custel/';
+    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/';
     var cTemp = document.createElement('template');
     cTemp.innerHTML = `
 <style>:host {
@@ -184,11 +184,11 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             let THIZ = this;
             let pop = this.sr.querySelector('#pop1');
             THIZ.dialog = THIZ.sr.querySelector('#dialog1');
-            pop.addEventListener('click', function(e) {
+            pop.addEventListener('click', function (e) {
                 THIZ.dialog.showModal();
             });
             let close = this.sr.querySelector('#close1');
-            close.addEventListener('click', function(e) {
+            close.addEventListener('click', function (e) {
                 THIZ.dialog.close();
             });
         }

@@ -7,7 +7,7 @@
 
 depp.define({
 
-    'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/custel/surveryitem/custel/surveyitem-comp.min.js'],
+    'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/surveryitem/custel/surveyitem-comp.min.js'],
 
     'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
 
@@ -113,7 +113,7 @@ depp.define({
     'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css', 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
     ,
-    'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.0/src/vendors/parallaxImg.min.js'
+    'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/src/vendors/parallaxImg.min.js'
 
     // deprectated
     ,

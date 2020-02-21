@@ -1,3 +1,6 @@
+### 8.2.1
+- Dropped es5
+
 ### 3.12.15
 - vega, Design and DataTab
 
