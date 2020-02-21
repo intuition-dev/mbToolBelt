@@ -8,9 +8,6 @@
 Any locally hosted lib is because we can't find it on a CDN or they have poor builds so we have to host
  */
 
-
-// NOTE: no more poly+DOM event
-
 console.log('start')
 depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
     'eventBus': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/EventBus.js'
@@ -23,11 +20,48 @@ function onDOM_() {
 document.addEventListener('deviceready', onDOM_, false)
 document.addEventListener('DOMContentLoaded', onDOM_, false)
 
+addEventListener('WebComponentsReady', function(e) { // step 2
+    console.log('WebComponentsReady')
+    depp.done('WebComponentsReady')
+    depp.require('polyIO') // load polyIO
+})
+
+var supportsES6 = function() {
+    try {
+        new Function("(a = 0) => a")
+        return true
+    } catch (err) {
+        return false
+    }
+}()
+
+function polyIO() { // callback step 3
+    console.log('polyIO')
+    if (supportsES6) { // modern 
+        console.log('step4T', supportsES6)
+        depp.require('es5-adapter', function() {
+                console.log('poly', Date.now() - _start)
+                depp.done('poly')
+            }) //depp
+    } else { // ie 11
+        console.log('step4F', supportsES6)
+        depp.require('poly-11+', function() {
+            console.log('poly', Date.now() - _start)
+            depp.done('poly')
+        })
+    } //else
+} //()
 
 depp.define({
 
-    // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver CIntersectionObserverEntry console.trace HTMLTemplateElement requestAnimationFrame CustomEvent'
+    //  'webcomponents-loader': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-loader.js'
+    // https://github.com/webcomponents/webcomponentsjs
+    'es5-adapter': 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/custom-elements-es5-adapter.js'
 
+    ,
+    'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features=fetch%2CWebAnimations%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.map%2CIntersectionObserver%2CIntersectionObserverEntry%2Cconsole.trace%2Cconsole.debug%2CHTMLTemplateElement%2CrequestAnimationFrame%2CPromise%2CCustomEvent'
+
+    ,
     'poly-11+': [
         // and closest ie11 - don't use v3
         , 'https://cdn.jsdelivr.net/npm/element-closest@2.0.2/element-closest.min.js'
@@ -53,7 +87,6 @@ depp.define({
     'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/spa-ts-router/spa-router.min.js'],
     'RPC': ['#poly', '#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@1.1.9/browser/httpRPC.min.js'],
     'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
-
 
     ,
     'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
@@ -150,7 +183,7 @@ depp.define({
     'accordion': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/jquery-accordion/js/jquery.accordion.min.js', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v3.14.15/src/vendors/jquery-accordion/css/jquery.accordion.min.css']
 
     ,
-    'emailjs': ['https://cdn.emailjs.com/sdk/2.4.1/email.min.js']
+    'emailjs': ['https://cdn.emailjs.com/sdk/2.3.2/email.min.js']
 
     ,
     'pagination': ['#jquery', 'https://cdn.jsdelivr.net/npm/paginationjs@2.1.5/dist/pagination.min.js']
@@ -359,7 +392,7 @@ function inView(el) { // is element in view?
  * emits 'onFontsLoaded'
  */
 function toolBeltDefault() {
-    depp.require(['eventBus', 'trace'], function() { // 'mustache', 'feather-icons',
+    depp.require(['poly', 'eventBus', 'trace'], function() { // 'mustache', 'feather-icons',
             reqAnif(function() {
                     console.log('tBD')
                     loadFonts(['Open+Sans:300,400'])
@@ -370,13 +403,15 @@ function toolBeltDefault() {
 } //()
 
 // DOMDelayed: auto loads fontLoader
-depp.require(['DOM', 'eventBus'], function() {
+depp.require(['DOM', 'eventBus', 'poly'], function() {
         console.log('dD')
         setTimeout(function() { // at end
                 reqAnif(function() {
 
                         // for custom elements use tis event:
                         depp.done('DOMDelayed')
+                        depp.done('DOMDelayed')
+                        disE('DOMDelayed')
 
                         setTimeout(function() { // wait again
                             depp.require('fontloader')

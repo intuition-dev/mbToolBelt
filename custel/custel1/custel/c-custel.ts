@@ -1,6 +1,6 @@
 
 // after any needed poly fills are loaded
-addEventListener('poly+DOM', function() {// wait on DOM to avoid double cons
+addEventListener('DOMDelayed', function() {// wait on DOM to avoid double cons
 
 console.log('loaded')
 

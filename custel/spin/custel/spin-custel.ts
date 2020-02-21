@@ -2,7 +2,7 @@
 declare var depp
 declare var reqAnif:any
 
-depp.require(['poly+DOM'], function () {
+depp.require(['DOMDelayed'], function () {
 
 var cTemp = document.createElement('template')
 cTemp.innerHTML = `
