@@ -69,7 +69,8 @@ depp.define({
     'gridformsDefaultStyle': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.css'],
     'gridformsJS': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.js']
 
-    //removes FOUT 
+    //removes FOUT to do: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
     ,
     'fontloader': ['#eventBus', 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
 
@@ -80,7 +81,7 @@ depp.define({
     ,
     'jqFlip': ['#jquery', 'https://cdn.jsdelivr.net/gh/nnattawat/flip@v1.1.2/dist/jquery.flip.min.js']
 
-    //todo: port
+    //todo: remove cookie
     ,
     'instantpage': ['https://instant.page/3.0.0']
 
@@ -331,6 +332,7 @@ function setAttrDa(el, obj) {
 
 // This async dis can help, for example in promise
 function disE(evtName, msg) {
+    console.log('disE is deprecated, remove')
     setTimeout(function() {
         console.log('disE', evtName)
             //dispatchEvent(new CustomEvent(evtName, { detail: msg }))
