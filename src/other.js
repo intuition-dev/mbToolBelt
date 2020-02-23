@@ -76,16 +76,13 @@ depp.define({
     'jqMousewheel': ['#jquery', 'https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js'],
     'scrollify': ['#jquery', 'https://cdn.jsdelivr.net/npm/jquery-scrollify@1.0.20/jquery.scrollify.min.js']
 
-    // use for file uploads only
-    ,
-    'axios': 'https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js'
-
     // https://www.npmjs.com/package/collect.js
     ,
     'collect': 'https://cdn.jsdelivr.net/npm/collect.js@4.16.6/build/collect.min.js'
 
     ,
     'fluxify': 'https://cdn.jsdelivr.net/npm/fluxify@0.2.3/fluxify.min.js',
+
     'flyd': 'https://cdn.jsdelivr.net/npm/flyd@0.2.8/flyd.min.js'
 
     ,

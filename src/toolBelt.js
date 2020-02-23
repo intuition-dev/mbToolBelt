@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', onDOM_, false)
 
 depp.define({
 
-    // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver CIntersectionObserverEntry
+    // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver IntersectionObserverEntry
     // console.trace HTMLTemplateElement requestAnimationFrame CustomEvent'
 
     'poly-11+': [, 'https://cdn.jsdelivr.net/npm/element-closest@2.0.2/element-closest.min.js'
@@ -83,7 +83,7 @@ depp.define({
 
     //todo: remove cookie
     ,
-    'instantpage': ['https://instant.page/3.0.0']
+    'instantpage': ['https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js']
 
     // layout
     ,
