@@ -32,7 +32,7 @@ b,strong{font-weight:bolder;}
    
    console.log('loaded')
 
-   window.customElements.define('spin-custel', class extends HTMLElement {
+   customElements.define('spin-custel', class extends HTMLElement {
       sr // shadow root var
       tmpl
       constructor() {

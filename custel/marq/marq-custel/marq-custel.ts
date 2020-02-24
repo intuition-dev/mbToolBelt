@@ -82,7 +82,7 @@ cTemp.innerHTML = `
       </style>
    `
 
-window.customElements.define('marq-custel', class extends HTMLElement {
+customElements.define('marq-custel', class extends HTMLElement {
    sr // shadow root var
    index: number = 0
    constructor() {

@@ -18,6 +18,7 @@ depp.define({ // depp.js and eventBus are the only dependencies. the rest are po
 depp.require('eventBus') // DeventBus is the default event bus in the code
 
 function onDOM_() {
+    console.log('DOM')
     depp.done('DOM')
 } //()
 document.addEventListener('deviceready', onDOM_, false)

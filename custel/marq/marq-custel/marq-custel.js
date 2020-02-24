@@ -79,7 +79,7 @@ cTemp.innerHTML = `
       }
       </style>
    `;
-window.customElements.define('marq-custel', class extends HTMLElement {
+customElements.define('marq-custel', class extends HTMLElement {
     constructor() {
         super();
         this.index = 0;

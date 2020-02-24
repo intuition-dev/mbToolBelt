@@ -216,7 +216,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
 </dialog>
 `
 
-    window.customElements.define('pop-custel', class extends HTMLElement {
+    customElements.define('pop-custel', class extends HTMLElement {
         sr // shadow root var
         vm: CustelsListVM
         dialog

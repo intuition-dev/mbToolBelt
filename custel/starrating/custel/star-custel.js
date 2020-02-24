@@ -24,7 +24,7 @@ starTemp.innerHTML = `
    <span class='star-icon' id='s1'>☆</span><span class='star-icon' id='s2'>☆</span><span class='star-icon' id='s3'>☆</span><span class='star-icon' id='s4'>☆</span>
 </div>
 `;
-window.customElements.define('star-custel', class extends HTMLElement {
+customElements.define('star-custel', class extends HTMLElement {
     constructor() {
         super();
         this.sr = this.attachShadow({ mode: 'closed' });

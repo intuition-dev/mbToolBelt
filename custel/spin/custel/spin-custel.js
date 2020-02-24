@@ -25,7 +25,7 @@ b,strong{font-weight:bolder;}
 </style>
 `;
     console.log('loaded');
-    window.customElements.define('spin-custel', class extends HTMLElement {
+    customElements.define('spin-custel', class extends HTMLElement {
         constructor() {
             super();
             console.log('CONS');

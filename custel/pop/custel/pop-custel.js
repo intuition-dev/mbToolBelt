@@ -174,7 +174,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
    <button id="paste"  class="btn btn-b btn-sm">Paste</button>
 </dialog>
 `;
-    window.customElements.define('pop-custel', class extends HTMLElement {
+    customElements.define('pop-custel', class extends HTMLElement {
         constructor() {
             super();
             console.log('cons');

@@ -5,29 +5,24 @@ body
 
    p in pg
    
-   c-custel#c1
-      p Slot In
+   c-custel(bla=3)#c1
+   p Slot In
 
    script.
-      toolBeltDefault() 
-
-   script(src='/custel/c-custel.js')
-
-   script.
-      // send message to comp
-      let c1 = document.getElementById('c1')
-      c1.setAttribute('bla', 2) // call to the comp's property
       
       // example receive messages from comp
       depp.require(['eventBus'], function() {
+         
          DeventBus.addListener('c-custel-x', function(evt) {
             console.log('**pg received message**', evt)
-
+         
+            // optional, interact w/ element
             let c = document.getElementById('c1')
             c.setViewModel(null)
+
          })
       })
 
+   script(src='/custel/c-custel.js' type='module')
 
-      console.log('pg')
 

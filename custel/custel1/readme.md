@@ -57,7 +57,7 @@ So I hope it shows that Custom Elements are easy to use.
       <slot></slot>
    `
 
-   window.customElements.define('c-custel', class extends HTMLElement {
+   customElements.define('c-custel', class extends HTMLElement {
       sr // shadow root var
       constructor() {
          super()

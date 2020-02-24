@@ -18,30 +18,22 @@
 </head>
 <body>
   <p>in pg</p>
-  <c-custel id="c1">
-    <p>Slot In</p>
-  </c-custel>
+  <c-custel bla="3" id="c1"></c-custel>
+  <p>Slot In</p>
   <script>
-    toolBeltDefault() 
-    
-  </script>
-  <script src="/custel/c-custel.js"></script>
-  <script>
-    // send message to comp
-    let c1 = document.getElementById('c1')
-    c1.setAttribute('bla', 2) // call to the comp's property
-    
     // example receive messages from comp
     depp.require(['eventBus'], function() {
+       
        DeventBus.addListener('c-custel-x', function(evt) {
           console.log('**pg received message**', evt)
-    
+       
+          // optional, interact w/ element
           let c = document.getElementById('c1')
           c.setViewModel(null)
+    
        })
     })
     
-    
-    console.log('pg')
   </script>
-<!-- mB v8.2.1 on 2020-02-21T17:00:44.409Z --></body>
+  <script src="/custel/c-custel.js" type="module"></script>
+<!-- mB v8.2.1 on 2020-02-24T00:49:03.522Z --></body>

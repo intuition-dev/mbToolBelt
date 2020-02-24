@@ -28,7 +28,7 @@ starTemp.innerHTML = `
 `
 
 
-window.customElements.define('star-custel', class extends HTMLElement {
+customElements.define('star-custel', class extends HTMLElement {
    sr 
    constructor() {
       super()
