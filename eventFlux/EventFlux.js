@@ -93,6 +93,14 @@ class Topic {
         }
     }//()
 
+    // dispatch async
+    dispatchAsync(event, data) {
+        const THIZ = this
+        setTimeout(function() { 
+            THIZ.dispatch(event,data)
+        }, 1) 
+    }//()
+
     consume(binding, queue, listener) {
         for (var key in queue) {
             if (this.matchWildCard(key, binding)) {
@@ -134,13 +142,3 @@ window.DefEventBus = new EventFlux().getTopic('DEFAULT', { 'persistent': true })
 
 console.log('DefEventBus')
 
-
-// This async dis can help, for example in promise
-function disEX(evtName, msg) {
-    console.log('disE is deprecated, remove')
-    setTimeout(function() {
-        console.log('disE', evtName)
-            //dispatchEvent(new CustomEvent(evtName, { detail: msg }))
-        DeventBus.dispatch(evtName, msg)
-    }, 1)
-} //()

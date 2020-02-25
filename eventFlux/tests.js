@@ -1,40 +1,43 @@
-console.log('tests script');
+
 var pro = loadQunit();
 pro.then(function () {
     console.log('qunit loaded');
     QUnit.start();
     new TestEB();
 }); //pro
+
 import { EventFlux } from './EventFlux.js';
 class TestEB {
+
     constructor() {
-        console.log('TestEB');
-        new EventFlux();
-        TestEB.listener = DefEventBus.addListener('onUData', TestEB.onVM1Data);
-        QUnit.test("hello test", function (assert_) {
+        new EventFlux(); // load it
+        QUnit.test("eb test", function (assert_) {
             TestEB.assert = assert_;
             TestEB.done1 = assert_.async();
             TestEB.done2 = assert_.async();
+            console.log('start tests...');
+            TestEB.testB4();
+            TestEB.testAf();
         });
     } //()
-    static onVM1Data(data) {
-        console.log('data');
-        TestEB.assert.ok(true, "Passed!");
-        TestEB.done1();
-        // test 2
-        DefEventBus.removeListener(TestEB.listener);
-        let arg = {};
-        arg.srch = chance.character({ alpha: true }) + chance.character({ alpha: true });
-        arg.o = 1;
-        DefEventBus.dispatch('uFetch', arg);
-        DefEventBus.addListener('onUData', TestEB.onVM2Data);
+
+    static testB4() {
+        // data before
+        DefEventBus.dispatch('dataB4', 'oh hi b4');
+        DefEventBus.addListener('dataB4', function (data) {
+            console.log('b4', data);
+            TestEB.assert.ok(true, "Passed!");
+            TestEB.done1();
+        });
     } //()
-    static onVM2Data(data2) {
-        console.log('data2');
-        TestEB.assert.ok(true, "Passed!");
-        TestEB.done2();
-        // in here we can call RPC to send data of duration, browser and ip
-        // rpc send metrics
-        console.log('TestsDone');
+
+    static testAf() {
+        // data after
+        DefEventBus.addListener('dataAf', function (data) {
+            console.log('af:', data);
+            TestEB.assert.ok(true, "Passed!");
+            TestEB.done2();
+        });
+        DefEventBus.dispatchAsync('dataAf', 'oh hi af');
     } //()
 } //class

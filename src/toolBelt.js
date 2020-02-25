@@ -3,7 +3,7 @@
 /* This file is a toolbelt, a curated list of libs to use when a need arises. 
  */
 
-// NOTE: no more poly+DOM, loadFonts, eventBus, disE, fontloader, toolBeltDefault
+// NOTE: no more poly+DOM, loadFonts, eventBus, disE, fontloader, toolBeltDefault. Now it is a class
 
 // 'Open+Sans:300,300i,400', 'PT+Serif:400,700i', 'Marmelad' 
 
@@ -13,6 +13,7 @@ window.ENV = '#{ENV}' //- for comps, but it is also in scope for Pug for ENV log
 
 function onDOM_() {
     depp.done('DOM')
+    console.log('DOM')
 } //()
 document.addEventListener('deviceready', onDOM_, false)
 document.addEventListener('DOMContentLoaded', onDOM_, false)
@@ -21,8 +22,7 @@ document.addEventListener('DOMContentLoaded', onDOM_, false)
 depp.require(['DOM'], function() {
     setTimeout(function() { // at end
         reqAnif(function() {
-                // for custom elements use tis event:
-                depp.done('DOMDelayed')
+                depp.done('DOMDelayed') // event
                 console.log('dD')
             }) // wait ani
         }, 1) // wait 1

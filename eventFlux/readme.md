@@ -3,3 +3,7 @@
 
 - pub first or sub first!
 - Can be used for Flux or anything else.
+
+EventFlux.js
+
+Unit test included.
