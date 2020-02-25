@@ -1,65 +1,64 @@
 //Thanos has a glove. We just gave you a tool belt!:
 
 /* This file is a toolbelt, a curated list of libs to use when a need arises. 
-
-Also tries for a bit of prep in case of Electron or Cordova/PhoneGap.
- And fight FOUT
-
-Any locally hosted lib is because we can't find it on a CDN or they have poor builds so we have to host
  */
 
+// NOTE: no more poly+DOM, loadFonts, eventBus, disE, fontloader, toolBeltDefault
 
-// NOTE: no more poly+DOM event
+// 'Open+Sans:300,300i,400', 'PT+Serif:400,700i', 'Marmelad' 
 
 console.log('start')
-depp.define({ // depp.js and eventBus are the only dependencies. the rest are polyfills and nice to haves
-    'eventBus': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/src/vendors/eventBus/EventBus.js'
-})
-depp.require('eventBus') // DeventBus is the default event bus in the code
+var _start = Date.now()
+window.ENV = '#{ENV}' //- for comps, but it is also in scope for Pug for ENV logic
 
 function onDOM_() {
-    console.log('DOM')
     depp.done('DOM')
 } //()
 document.addEventListener('deviceready', onDOM_, false)
 document.addEventListener('DOMContentLoaded', onDOM_, false)
 
+// DOMDelayed 
+depp.require(['DOM'], function() {
+    setTimeout(function() { // at end
+        reqAnif(function() {
+                // for custom elements use tis event:
+                depp.done('DOMDelayed')
+                console.log('dD')
+            }) // wait ani
+        }, 1) // wait 1
+}) //()
 
 depp.define({
 
     // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver IntersectionObserverEntry
-    // console.trace HTMLTemplateElement requestAnimationFrame CustomEvent'
+    // console.trace  requestAnimationFrame '
 
-    'poly-11+': [, 'https://cdn.jsdelivr.net/npm/element-closest@2.0.2/element-closest.min.js'
-        // fit-images css
-        , 'https://cdn.jsdelivr.net/gh/fregante/object-fit-images@v3.2.3/dist/ofi.min.js'
+    'poly-sticky': [
         //poly for sticky
-        , 'https://cdn.jsdelivr.net/npm/stickyfilljs@2.1.0/dist/stickyfill.min.js'
+        'https://cdn.jsdelivr.net/npm/stickyfilljs@2.1.0/dist/stickyfill.min.js'
     ]
 
     ,
-    'poly-dialog': ['https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.min.js', 'https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.min.js']
+    'poly-dialog': ['https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.min.js', 
+                    'https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.min.js']
 
     // check "ResizeObserver" in window
     ,
-    'resize-observer-poly': 'https://cdn.jsdelivr.net/gh/que-etc/resize-observer-polyfill@v1.5.1/dist/ResizeObserver.min.js'
-        // end poly
-
+    'poly-resize-observer': 'https://cdn.jsdelivr.net/gh/que-etc/resize-observer-polyfill@v1.5.1/dist/ResizeObserver.min.js'
+ 
     ,
     'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js'],
     'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/src/vendors/debug.css'
 
     ,
-    'SPA': ['#eventBus', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/spa-ts-router/spa-router.min.js'],
+    'SPA': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/spa-ts-router/spa-router.min.js'],
     'RPC': ['#lz-string', 'https://cdn.jsdelivr.net/npm/http-rpc@2.2.0/browser/httpRPC.min.js'],
     'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js'
 
 
-    ,
-    'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
+    ,'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js'
 
-    ,
-    'platform': 'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js',
+    ,'platform': 'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js',
     'fontfaceobserver': 'https://cdn.jsdelivr.net/npm/fontfaceobserver@2.1.0/fontfaceobserver.standalone.min.js',
     'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js'
 
@@ -70,14 +69,9 @@ depp.define({
     'gridformsDefaultStyle': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.css'],
     'gridformsJS': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.js']
 
-    //removes FOUT to do: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-
-    ,
-    'fontloader': ['#eventBus', 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
 
     // Use for context, SPA and complex apps.jakesgordon requires Commercial License 
-    ,
-    'state-machine': ['#eventBus', 'https://cdn.jsdelivr.net/npm/javascript-state-machine@3.1.0/lib/state-machine.min.js']
+    , 'state-machine': ['https://cdn.jsdelivr.net/npm/javascript-state-machine@3.1.0/lib/state-machine.min.js']
 
     ,
     'jqFlip': ['#jquery', 'https://cdn.jsdelivr.net/gh/nnattawat/flip@v1.1.2/dist/jquery.flip.min.js']
@@ -285,9 +279,7 @@ depp.define({
     ,
     'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/marq/marq-custel/marq-custel.min.js'],
     'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/spin/custel/spin-custel.min.js']
-
-    ,
-    'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/starrating/custel/star-custel.js']
+    ,'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/starrating/custel/star-custel.js']
 
 })
 
@@ -295,34 +287,12 @@ depp.define({
 var dialogSupport = window.HTMLDialogElement
 if (!dialogSupport) {
     depp.require(['poly-dialog'], function() {
-        depp.done('dialogOK')
         depp.done('dialogReady')
     })
 } else {
-    depp.done('dialogOK')
     depp.done('dialogReady')
 }
 
-// only if script is strange, else use depp
-//- eg addScript('bla.js', null, 'api-key', 'key123') when they want you to use the tag: so you can in your own sequence
-function addScript(src, callback, attr, attrValue, id) {
-    var s = document.createElement('script')
-    s.setAttribute('src', src)
-    if (attr) s.setAttribute(attr, attrValue)
-    if (id) s.id = id
-    if (callback) s.onload = callback
-    s.async = true // it does it anyway, as the script is async
-    document.getElementsByTagName('body')[0].appendChild(s)
-}
-
-// helper for custom elements
-//add element defer //////////////////////////////////////////
-function addElementDe(parentEl, elName, id) {
-    var el = document.createElement(elName)
-    el.id = id
-    parentEl.appendChild(el)
-    return el
-} //()
 
 //set data
 function setAttrDa(el, obj) {
@@ -330,16 +300,6 @@ function setAttrDa(el, obj) {
     el.setAttribute('data', JSON.stringify(clone))
 } //()
 // end elements//////////////////////////////////////////////////////
-
-// This async dis can help, for example in promise
-function disE(evtName, msg) {
-    console.log('disE is deprecated, remove')
-    setTimeout(function() {
-        console.log('disE', evtName)
-            //dispatchEvent(new CustomEvent(evtName, { detail: msg }))
-        DeventBus.dispatch(evtName, msg)
-    }, 1)
-} //()
 
 function inView(el) { // is element in view?
     //special bonus for jQuery
@@ -355,60 +315,11 @@ function inView(el) { // is element in view?
     )
 }
 
-/**
- * You may want to call this function, or load it manually
- * emits 'onFontsLoaded'
- */
-function toolBeltDefault() {
-    depp.require(['DOMDelayed'], function() { // 'mustache', 'feather-icons',
-            reqAnif(function() {
-                    console.log('tBD')
-                    loadFonts(['Open+Sans:300,400'])
-                        //depp.require(['instantpage'])
-                        //loadFonts(['Open+Sans:300,300i,400', 'PT+Serif:400,700i', 'Marmelad'])
-                }) //ani
-        }) //req
-} //()
-
-// DOMDelayed: auto loads fontLoader
-depp.require(['DOM', 'eventBus'], function() {
-        setTimeout(function() { // at end
-                reqAnif(function() {
-
-                        // for custom elements use tis event:
-                        depp.done('DOMDelayed')
-                        console.log('dD')
-
-                        setTimeout(function() { // wait again
-                            depp.require('fontloader')
-                        }, 1)
-
-                    }) // wait ani
-            }, 1) // wait 1
-    }) //()
-
 function reqAnif(foo) {
     requestAnimationFrame(function() {
         foo()
     })
 } //()
-
-// FOUT section
-function loadFonts(fontsArr) {
-    depp.require(['fontloader', 'eventBus', 'DOMDelayed'], function() {
-        var fontConfig = {
-            classes: false,
-            google: {
-                families: fontsArr
-            },
-            active: function() {
-                disE('FontsLoaded', fontsArr)
-            }
-        }
-        WebFont.load(fontConfig)
-    })
-}
-// END FOUT section
 
 //helps qunit not auto run 
 function loadQunit() { // you have to wait on -ready and manually QUnit.start()
@@ -449,16 +360,16 @@ function renderMustache(root, id, data) {
     return Mustache.render(template, data)
 }
 
-var supportsES6 = function() {
+function supportsES6() {
     try {
         new Function("(a = 0) => a")
         return true
     } catch (err) {
         return false
     }
-}()
+}
 
-function fetchItems(items) { // requires poly.  
+function fetchItems(items) { 
     return new Promise(function(resolve, reject) {
             fetch(items, {
                     cache: 'default',

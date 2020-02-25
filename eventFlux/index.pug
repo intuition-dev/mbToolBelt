@@ -1,14 +1,10 @@
 head
-   include headFrag
-   //include ops
-   
+   include headFrag   
 
 body
-   p#one oh hi
-   p #{ENV}
+   #qunit
+   #qunit-fixture
 
-   script.
-      toolBeltDefault()
-      
-      depp.require(['DOMDelayed', 'disableAutoFill'])
+   script(type='module', src='tests.js')
+
    

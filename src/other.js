@@ -7,7 +7,9 @@
 
 depp.define({
 
-    'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/surveryitem/custel/surveyitem-comp.min.js'],
+    'fontloader': ['https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
+
+    ,'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/surveryitem/custel/surveyitem-comp.min.js'],
 
     'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
 
@@ -141,15 +143,16 @@ function loadVexAlertFlat() { // since it has extra call at end
 } //()
 
 
-/* how to load tricky things
-   loadQunit().then(function(){
-      console.log('qunit-ready')
-   })
-
-   loadFB().then(function(){
-      console.log('FB')
-   })
-*/
+//- eg addScript('bla.js', null, 'api-key', 'key123') when they want you to use the tag: so you can in your own sequence
+function addScript(src, callback, attr, attrValue, id) {
+    var s = document.createElement('script')
+    s.setAttribute('src', src)
+    if (attr) s.setAttribute(attr, attrValue)
+    if (id) s.id = id
+    if (callback) s.onload = callback
+    s.async = true // it does it anyway, as the script is async
+    document.getElementsByTagName('body')[0].appendChild(s)
+}
 
 // https://www.mixamo.com/#/?page=1&type=Character
 
@@ -203,4 +206,13 @@ function debounceF(callback, time) { //returns a modified function!!!
 depp.require('DOM', function() {
         console.log('lh', getStyle(document.getElementsByTagName("BODY")[0], 'line-height'))
     })
-    // https://tailwindcss.com/resources
+// https://tailwindcss.com/resources
+
+// helper for custom elements
+//add element defer //////////////////////////////////////////
+function addElementDe(parentEl, elName, id) {
+    var el = document.createElement(elName)
+    el.id = id
+    parentEl.appendChild(el)
+    return el
+} //()

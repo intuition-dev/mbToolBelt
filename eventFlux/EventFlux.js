@@ -131,3 +131,16 @@ class Listener {
 
 // added this:
 window.DefEventBus = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
+
+console.log('DefEventBus')
+
+
+// This async dis can help, for example in promise
+function disEX(evtName, msg) {
+    console.log('disE is deprecated, remove')
+    setTimeout(function() {
+        console.log('disE', evtName)
+            //dispatchEvent(new CustomEvent(evtName, { detail: msg }))
+        DeventBus.dispatch(evtName, msg)
+    }, 1)
+} //()
