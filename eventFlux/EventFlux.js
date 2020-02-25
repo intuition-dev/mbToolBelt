@@ -1,13 +1,16 @@
 // https://github.com/theiconic/event-bus
 // added code at end
 // error for Nat: was for in. Should be regular loop. 
+
 /**
  * Event bus
  */
 export class EventFlux {
+
     constructor() {
         this.topics = {};
     }
+    
     /**
      * Get a topic in the event bus, if it doesn't exist, it will be created
      * @param {string} identifier
@@ -19,16 +22,18 @@ export class EventFlux {
         }
         return this.topics[identifier];
     }
-    ;
+    
     /**
      * @returns {Topic[]}
      */
     getTopics() {
         return this.topics;
     }
-    ;
+
 } // class
+
 class Topic {
+
     /**
      * @param {string} identifier
      */
@@ -38,6 +43,7 @@ class Topic {
         this.identifier = identifier;
         this.options = options || {};
     }
+    
     /**
      * @param {string} binding The event binding to listen to
      * @param {Function} callback The callback to be triggered on events
@@ -52,7 +58,7 @@ class Topic {
         }
         return listener;
     }
-    ;
+
     /**
      * @param {Listener} listener The listener instance to remove
      */
@@ -64,8 +70,8 @@ class Topic {
                 return;
             }
         }
-    }
-    ;
+    }//()
+
     /**
      * @param {string} event The event to trigger
      * @param {any} data The data to broadcast to the listeners
@@ -85,8 +91,8 @@ class Topic {
             this.queue[event] = this.queue[event] || [];
             this.queue[event].push(data);
         }
-    }
-    ;
+    }//()
+
     consume(binding, queue, listener) {
         for (var key in queue) {
             if (this.matchWildCard(key, binding)) {
@@ -98,11 +104,14 @@ class Topic {
             }
         }
     }
+
     matchWildCard(str, rule) {
         return new RegExp('^' + rule.split('*').join('.*') + '$').test(str);
-    }
-}
+    }//()
+}//class
+
 class Listener {
+
     /**
      * @param {string} event The event this listener is attached to
      * @param {Function} callback The actual callable that will be triggered on events
@@ -113,10 +122,12 @@ class Listener {
         this.callback = callback;
         this.topic = topic;
     }
-    ;
+
     unbind() {
         this.topic.removeListener(this);
     }
+
 } // class
+
 // added this:
-window.DeventBus = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
+window.DefEventBus = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
