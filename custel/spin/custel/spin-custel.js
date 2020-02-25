@@ -33,24 +33,27 @@ b,strong{font-weight:bolder;}
             this.sr.appendChild(cTemp.content.cloneNode(true));
             this.tmpl = cTemp.innerHTML;
             const THIZ = this;
+            // to do:FIX
             addEventListener('spin-start', function (e) {
                 THIZ.spin();
             });
             addEventListener('spin-stop', function (e) {
                 THIZ.stop();
             });
-        }
+        } //cons
         spin() {
             const THIZ = this;
             console.log('spin');
             this.sr.innerHTML = this.tmpl;
-        }
+            //THIZ.sr.getElementById('spin1').style.display = "block";
+        } //()
         stop() {
             const THIZ = this;
             reqAnif(function () {
                 console.log('stop?');
                 THIZ.sr.innerHTML = '';
+                //THIZ.sr.getElementById('spin1').style.display = "none";
             });
-        }
-    });
+        } //()
+    }); //custel
 });

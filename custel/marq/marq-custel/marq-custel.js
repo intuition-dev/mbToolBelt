@@ -83,31 +83,34 @@ customElements.define('marq-custel', class extends HTMLElement {
     constructor() {
         super();
         this.index = 0;
+        //create shadow element
         let _this = this;
         this.sr = this.attachShadow({ mode: 'closed' });
         this.sr.appendChild(cTemp.content.cloneNode(true));
+        //create clone of the ul so we can animated later
         const ul2 = document.createElement('ul');
         ul2.classList.add('marq-track');
         ul2.classList.add('marq-track-2');
         this.sr.querySelector('.marq-wrapper').appendChild(ul2);
-    }
+    } //cons
+    //add li items to the stack
     addOne(str, url) {
         const _this = this;
         const el = document.createElement('li');
-        el.setAttribute('data-index', '' + this.index);
+        el.setAttribute('data-index', '' + this.index); //set index to each li, so we can move element to the back once its hidden
         el.innerHTML = '<a href=' + url + '>' + str + '</a>';
         const el2 = el.cloneNode(true);
         let ul = this.sr.querySelector('.marq-track');
         const ul2 = this.sr.querySelector('.marq-track-2');
         ul.appendChild(el);
-        ul2.appendChild(el2);
+        ul2.appendChild(el2); //clone elements to use in animation
         this.index++;
         _this._marq();
     }
     removeAll() {
         const _this = this;
-        const marqTrack = _this.sr.querySelector('.marq-track').children;
-        const marqTrack2 = _this.sr.querySelector('.marq-track-2').children;
+        const marqTrack = _this.sr.querySelector('.marq-track').children; //there 2 of them
+        const marqTrack2 = _this.sr.querySelector('.marq-track-2').children; //there 2 of them
         while (marqTrack.length) {
             var i = 0;
             marqTrack[i].remove();
@@ -123,7 +126,13 @@ customElements.define('marq-custel', class extends HTMLElement {
         let _this = this;
         var animated_obj_1 = _this.sr.querySelector('.marq-track');
         var animated_obj_2 = _this.sr.querySelector('.marq-track-2');
-        var d = animated_obj_1.clientWidth;
+        var d = animated_obj_1.clientWidth; //width of the animated block
+        //animation duration
+        /*
+        time = px / desired pixels per second,
+        So, if the animation covers 200px and the desired speed is 100px per sec, then:
+        time = 200px / 100px = 2 sec = 2000,
+        */
         var time = (d / 30) * 1000;
         var trans = [
             { transform: 'translateX(' + d + 'px)' },
@@ -151,5 +160,5 @@ customElements.define('marq-custel', class extends HTMLElement {
             animatedTrack.play();
             animatedTrack_2.play();
         });
-    }
-});
+    } //()
+}); //custel

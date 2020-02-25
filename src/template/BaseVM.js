@@ -1,3 +1,6 @@
+/**
+ * Maps to the View fields and layout (minus the UI)
+ */
 class My1VM {
     constructor() {
         this.rpc = new httpRPC('http', 'localhost', 8888);
@@ -15,16 +18,18 @@ class My1VM {
             console.log(Date.now() - _rpcS);
             DeventBus.dispatch('onUData', resp);
         });
-    }
+    } //()
+    // returns 'OK', else an error message should be shown by View|Binding
     validate() {
         return 'OK';
     }
+    // log. maybe remote log
     log(...a) {
     }
     genGUID() {
         var d = new Date().getTime();
         if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
-            d += performance.now();
+            d += performance.now(); //use high-precision timer if available
         }
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = (d + Math.random() * 16) % 16 | 0;
@@ -43,14 +48,14 @@ class My1VM {
                 while (p.length > 0) {
                     document.cookie = cookieBase + p.join('/');
                     p.pop();
-                }
+                } //inner while
                 d.shift();
-            }
-        }
+            } //while
+        } //for
         localStorage.clear();
         sessionStorage.clear();
-    }
-}
+    } //()
+} // class
 depp.require(['eventBus', 'RPC', 'trace'], function () {
     console.log('VM ready');
     new My1VM();

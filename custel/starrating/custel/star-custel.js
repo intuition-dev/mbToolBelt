@@ -31,13 +31,13 @@ customElements.define('star-custel', class extends HTMLElement {
         this.sr.appendChild(starTemp.content.cloneNode(true));
         this.sr.addEventListener('click', function (e) {
             console.log(e.composedPath()[0]);
-        });
-    }
+        }); //click
+    } //cons
     static get observedAttributes() { return ['stars']; }
     attributeChangedCallback(aName, oldVal, newVal) {
         console.log(aName, newVal);
         this.stars(newVal);
-    }
+    } //()
     stars(el) {
         var elN = this.sr.querySelector('#s' + el);
         console.log(elN);
