@@ -1,6 +1,5 @@
-// https://github.com/theiconic/event-bus
-// added code at end
-// error for Nat: was for in. Should be regular loop. 
+
+// inspired by https://github.com/theiconic/event-bus
 
 /**
  * Event bus

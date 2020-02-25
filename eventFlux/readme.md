@@ -6,4 +6,7 @@
 
 EventFlux.js
 
+inspired by https://github.com/theiconic/event-bus
+
 Unit test included.
+
