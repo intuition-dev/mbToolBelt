@@ -2,11 +2,10 @@
 # My event bus is better than yours: EventFlux
 
 - pub first or sub first!
-- Can be used for Flux, or anything else.
+- Can be used for Flux, or any other event system or design
 
-EventFlux.js
 
-inspired by https://github.com/theiconic/event-bus, but as ES6+
+Inspired by https://github.com/theiconic/event-bus, but as ES6+
 
 Unit test included, use it as example, or:
 
