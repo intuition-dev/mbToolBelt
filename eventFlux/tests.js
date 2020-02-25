@@ -38,6 +38,7 @@ class TestEB {
             TestEB.assert.ok(true, "Passed!");
             TestEB.done2();
         });
+        // can use regular dispatch, or a delayed dispatch
         DefEventBus.dispatchAsync('dataAf', 'oh hi af');
     } //()
 } //class

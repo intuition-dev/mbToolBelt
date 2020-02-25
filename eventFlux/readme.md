@@ -6,9 +6,9 @@
 
 EventFlux.js
 
-inspired by https://github.com/theiconic/event-bus
+inspired by https://github.com/theiconic/event-bus, but as ES6+
 
-Unit test included, use that as example:
+Unit test included, use it as example, or:
 
     ```
     import { EventFlux } from './EventFlux.js';
@@ -20,3 +20,7 @@ Unit test included, use that as example:
     })
     ```
 
+
+#### Aside
+
+- https://facebook.github.io/flux/docs/in-depth-overview
