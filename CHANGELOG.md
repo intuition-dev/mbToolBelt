@@ -9,6 +9,10 @@
 
 - Toolbelt is now a class: toolBelt.foo()
 
+- fonts like this in pg/Pug: 
+  link(rel='stylesheet', href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400&display=swap")
+
+
 ### 8.2.1
 - Dropped es5
 

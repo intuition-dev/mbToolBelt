@@ -8,6 +8,9 @@ declare let axios: any
 console.info('spa router')
 
 class SPArouter {
+   
+   // Note:  it  does not use the eventFlux, it uses window . CustomEvent. Not sure what event system is better
+
    static isFile
    constructor() { }
 

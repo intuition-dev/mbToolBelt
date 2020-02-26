@@ -1,27 +1,25 @@
 import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
-// page receives messages from comp
-new EventFlux()
+new EventFlux() // makes defEventBus var
 
 // get the boilerplate:
-import { CompElement } from '/custel/CompElement.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/custel/custel1/custel/CompElement.js';
 class Custel1 extends CompElement {
+    template = `
+    <style>:host {
+       all: initial;
+       display: block;
+       contain: content;
+    }</style>
     
+    <b>I'm a Cust. El</b>
+    <slot></slot>
+    `;    
     constructor() {
         super();
-        this.template = `
-   <style>:host {
-      all: initial;
-      display: block;
-      contain: content;
-   }</style>
-   
-   <b>I'm a Cust. El</b>
-   <slot></slot>
-   `;
 
         this.state = {}; // could hold state internally, but I use ViewModel externally
-        console.log('h1');
-        this.setup(this.template);
+        console.log('Comp1');
+        this.setup(this.template) // just a helper funciton for boiler plate.
         this.sr.addEventListener('click', function (e) {
             console.log(e.composedPath()[0]);
         }); //click

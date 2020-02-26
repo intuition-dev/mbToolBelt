@@ -2,86 +2,122 @@
 # Vanilla Custom Elements
 
 Over the years there were many .js libraries related to components that come and go.
-Examples include React, Vue, Angular, etc. And they all lost out to the native: the component API built into the browser.
-Modern browsers has built in support for standard Custom Elements.
+Examples of component libs include React, Vue, Angular, etc. And they all lost out to the native built in: the component API built into the browser.
+Modern browsers has built in support for standard Custom Elements!
 
-// Note: wait on DOM to avoid double cons
 
 ## Example:
 
-If you download this folder you can run it with a local http server. 
+There are many hello world examples of custom elements, and here is another one. Download this folder you can run it with a local http server. 
 
 ## Reviewing the example use of a Custom Element
 
 In the page we use the component:
 
-```html
-   <c-custel id="c1">
-      <p>Slot In</p>
-   </c-custel>
-   <script>
-
-      // send message to comp
-      let c1 = document.getElementById('c1')
-      c1.setAttribute('bla', 2) // call to the comp's property
-      
-   </script>
+```
+  <p>in pg</p>
+  <c-custel bla="3" id="c1"></c-custel>
+  <p>Slot In</p>
+  <script src="/page.js" type="module"></script>
+  <script src="/custel/c-custel.js" type="module"></script>
 ```
 
-At the top in DOM I use the component. And I have ```</p>``` element in the component.
+In this case I also set an attribute and use a slot- just an example.
 
-I use a classic .js loader, not modules. Use any script loader you like(I usee depp.js, but you can use something else). I avoid modules and module loaders on the browser. A classic loader give me nicer control of loading sequence. For example my loads are faster, I can at run-time decide what to load - and easy support legacy browsers. It gives a more polished UX.
+And here it the page.js:
 
-So in the first line of the script, I define the location of my Custom Element: /custel/c-custel.js. (Normally you'd load it of a CDN(and obfuscated so page write
-is focused on using it), in same way you would load a jQuery plugins).
+```
+   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
+   new EventFlux()// makes defEventBus var
 
+   // page receives messages from comp
+   defEventBus.addListener('c-custel-x', function(evt) {
+      console.log('**pg received message**', evt)
 
+      // optionaly, you can interact w/ element
+      let c = document.getElementById('c1')
+      c.setViewModel(null)
+   })
+```
 
-In this case I also programmatically set an attribute - just an example.
+It loads an event system, you can use any event system you like, I used: https://github.com/intuition-dev/mbToolBelt/tree/master/eventFlux
+The purpose of the event system is to receive any messages from the component. 
 
-And last lines listen to an event - that component will send.
+We also can optionally call function on the component, here I use setViewModel method I put in the component.
+
 
 So I hope it shows that Custom Elements are easy to use.
 
 
 ## Now lets look at how we write the component
 
-```ts
-   var cTemp = document.createElement('template')
-   cTemp.innerHTML = `
-      <b>I'm Comp DOM!</b>
-      <slot></slot>
-   `
+First, I wrote a setup() helper function, since that code is boiler plate and used all the times!
 
-   customElements.define('c-custel', class extends HTMLElement {
-      sr // shadow root var
-      constructor() {
-         super()
-         this.sr = this.attachShadow({mode: 'closed'})
-         this.sr.appendChild(cTemp.content.cloneNode(true))
-
-         this.sr.addEventListener('click', function(e) {
-            console.log(e.composedPath()[0])
-         })//click
-         
-         //example of sending message
-         dispatchEvent(new CustomEvent('c-custel', { detail: {a:'b', c:'d'} }))
-      }//cons
-
-      // OFTEN you pass attributes, eg: this.getAttribute('XXX')
-
-   })
+```
+export class CompElement extends HTMLElement {
+    sr // shadow root handle
+    setup(template) {
+       const cTemp = document.createElement('template')
+       cTemp.innerHTML = template
+ 
+       this.sr = this.attachShadow({ mode: 'closed' })
+       this.sr.appendChild(cTemp.content.cloneNode(true))
+    }//cons
+ }//custel
 ```
 
-So the first few lines is going to be the DOM of the new Custom Element. We have to us scripting for templates since DOM template import is deprecated.
-Also, notice that we are using a ```</slot>```; so that page can send some DOM in. This is useful in cases where you want page and component to work 
-together. For example I might have page have the UI of button, but the component has some choices for a quiz.
+And now, lets look at the component code:
 
-We then define the component with some constructor boiler plate code. 
+```
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
+new EventFlux() // makes defEventBus var
+
+// get the boilerplate:
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/custel/custel1/custel/CompElement.js';
+class Custel1 extends CompElement {
+    template = `
+    <style>:host {
+       all: initial;
+       display: block;
+       contain: content;
+    }</style>
+    
+    <b>I'm a Cust. El</b>
+    <slot></slot>
+    `;    
+    constructor() {
+        super();
+
+        this.state = {}; // could hold state internally, but I use ViewModel externally
+
+        this.setup(this.template) // just a helper funciton for boiler plate.
+        this.sr.addEventListener('click', function (e) {
+            console.log(e.composedPath()[0]);
+        }); //click
+        //example of sending message to page
+        defEventBus.dispatch('c-custel-x', { a: 'b', c: 'd' });
+        
+    } //cons
+
+    //register properties w/ reflection to attributes, and get pg message or get attribute
+    static get observedAttributes() { return ['bla', 'bla2']; }
+    attributeChangedCallback(aName, oldVal, newVal) {
+        console.log('custel received message', aName, newVal);
+    } //()
+
+    setViewModel(vm) {    } // just some method
+} //custel
+
+customElements.define('c-custel', Custel1)
+```
+
+First, notice the string literal: template. This is our HTML code.
+Then notice that we call the setup() function.
 
 I added a clicked event - handles a click on the component. Also it will dispatch an event to a page; and last lines are to receive
 a message from the page scripts. 
 
+And we can hold state or use a ViewModel.
 
 ## Notes
 
