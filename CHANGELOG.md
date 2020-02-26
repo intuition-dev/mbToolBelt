@@ -1,3 +1,12 @@
+### 8.2.2
+
+ - no more poly+DOM, loadFonts, eventBus, disE, toolBeltDefault, httpRPC
+
+- new RPC and FlexBus syntax:
+  import { httpRPC } from 'https://cdn.jsdelivr.net/npm/http-rpc@2.2.1/browser/httpRPC.min.js'
+
+- now Toolbelt is a class
+
 ### 8.2.1
 - Dropped es5
 

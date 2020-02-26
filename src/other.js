@@ -9,7 +9,7 @@ depp.define({
 
     'fontloader': ['https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
 
-    ,'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/custel/surveryitem/custel/surveyitem-comp.min.js'],
+    ,'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.2/custel/surveryitem/custel/surveyitem-comp.min.js'],
 
     'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
 
@@ -112,7 +112,7 @@ depp.define({
     'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css', 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
     ,
-    'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.1/src/vendors/parallaxImg.min.js'
+    'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.2/src/vendors/parallaxImg.min.js'
 
     // deprectated
     ,
@@ -128,6 +128,19 @@ depp.define({
 
 })
 
+function inView(el) { // is element in view?
+    //special bonus for jQuery
+    if (typeof jQuery === 'function' && el instanceof jQuery) {
+        el = el[0]
+    }
+    var rect = el.getBoundingClientRect()
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+}
 
 //deprecated
 function loadVexAlertFlat() { // since it has extra call at end

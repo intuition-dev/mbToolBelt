@@ -7,6 +7,7 @@ pro.then(function () {
 }); //pro
 
 import { EventFlux } from './EventFlux.js';
+
 class TestEB {
 
     constructor() {
