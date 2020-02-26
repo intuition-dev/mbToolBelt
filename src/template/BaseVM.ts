@@ -1,7 +1,7 @@
 
 declare var httpRPC
 declare var depp
-declare var DeventBus
+declare var DdefEventBus
 
 /**
  * Maps to the View fields and layout (minus the UI)
@@ -12,7 +12,7 @@ class My1VM { //
    constructor() {
    
       let THIZ = this
-      DeventBus.addListener('uFetch', function(arg) {
+      defEventBus.addListener('uFetch', function(arg) {
          THIZ.fetch(arg.srch,arg.o)
       })
    }
@@ -26,7 +26,7 @@ class My1VM { //
       this.rpc.invoke('uapi', 'srch', args)
       .then(function(resp) {
          console.log(Date.now() - _rpcS)
-         DeventBus.dispatch('onUData', resp)
+         defEventBus.dispatch('onUData', resp)
       })
    }//()
 
@@ -74,7 +74,7 @@ class My1VM { //
 }// class
 
 
-depp.require(['eventBus', 'RPC', 'trace'], function() {
+depp.require(['defEventBus', 'RPC', 'trace'], function() {
    console.log('VM ready')
    new My1VM()
 }) 

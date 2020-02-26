@@ -3,8 +3,7 @@ Update changelog.md!
 
 (once you release component or RPC- you have to register it here)
 
-cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.2/
-
+cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/
 
 1. replace above string w/ a bumped version; globally via VS Code. It should be over 160 of places in all of git (ignore min.js and html)
 
@@ -19,3 +18,5 @@ cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.2/
 6. update changelog.md
 
 7. check that it works in some small app, eg src/template
+
+8. check flux, rpc and custel1

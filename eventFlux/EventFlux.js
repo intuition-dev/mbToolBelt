@@ -7,7 +7,8 @@
 export class EventFlux {
 
     constructor() {
-        this.topics = {};
+        console.log('EventFlux')
+        this.topics = {}
     }
     
     /**
@@ -137,7 +138,7 @@ class Listener {
 } // class
 
 // added this:
-window.DefEventBus = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
+window.defEventBus = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
 
-console.log('DefEventBus')
+console.log('defEventBus')
 

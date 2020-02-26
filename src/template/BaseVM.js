@@ -5,7 +5,7 @@ class My1VM {
     constructor() {
         this.rpc = new httpRPC('http', 'localhost', 8888);
         let THIZ = this;
-        DeventBus.addListener('uFetch', function (arg) {
+        defEventBus.addListener('uFetch', function (arg) {
             THIZ.fetch(arg.srch, arg.o);
         });
     }
@@ -16,7 +16,7 @@ class My1VM {
         this.rpc.invoke('uapi', 'srch', args)
             .then(function (resp) {
             console.log(Date.now() - _rpcS);
-            DeventBus.dispatch('onUData', resp);
+            defEventBus.dispatch('onUData', resp);
         });
     } //()
     // returns 'OK', else an error message should be shown by View|Binding
@@ -56,7 +56,7 @@ class My1VM {
         sessionStorage.clear();
     } //()
 } // class
-depp.require(['eventBus', 'RPC', 'trace'], function () {
+depp.require(['defEventBus', 'RPC', 'trace'], function () {
     console.log('VM ready');
     new My1VM();
 });

@@ -4,31 +4,31 @@ class UIBinding {
         document.getElementById("srchBut").addEventListener("click", function () {
             console.log('klk');
             let arg = {};
-            DeventBus.dispatch('uFetch', arg);
+            defEventBus.dispatch('uFetch', arg);
         });
-        DeventBus.addListener('onUData', UIBinding.onData);
+        defEventBus.addListener('onUData', UIBinding.onData);
     } //()
     static onData(data) {
         console.log('onData');
     } //()
 }
-depp.require(['DOM', 'eventBus'], function () {
+depp.require(['DOM', 'defEventBus'], function () {
     console.log('UI loaded');
     new UIBinding();
 });
 // event buss eliminates race conditions
 function testE1() {
-    depp.require('eventBus', function () {
+    depp.require('defEventBus', function () {
         console.log('tst:');
         // data before
-        DeventBus.dispatch('dataB4', 'oh hi b4');
-        DeventBus.addListener('dataB4', function (data) {
+        defEventBus.dispatch('dataB4', 'oh hi b4');
+        defEventBus.addListener('dataB4', function (data) {
             console.log('b4', data);
         });
         // data after
-        DeventBus.addListener('dataAf', function (data) {
+        defEventBus.addListener('dataAf', function (data) {
             console.log('af:', data);
         });
-        DeventBus.dispatch('dataAf', 'oh hi af');
+        defEventBus.dispatch('dataAf', 'oh hi af');
     });
 } //()

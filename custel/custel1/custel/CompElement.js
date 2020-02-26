@@ -1,9 +1,8 @@
 
-// composable element, composition, IOC, DI
+// composable element: IOC, DI
 export class CompElement extends HTMLElement {
     sr // shadow root handle
     setup(template) {
-       console.log('h1')
        const cTemp = document.createElement('template')
        cTemp.innerHTML = template
  

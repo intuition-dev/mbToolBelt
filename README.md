@@ -9,14 +9,10 @@
 Listed dependencies gives you application a list of a election curated js libraries that you may chose to use/require.
 
 
-It saves time, sets baseline for depps, defines popular/approved libs:
+It saves time, sets baseline for depps, defines popular libs:
 
       mbake -f .
 
 That will emit this code:
 
-      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.2/src/toolBelt.min.js')
-
-It also contains polyfill and some other frequently needed functions.
-
-ps: don't use .min. with html ship or web components loader
+      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/src/toolBelt.min.js')

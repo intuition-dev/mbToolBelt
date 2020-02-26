@@ -3,7 +3,7 @@ console.log('UI:')
 
 declare var depp
 declare var List
-declare var DeventBus
+declare var DdefEventBus
 
 class UIBinding {
    constructor() {
@@ -12,10 +12,10 @@ class UIBinding {
          console.log('klk')
 
          let arg:any ={}
-         DeventBus.dispatch('uFetch', arg)
+         defEventBus.dispatch('uFetch', arg)
       })
 
-      DeventBus.addListener('onUData', UIBinding.onData)
+      defEventBus.addListener('onUData', UIBinding.onData)
 
    }//()
 
@@ -26,7 +26,7 @@ class UIBinding {
 
 }
 
-depp.require(['DOM', 'eventBus'], function() {
+depp.require(['DOM', 'defEventBus'], function() {
    console.log('UI loaded')
    new UIBinding()
 }) 
@@ -34,20 +34,20 @@ depp.require(['DOM', 'eventBus'], function() {
 // event buss eliminates race conditions
 function testE1() {
 
-   depp.require('eventBus', function(){
+   depp.require('defEventBus', function(){
      console.log('tst:')
 
      // data before
-     DeventBus.dispatch('dataB4', 'oh hi b4')
-     DeventBus.addListener('dataB4', function(data) {
+     defEventBus.dispatch('dataB4', 'oh hi b4')
+     defEventBus.addListener('dataB4', function(data) {
        console.log('b4', data)
      })
 
      // data after
-     DeventBus.addListener('dataAf', function(data) {
+     defEventBus.addListener('dataAf', function(data) {
        console.log('af:', data)
      })
-     DeventBus.dispatch('dataAf', 'oh hi af')
+     defEventBus.dispatch('dataAf', 'oh hi af')
    })
  }//()
 

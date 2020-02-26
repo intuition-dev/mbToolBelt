@@ -1,12 +1,12 @@
 
-var pro = loadQunit();
+var pro = toolBelt.loadQunit();
 pro.then(function () {
     console.log('qunit loaded');
     QUnit.start();
     new TestEB();
 }); //pro
 
-import { EventFlux } from './EventFlux.js';
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
 
 class TestEB {
 
@@ -24,8 +24,8 @@ class TestEB {
 
     static testB4() {
         // data before
-        DefEventBus.dispatch('dataB4', 'oh hi b4');
-        DefEventBus.addListener('dataB4', function (data) {
+        defEventBus.dispatch('dataB4', 'oh hi b4');
+        defEventBus.addListener('dataB4', function (data) {
             console.log('b4', data);
             TestEB.assert.ok(true, "Passed!");
             TestEB.done1();
@@ -34,12 +34,12 @@ class TestEB {
 
     static testAf() {
         // data after
-        DefEventBus.addListener('dataAf', function (data) {
+        defEventBus.addListener('dataAf', function (data) {
             console.log('af:', data);
             TestEB.assert.ok(true, "Passed!");
             TestEB.done2();
         });
         // can use regular dispatch, or a delayed dispatch
-        DefEventBus.dispatchAsync('dataAf', 'oh hi af');
+        defEventBus.dispatchAsync('dataAf', 'oh hi af');
     } //()
 } //class

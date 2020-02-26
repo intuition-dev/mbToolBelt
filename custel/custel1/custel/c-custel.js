@@ -1,6 +1,11 @@
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
+// page receives messages from comp
+new EventFlux()
+
 // get the boilerplate:
 import { CompElement } from '/custel/CompElement.js';
 class Custel1 extends CompElement {
+    
     constructor() {
         super();
         this.template = `
@@ -13,6 +18,7 @@ class Custel1 extends CompElement {
    <b>I'm a Cust. El</b>
    <slot></slot>
    `;
+
         this.state = {}; // could hold state internally, but I use ViewModel externally
         console.log('h1');
         this.setup(this.template);
@@ -20,18 +26,20 @@ class Custel1 extends CompElement {
             console.log(e.composedPath()[0]);
         }); //click
         //example of sending message to page
-        depp.require(['eventBus'], function () {
-            DeventBus.dispatch('c-custel-x', { a: 'b', c: 'd' });
-        });
+        defEventBus.dispatch('c-custel-x', { a: 'b', c: 'd' });
+        
     } //cons
+
     //register properties w/ reflection to attributes, and get pg message or get attribute
     static get observedAttributes() { return ['bla', 'bla2']; }
     attributeChangedCallback(aName, oldVal, newVal) {
         console.log('custel received message', aName, newVal);
     } //()
+
     setViewModel(vm) {
-        console.log('a ViewModel can be set if separation is required, or use EventBus to be loosely coupled');
+        console.log('a ViewModel can be set if separation is required, or use defEventBus to be loosely coupled');
     } //()
 } //custel
-customElements.define('c-custel', Custel1);
-console.log('loaded');
+
+customElements.define('c-custel', Custel1)
+console.log('loaded')

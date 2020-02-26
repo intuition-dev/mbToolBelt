@@ -8,20 +8,7 @@ body
    c-custel(bla=3)#c1
    p Slot In
 
-   script.
-      
-      // example receive messages from comp
-      depp.require(['eventBus'], function() {
-         
-         DeventBus.addListener('c-custel-x', function(evt) {
-            console.log('**pg received message**', evt)
-         
-            // optional, interact w/ element
-            let c = document.getElementById('c1')
-            c.setViewModel(null)
-
-         })
-      })
+   script(src='/page.js' type='module')
 
    script(src='/custel/c-custel.js' type='module')
 
