@@ -1,10 +1,13 @@
+
 /**
  * Copyright (c) 2014, 2019 The xterm.js authors. All rights reserved.
  * @license MIT
  *
  * Implements the attach method, that attaches the terminal to a WebSocket stream.
  */
+
 // forked on 10-22-19
+
 class AttachAddon {
     constructor(socket, options) {
         this._disposables = [];
@@ -36,6 +39,7 @@ class AttachAddon {
         this._socket.send(data);
     }
 }
+
 function addSocketListener(socket, type, handler) {
     socket.addEventListener(type, handler);
     return {
