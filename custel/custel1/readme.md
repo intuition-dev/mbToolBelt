@@ -25,10 +25,6 @@ In the page we use the component:
       let c1 = document.getElementById('c1')
       c1.setAttribute('bla', 2) // call to the comp's property
       
-      //use Custom Events example to receive messages from comp
-      addEventListener('c-custel', function (evt) {
-         console.log('pg received message', evt.detail)
-      })
    </script>
 ```
 

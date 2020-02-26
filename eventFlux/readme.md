@@ -11,7 +11,7 @@ Unit test included, use it as example, or:
 
     ```
     import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/defEventBus.min.js'
-    new EventFlux() // makes the persistent windows instance
+    new EventFlux() // makes the persistent windows instance **defEventBus**
 
     defEventBus.dispatch('evX', 'oh hi');
     defEventBus.addListener('evX', function (data) {
