@@ -1,34 +1,33 @@
 console.log('UI:');
 class UIBinding {
+
     constructor() {
-        document.getElementById("srchBut").addEventListener("click", function () {
-            console.log('klk');
-            let arg = {};
-            defEventBus.dispatch('uFetch', arg);
-        });
         defEventBus.addListener('onUData', UIBinding.onData);
     } //()
+    
     static onData(data) {
         console.log('onData');
+        let options = {
+            valueNames: ['fname', 'lname', 'email', 'pass'],
+            item: `<tr> 
+               <td class="fname"></td>
+               <td class="lname"></td>
+               <td class="email"></td>
+               <td class="pass"> </td>
+            </tr>`
+        };
+        if (!(UIBinding.userLst)) {
+            let userLstEl = document.getElementById('userLst');
+            UIBinding.userLst = new List(userLstEl, options, data);
+        }
+        else { //list exists
+            UIBinding.userLst.add(data);
+        }
+        console.log('listjs', data);
     } //()
-}
-depp.require(['DOM', 'defEventBus'], function () {
-    console.log('UI loaded');
-    new UIBinding();
+}//
+
+depp.require(['DOM', 'listjs'], function () {
+    console.log('ready');
+    new UIBinding()
 });
-// event buss eliminates race conditions
-function testE1() {
-    depp.require('defEventBus', function () {
-        console.log('tst:');
-        // data before
-        defEventBus.dispatch('dataB4', 'oh hi b4');
-        defEventBus.addListener('dataB4', function (data) {
-            console.log('b4', data);
-        });
-        // data after
-        defEventBus.addListener('dataAf', function (data) {
-            console.log('af:', data);
-        });
-        defEventBus.dispatch('dataAf', 'oh hi af');
-    });
-} //()

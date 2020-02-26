@@ -1,34 +1,46 @@
 
 declare var httpRPC
 declare var depp
-declare var DdefEventBus
 
 /**
  * Maps to the View fields and layout (minus the UI)
  */
-class My1VM { // 
-   rpc = new httpRPC('http', 'localhost', 8888)
-   
-   constructor() {
-   
-      let THIZ = this
-      defEventBus.addListener('uFetch', function(arg) {
-         THIZ.fetch(arg.srch,arg.o)
-      })
-   }
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
+new EventFlux() // makes defEventBus var
 
-   fetch(srch, o) {    
-      var _rpcS = Date.now()
-      let args = {}
-   
-      console.log('fetch', args)  
+// req for rpc
+import { httpRPC } from 'https://cdn.jsdelivr.net/npm/http-rpc@2.2.1/browser/httpRPC.min.js'
 
-      this.rpc.invoke('uapi', 'srch', args)
-      .then(function(resp) {
-         console.log(Date.now() - _rpcS)
-         defEventBus.dispatch('onUData', resp)
-      })
-   }//()
+export class UsersVM {
+
+    constructor() {
+        console.log('cons')
+        let THIZ = this
+        
+        depp.require(['lz-string'], function() { // after we have lz-string we can RPC
+            THIZ.rpc = new httpRPC('http', 'localhost', 8888);
+            THIZ.fetch('a', 1);
+    
+            defEventBus.addListener('uFetch', function(arg) {
+                THIZ.fetch(arg.srch, arg.o)
+            })
+
+        })//req
+    }//
+
+    fetch(srch, o) {
+        var _rpcS = Date.now();
+        let args = {};
+        args['srch'] = srch;
+        args['o'] = o;
+        console.log('fetch', args);
+        this.rpc.invoke('uapi', 'srch', args)
+            .then(function(resp) {
+                console.log('got data')
+                defEventBus.dispatch('onUData', resp)
+            })
+    }//()
+
 
     // returns 'OK', else an error message should be shown by View|Binding
     validate():string {
@@ -40,7 +52,7 @@ class My1VM { //
 
     }
      
-   genGUID() { //generates a guid client side so no need to wait
+   static genGUID() { //generates a guid client side so no need to wait
       var d = new Date().getTime();
       if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
       d += performance.now(); //use high-precision timer if available
@@ -73,8 +85,4 @@ class My1VM { //
   
 }// class
 
-
-depp.require(['defEventBus', 'RPC', 'trace'], function() {
-   console.log('VM ready')
-   new My1VM()
-}) 
+new UsersVM()

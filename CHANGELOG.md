@@ -2,15 +2,18 @@
 - removed: poly+DOM, loadFonts, eventBus, disE, toolBeltDefault, httpRPC
 
 - new RPC and FlexBus syntax:
-  import { httpRPC } from 'https://cdn.jsdelivr.net/npm/http-rpc@2.2.1/browser/httpRPC.min.js'
+  `import { httpRPC } from 'https://cdn.jsdelivr.net/npm/http-rpc@2.2.1/browser/httpRPC.min.js'`
   and:
-  import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.2/eventFlux/EventFlux.min.js'
-  DefEventBus.foo()
+  
+  ```
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.2/eventFlux/EventFlux.min.js'
+    DefEventBus.foo()
+  ```
 
 - Toolbelt is now a class: toolBelt.foo()
 
 - fonts like this in pg/Pug: 
-  link(rel='stylesheet', href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400&display=swap")
+  `link(rel='stylesheet', href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400&display=swap")`
 
 
 ### 8.2.1
