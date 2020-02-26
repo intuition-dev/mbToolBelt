@@ -6,7 +6,7 @@ pro.then(function () {
     new TestEB();
 }); //pro
 
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/eventFlux/EventFlux.js'
 
 class TestEB {
 

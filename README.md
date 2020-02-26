@@ -15,4 +15,4 @@ It saves time, sets baseline for depps, defines popular libs:
 
 That will emit this code:
 
-      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/src/toolBelt.min.js')
+      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/src/toolBelt.min.js')

@@ -1,3 +1,7 @@
+### 8.2.6
+- libs are obfuscated
+- update template for css design, w/o loadFonts
+
 ### 8.2.4
 - removed lz-string
 

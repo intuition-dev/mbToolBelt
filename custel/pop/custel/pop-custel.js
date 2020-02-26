@@ -91,8 +91,8 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             });
         } //()
     } //class
-    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/custel/';
-    // custel ////////////////////////////////////////////////////////////////////////////////////////// https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.0.5/src/css/main.css
+    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/custel/';
+    // custel ////////////////////////////////////////////////////////////////////////////////////////// https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.2.6/src/css/global.css
     var cTemp = document.createElement('template');
     cTemp.innerHTML = `
 <style>:host {
@@ -104,7 +104,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
 
 <link rel = "stylesheet"
     type = "text/css"
-    href = "https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.0.5/src/css/main.css" />
+    href = "https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.2.6/src/css/global.css" />
 
 <a id="pop1" href="#pop" rel="modal:open" class="btn btn-b btn-sm">Pop Custom</a>
 

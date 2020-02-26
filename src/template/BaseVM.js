@@ -1,7 +1,7 @@
 /**
  * Maps to the View fields and layout (minus the UI)
  */
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js';
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/eventFlux/EventFlux.js';
 new EventFlux(); // makes defEventBus var
 // req for rpc
 import { HttpRPC } from 'https://cdn.jsdelivr.net/npm/http-rpc@2.2.6/browser/httpRPC.min.js';

@@ -27,7 +27,7 @@ In this case I also set an attribute and use a slot- just an example.
 And here it the page.js:
 
 ```
-   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
+   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/eventFlux/EventFlux.js'
    new EventFlux()// makes defEventBus var
 
    // page receives messages from comp
@@ -51,7 +51,7 @@ So I hope it shows that Custom Elements are easy to use.
 
 ## Now lets look at how we write the component
 
-First, I wrote a setup() helper function, since that code is boiler plate and used all the times!
+First, I wrote a setup() helper function, since that code is boiler plate and used **all** the times!
 
 ```
 export class CompElement extends HTMLElement {
@@ -66,14 +66,16 @@ export class CompElement extends HTMLElement {
  }//custel
 ```
 
+Any code that you need often should be above!
+
 And now, lets look at the component code:
 
 ```
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/eventFlux/EventFlux.js'
 new EventFlux() // makes defEventBus var
 
 // get the boilerplate:
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/custel/custel1/custel/CompElement.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/custel/custel1/custel/CompElement.js';
 class Custel1 extends CompElement {
     template = `
     <style>:host {
