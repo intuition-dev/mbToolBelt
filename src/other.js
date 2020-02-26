@@ -155,8 +155,7 @@ function loadVexAlertFlat() { // since it has extra call at end
         }) //pro
 } //()
 
-
-//- eg addScript('bla.js', null, 'api-key', 'key123') when they want you to use the tag: so you can in your own sequence
+//- eg addScript('bla.js', null, 'api-key', 'key123')  so you can control your own sequence
 function addScript(src, callback, attr, attrValue, id) {
     var s = document.createElement('script')
     s.setAttribute('src', src)
