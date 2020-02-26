@@ -4,7 +4,8 @@ Thanos has a glove. We just gave you a tool belt!:
 This file is a toolbelt, a curated list of libs to use when a need arises.
 */
 depp.define({
-    // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= WebAnimations IntersectionObserver IntersectionObserverEntry
+    // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= 
+    //  WebAnimations IntersectionObserver IntersectionObserverEntry
     // console.trace  requestAnimationFrame '
     'poly-sticky': [
         //poly for sticky
@@ -23,7 +24,6 @@ depp.define({
     'platform': 'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js',
     'fontfaceobserver': 'https://cdn.jsdelivr.net/npm/fontfaceobserver@2.1.0/fontfaceobserver.standalone.min.js',
     'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js',
-    'lz-string': 'https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js',
     'gridformsDefaultStyle': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.css'],
     'gridformsJS': ['https://cdn.jsdelivr.net/npm/gridforms@1.0.6/gridforms/gridforms.min.js']
     // Use for context, SPA and complex apps.jakesgordon requires Commercial License 
@@ -152,11 +152,7 @@ depp.define({
     'stripe': 'https://js.stripe.com/v3/',
     'underscore': 'https://cdn.jsdelivr.net/npm/underscore@1.9.2/underscore.min.js',
     'pubnub': ['https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js']
-    //*** INTU Comps:
-    ,
-    'marq-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/custel/marq/marq-custel/marq-custel.min.js'],
-    'spin-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/custel/spin/custel/spin-custel.min.js'],
-    'star-custel': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.3/custel/starrating/custel/star-custel.js']
+   
 })
 
 window.ENV = '#{ENV}'; //- for comps, but it is also in scope for Pug for ENV logic

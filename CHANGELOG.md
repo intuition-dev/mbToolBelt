@@ -1,3 +1,6 @@
+### 8.2.4
+- removed lz-string
+
 ### 8.2.3
 - removed: poly+DOM, loadFonts, eventBus, disE, toolBeltDefault, httpRPC
 
