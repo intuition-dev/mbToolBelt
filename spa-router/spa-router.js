@@ -14,18 +14,21 @@ class SPArouter {
         }
         //fire NAV event
         SPArouter.disE({ type: SPArouter.NavSTART, toHref: toHref, fromHref: fromHref, back: back_ });
-        let url = toHref; //SPArouter.appendQueryString(toHref, { 'SPArouter': "\"" + SPArouter.zone + "\"" })
+        let url = toHref;
         console.info(url);
-        //   credentials: 'same-origin' ?
-        //axios.get(url).then(function (txt) {
+        //   credentials: 'same-origin'          
         fetch(url, {}).then(function (fullResp) {
             return fullResp.text();
         }).then(function (str) {
-            let $html = $('<html></html>').append(str);
-            let title = $html.find('title').first().text();
-            document.title = title;
-            let newContent = $html.find(SPArouter.zone).html();
-            //console.info(newContent)
+            var temp = document.createElement('div');
+            temp.innerHTML = str;
+            let $html = temp;
+            //console.log('s',$html)
+            let newContent = $html.querySelector(SPArouter.zone);
+            console.info('c', newContent);
+            let title = $html.getElementsByTagName("title")[0];
+            console.info('tit', title.text);
+            document.title = title.text;
             //fire new PAGE received event
             SPArouter.fixROOT();
             SPArouter.disE({ type: SPArouter.NavDONE, toHref: toHref, fromHref: fromHref, newContent: newContent, $html: $html, back: back_ });
