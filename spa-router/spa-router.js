@@ -1,4 +1,5 @@
 // All rights reserved by INTUITION.DEV |  Cekvenich, licensed under GPL-3.0-only
+// if (anchor.is('.norouter')) it gets ignored by router
 console.info('spa router');
 class SPArouter {
     constructor() { }
@@ -15,20 +16,23 @@ class SPArouter {
         SPArouter.disE({ type: SPArouter.NavSTART, toHref: toHref, fromHref: fromHref, back: back_ });
         let url = toHref; //SPArouter.appendQueryString(toHref, { 'SPArouter': "\"" + SPArouter.zone + "\"" })
         console.info(url);
-        //   credentials: 'same-origin' 
-        axios.get(url).then(function (txt) {
-            let $html = $('<html></html>').append($(txt.data));
+        //   credentials: 'same-origin' ?
+        //axios.get(url).then(function (txt) {
+        fetch(url, {}).then(function (fullResp) {
+            return fullResp.text();
+        }).then(function (str) {
+            let $html = $('<html></html>').append(str);
             let title = $html.find('title').first().text();
             document.title = title;
             let newContent = $html.find(SPArouter.zone).html();
             //console.info(newContent)
             //fire new PAGE received event
-            SPArouter.fROOTfix();
+            SPArouter.fixROOT();
             SPArouter.disE({ type: SPArouter.NavDONE, toHref: toHref, fromHref: fromHref, newContent: newContent, $html: $html, back: back_ });
         }).catch(function (er) {
             console.info('error', er);
             SPArouter.disE({ type: SPArouter.ERR, err: er });
-        });
+        }); // axios
     } //()
     static appendQueryString(url, queryVars) {
         let firstSeparator = (url.indexOf('?') == -1 ? '?' : '&');
@@ -71,7 +75,7 @@ class SPArouter {
             SPArouter.watchATags();
         }
     }
-    static fROOTfix() {
+    static fixROOT() {
         if (SPArouter.isFile) {
             $('a').each(function (index, value) {
                 let hasQuery = this.href.includes('?');
@@ -102,7 +106,7 @@ class SPArouter {
                     clearTimeout(debounce);
                     debounce = setTimeout(() => {
                         console.log('mutation');
-                        SPArouter.fROOTfix();
+                        SPArouter.fixROOT();
                     }, 0);
                 }
             });
@@ -155,7 +159,6 @@ SPArouter.ERR = '_nav-ERR';
 /*
 EXAMPLE:
 SPArouter.init(onNavigate);
-// call the FSM state machine
 function onNavigate (evt) { // this acts as the controller
    if (evt.detail.type == SPArouter.NavSTART) { //start
       //$('#router').fadeTo(100,.2);

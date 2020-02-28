@@ -1,12 +1,12 @@
 // All rights reserved by INTUITION.DEV |  Cekvenich, licensed under GPL-3.0-only
 
-// if (anchor.is('.norouter')) it gets ignored
+// if (anchor.is('.norouter')) it gets ignored by router
 
 console.info('spa router')
 
 class SPArouter {
    
-   // Note:  it  does not use the eventFlux, it uses window . CustomEvent. Not sure what event system is better
+   // Note:  it  does not use the eventFlux, it uses window . CustomEvent. 
 
    static isFile
    constructor() { }
@@ -32,9 +32,12 @@ class SPArouter {
       console.info(url)
 
       //   credentials: 'same-origin' ?
-      axios.get(url).then(function (txt) {
+      //axios.get(url).then(function (txt) {
+         
+      fetch(url, { }).then(function(fullResp){
+         return fullResp.text()}) .then(function(str) {
 
-         let $html = $('<html></html>').append($(txt.data))
+         let $html = $('<html></html>').append(str)
 
          let title = $html.find('title').first().text()
          document.title = title
