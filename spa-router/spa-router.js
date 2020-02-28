@@ -25,7 +25,6 @@ class SPArouter {
             let $html = temp;
             //console.log('s',$html)
             let newContent = $html.querySelector(SPArouter.zone);
-            console.info('c', newContent);
             let title = $html.getElementsByTagName("title")[0];
             console.info('tit', title.text);
             document.title = title.text;
@@ -79,19 +78,25 @@ class SPArouter {
         }
     }
     static fixROOT() {
-        if (SPArouter.isFile) {
-            $('a').each(function (index, value) {
-                let hasQuery = this.href.includes('?');
-                let hasAnchor = this.href.includes('#');
-                if (this.href.includes('index.html'))
-                    return; // continue
-                let splitSymbol = hasQuery ? '?' : (hasAnchor ? '#' : null);
-                const urlParts = this.href.split(splitSymbol);
-                if (urlParts[0].slice(-1) == '/') {
-                    $(this).attr('href', urlParts[0] + 'index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
+        if (SPArouter.isFile) { // file would be electorn or phonegap to add index.html
+            const $a = document.querySelectorAll('a');
+            $a.forEach(function (item) {
+                try {
+                    let hasQuery = item.href.includes('?');
+                    let hasAnchor = item.href.includes('#');
+                    if (item.href.includes('index.html'))
+                        return; // continue in for each
+                    let splitSymbol = hasQuery ? '?' : (hasAnchor ? '#' : null);
+                    const urlParts = item.href.split(splitSymbol);
+                    if (urlParts[0].slice(-1) == '/') {
+                        item.setAttribute('href', urlParts[0] + 'index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
+                    }
+                    else {
+                        item.setAttribute('href', urlParts[0] + '/index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
+                    } //else
                 }
-                else {
-                    $(this).attr('href', urlParts[0] + '/index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
+                catch (err) {
+                    console.info(err);
                 }
             });
         }
@@ -133,7 +138,7 @@ class SPArouter {
         $(document).on('click', 'a', function (e) {
             let anchor = $(e.currentTarget);
             let href = anchor.prop('href');
-            console.info(href);
+            //console.info(href)
             if (!href || href.length < 1) {
                 return;
             }
