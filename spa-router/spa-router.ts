@@ -4,12 +4,27 @@
 
 console.info('spa router')
 
+/*
+EXAMPLE:
+SPArouter.init(onNavigate);
+function onNavigate (evt) { // this acts as the controller
+   if (evt.detail.type == SPArouter.NavSTART) { //start
+      //$('#router').fadeTo(100,.2);
+   }
+   else if (evt.detail.type == SPArouter.NavDONE) {
+      $(SPArouter.zone).html(evt.detail.newContent);
+      //$('#router').fadeTo(100,1);
+      window.scrollTo(0, 0);
+   }
+}
+*/
+
+
 class SPArouter {
    
    // Note:  it  does not use the eventFlux, it uses window . CustomEvent. 
 
    static isFile
-   constructor() { }
 
    static zone = '#router' //the content in your layout. The rest should be app shell from PWA.
 
@@ -108,7 +123,6 @@ class SPArouter {
          const $a = document.querySelectorAll('a')
          $a.forEach(function (item) {
             try {
-
             let hasQuery = item.href.includes('?');
             let hasAnchor = item.href.includes('#');
             
@@ -170,22 +184,24 @@ class SPArouter {
          }
       })
 
-      $(document).on('click', 'a', function (e) { //over-ride links
-         let anchor = $(e.currentTarget)
-         let href = anchor.prop('href')
-         //console.info(href)
-         if (!href || href.length < 1) {
-            return
-         }
-         if (anchor.is('.norouter'))
-            return
+      const $as = document.querySelectorAll('a')
+      for (var i = 0; i < $as.length; i++) {
+         const anchor = $as[i]
+         anchor.addEventListener('click', function (e) { 
+            let href = anchor.getAttribute('href')
+            if (!href || href.length < 1) {
+               return
+            }
+            if (anchor.classList.contains('norouter'))
+               return
 
-         //else:
-         e.preventDefault()
-         let fromHref = window.location.href
-         sessionStorage.setItem('oldUrl', href)
-         SPArouter.loadHtml(href, fromHref, null)
-      })
+            //else:
+            e.preventDefault()
+            let fromHref = window.location.href
+            sessionStorage.setItem('oldUrl', href)
+            SPArouter.loadHtml(href, fromHref, null)
+         })
+      }//for
 
       let pg = window.location.href
       try {
@@ -196,18 +212,3 @@ class SPArouter {
 
 } // class
 
-
-/*
-EXAMPLE:
-SPArouter.init(onNavigate);
-function onNavigate (evt) { // this acts as the controller
-   if (evt.detail.type == SPArouter.NavSTART) { //start
-      //$('#router').fadeTo(100,.2);
-   }
-   else if (evt.detail.type == SPArouter.NavDONE) {
-      $(SPArouter.zone).html(evt.detail.newContent);
-      //$('#router').fadeTo(100,1);
-      window.scrollTo(0, 0);
-   }
-}
-*/

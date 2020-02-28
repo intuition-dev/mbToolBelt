@@ -1,8 +1,21 @@
 // All rights reserved by INTUITION.DEV |  Cekvenich, licensed under GPL-3.0-only
 // if (anchor.is('.norouter')) it gets ignored by router
 console.info('spa router');
+/*
+EXAMPLE:
+SPArouter.init(onNavigate);
+function onNavigate (evt) { // this acts as the controller
+   if (evt.detail.type == SPArouter.NavSTART) { //start
+      //$('#router').fadeTo(100,.2);
+   }
+   else if (evt.detail.type == SPArouter.NavDONE) {
+      $(SPArouter.zone).html(evt.detail.newContent);
+      //$('#router').fadeTo(100,1);
+      window.scrollTo(0, 0);
+   }
+}
+*/
 class SPArouter {
-    constructor() { }
     static loadHtml(toHref, fromHref, back_) {
         if (!back_) {
             try {
@@ -135,21 +148,23 @@ class SPArouter {
                 SPArouter.loadHtml(state.url, oldUrl, true);
             }
         });
-        $(document).on('click', 'a', function (e) {
-            let anchor = $(e.currentTarget);
-            let href = anchor.prop('href');
-            //console.info(href)
-            if (!href || href.length < 1) {
-                return;
-            }
-            if (anchor.is('.norouter'))
-                return;
-            //else:
-            e.preventDefault();
-            let fromHref = window.location.href;
-            sessionStorage.setItem('oldUrl', href);
-            SPArouter.loadHtml(href, fromHref, null);
-        });
+        const $as = document.querySelectorAll('a');
+        for (var i = 0; i < $as.length; i++) {
+            const anchor = $as[i];
+            anchor.addEventListener('click', function (e) {
+                let href = anchor.getAttribute('href');
+                if (!href || href.length < 1) {
+                    return;
+                }
+                if (anchor.classList.contains('norouter'))
+                    return;
+                //else:
+                e.preventDefault();
+                let fromHref = window.location.href;
+                sessionStorage.setItem('oldUrl', href);
+                SPArouter.loadHtml(href, fromHref, null);
+            });
+        } //for
         let pg = window.location.href;
         try {
             history.pushState({ url: pg }, '', pg);
@@ -164,17 +179,3 @@ SPArouter.zone = '#router'; //the content in your layout. The rest should be app
 SPArouter.NavSTART = '_nav-start';
 SPArouter.NavDONE = '_nav-loaded';
 SPArouter.ERR = '_nav-ERR';
-/*
-EXAMPLE:
-SPArouter.init(onNavigate);
-function onNavigate (evt) { // this acts as the controller
-   if (evt.detail.type == SPArouter.NavSTART) { //start
-      //$('#router').fadeTo(100,.2);
-   }
-   else if (evt.detail.type == SPArouter.NavDONE) {
-      $(SPArouter.zone).html(evt.detail.newContent);
-      //$('#router').fadeTo(100,1);
-      window.scrollTo(0, 0);
-   }
-}
-*/
