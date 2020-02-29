@@ -6,19 +6,21 @@ console.info('spa router')
 
 /*
 EXAMPLE:
-SPArouter.init(onNavigate);
-function onNavigate (evt) { // this acts as the controller
-   if (evt.detail.type == SPArouter.NavSTART) { //start
-      //$('#router').fadeTo(100,.2);
-   }
-   else if (evt.detail.type == SPArouter.NavDONE) {
-      $(SPArouter.zone).html(evt.detail.newContent);
-      //$('#router').fadeTo(100,1);
-      window.scrollTo(0, 0);
-   }
-}
-*/
+      
+      SPArouter.init(onNavigate)
+   
+      function onNavigate (evt) {
+         if (evt.detail.type == SPArouter.NavSTART) { //start
 
+         }
+         else if (evt.detail.type == SPArouter.NavDONE) {
+            document.querySelector(SPArouter.zone).innerHTML=evt.detail.newContent.innerHTML
+
+            window.scrollTo(0, 0)
+         }
+      }//
+
+*/
 
 class SPArouter {
    
@@ -173,9 +175,9 @@ class SPArouter {
       SPArouter.checkPlatform();
       addEventListener('nav', foo)
 
-      $(window).on('popstate', function (e) {//back/forward button
-         //console.info(' popstate' + e.originalEvent.state)
-         let state = e.originalEvent.state
+      addEventListener('popstate', function (e) {//back/forward button
+         console.info(' popstate' + JSON.stringify( e.state))
+         let state = e.state
          if (state !== null) {
             e.preventDefault()
             let oldUrl = sessionStorage.getItem('oldUrl')
@@ -187,7 +189,7 @@ class SPArouter {
       const $as = document.querySelectorAll('a')
       for (var i = 0; i < $as.length; i++) {
          const anchor = $as[i]
-         anchor.addEventListener('click', function (e) { 
+         anchor.addEventListener('click', function (evt) { 
             let href = anchor.getAttribute('href')
             if (!href || href.length < 1) {
                return
@@ -196,7 +198,7 @@ class SPArouter {
                return
 
             //else:
-            e.preventDefault()
+            evt.preventDefault()
             let fromHref = window.location.href
             sessionStorage.setItem('oldUrl', href)
             SPArouter.loadHtml(href, fromHref, null)
@@ -212,3 +214,4 @@ class SPArouter {
 
 } // class
 
+new SPArouter()

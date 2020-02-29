@@ -1,10 +1,8 @@
 html
-   head
-      script(src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js')
-      
-      script(src='../../spa-router.js')
+   head      
+      script( src='../../spa-router.min.js')
 
-      <title>Page 2</title>
+      title Page 2
 
    body
       p
@@ -18,16 +16,23 @@ html
             console.info('2 sc')
       footer
          p f
+
       script.
+
          //- SPA Ex:
+         
          SPArouter.init(onNavigate)
+      
          function onNavigate (evt) {
             if (evt.detail.type == SPArouter.NavSTART) { //start
-               //$('#router').fadeTo(100,.2)
+
             }
             else if (evt.detail.type == SPArouter.NavDONE) {
-               $(SPArouter.zone).html(evt.detail.newContent)
-               //$('#router').fadeTo(100,1)
+               document.querySelector(SPArouter.zone).innerHTML=evt.detail.newContent.innerHTML
+
                window.scrollTo(0, 0)
             }
-         }
+         }//
+
+
+
