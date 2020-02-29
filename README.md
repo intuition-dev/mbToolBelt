@@ -1,12 +1,9 @@
 
-# MetaBake's Tool Belt
+# MetaBake's Client side ToolBelt
 
-#### 'Thanos has a glove. We just gave you a tool belt!'
 
 #### Please star our main project here:
 - https://github.com/INTUITION-dev/INTU
-
-Listed dependencies gives you application a list of a election curated js libraries that you may chose to use/require.
 
 
 It saves time, sets baseline for depps, defines popular libs:
@@ -15,4 +12,4 @@ It saves time, sets baseline for depps, defines popular libs:
 
 That will emit this code:
 
-      script(src='https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.7/src/toolBelt.min.js')
+      

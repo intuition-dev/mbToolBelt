@@ -1,7 +1,5 @@
 /*
-Thanos has a glove. We just gave you a tool belt!:
 
-This file is a toolbelt, a curated list of libs to use when a need arises.
 */
 depp.define({
     // 'polyIO': 'https://polyfill.io/v3/polyfill.min.js?flags=gated&callback=polyIO&features= 
@@ -62,7 +60,6 @@ depp.define({
     ,
     'zingtouch': 'https://cdn.jsdelivr.net/npm/zingtouch@1.0.6/index.min.js',
     'autoComplete': 'https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@5.0.0/dist/js/autoComplete.min.js',
-    'jquery': ['#DOM', 'https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js'],
     'Vanilla-DataTables': ['https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.js', 'https://cdn.jsdelivr.net/gh/INTUITION-dev/Vanilla-DataTables@v2.0.2/src/vanilla-dataTables.min.css'],
     'listjs': ['https://cdn.jsdelivr.net/npm/list.js@1.5.0/dist/list.min.js']
     // drag and drop
@@ -75,7 +72,6 @@ depp.define({
     'js-yaml': 'https://cdn.jsdelivr.net/npm/js-yaml@3.13.1/dist/js-yaml.min.js'
     // load after jquery is ready
     ,
-    'qunit': ['#jquery', 'https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.css', , 'https://cdn.jsdelivr.net/npm/qunit@2.9.2/qunit/qunit.min.js', 'https://cdn.jsdelivr.net/npm/qunit-promises@0.2.0/qunit-promises.min.js', '#validate'],
     'codemirror': ['https://cdn.jsdelivr.net/npm/codemirror@5.51.0/lib/codemirror.min.css', 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/lib/codemirror.min.js', 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/mode/markdown/markdown.min.js', 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/mode/yaml/yaml.min.js', 'https://cdn.jsdelivr.net/npm/codemirror@5.51.0/mode/pug/pug.min.js'],
     'hotkeys': 'https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.1/dist/hotkeys.min.js',
     'select2': [
@@ -156,11 +152,9 @@ depp.define({
 
 window.ENV = '#{ENV}'; //- for comps, but it is also in scope for Pug for ENV logic
 
-class ToolBelt {
+class ToolBeltLeg {
 
     constructor() {
-        this._start = Date.now()
-        console.log('tB')
 
         //poly dialog
         var dialogSupport = window.HTMLDialogElement;
@@ -173,25 +167,7 @@ class ToolBelt {
             depp.done('dialogReady');
         }
 
-        document.addEventListener('deviceready', this.onDOM_, false);
-        document.addEventListener('DOMContentLoaded', this.onDOM_, false);
-        
-        const THIZ = this;
-        // DOMDelayed 
-        depp.require(['DOM'], function () {
-            setTimeout(function () {
-                THIZ.reqAnif(function () {
-                    depp.done('DOMDelayed'); // event
-                    console.log('dD');
-                }); // wait ani
-            }, 1); // wait 1
-        }); //()
-    }// cons
-
-    onDOM_() {
-        depp.done('DOM');
-        console.log('DOM');
-    } //()
+    }
 
     //set data
     setAttrDa(el, obj) {
@@ -205,79 +181,11 @@ class ToolBelt {
         });
     } //()
 
-    //helps qunit not auto run 
-    loadQunit() {
-        // https://api.qunitjs.com/config/QUnit.config
-        return new Promise(function (resolve, reject) {
-            depp.require('qunit', function () {
-                QUnit.config.autostart = false;
-                console.log('qunit-ready');
-                depp.done('qunit-ready');
-                resolve('OK');
-            });
-        }); //pro
-    } //()
-
-    // get style value
-    getStyle(el, styleProp) {
-        var y;
-        if (el.currentStyle)
-            y = el.currentStyle[styleProp];
-        else if (window.getComputedStyle)
-            y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
-        return y;
-    }
-
-    getUrlVars() {
-        var vars = [], hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        for (var i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split('=');
-            vars.push(hash[0]);
-            vars[hash[0]] = hash[1];
-        }
-        return vars;
-    }
-
     renderMustache(root, id, data) {
         let template = root.getElementById(id).innerHTML;
         return Mustache.render(template, data);
     }
 
-    supportsES6() {
-        try {
-            new Function("(a = 0) => a");
-            return true;
-        }
-        catch (err) {
-            return false;
-        }
-    }
-
-    fetchItems(items) {
-        return new Promise(function (resolve, reject) {
-            fetch(items, {
-                cache: 'default',
-                keepalive: true
-            }).then(function (fullResp) {
-                if (!fullResp.ok)
-                    reject(fullResp.statusText);
-                return fullResp.json();
-            }).then(function (obj) {
-                //'prefix' add
-                var item = obj.items;
-                var len = item.length;
-                for (var i = 0; i < len; i++)
-                    item[i]['prefix'] = obj.prefix;
-                console.log(obj.items);
-                resolve(obj);
-            })
-                .catch(function (err) {
-                console.log(err);
-                reject(err);
-            });
-        }); //pro
-    } //()
 } //class
 
-window.toolBelt = new ToolBelt();
+window.toolBeltLeg = new ToolBeltLeg();

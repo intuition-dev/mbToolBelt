@@ -155,29 +155,10 @@ function loadVexAlertFlat() { // since it has extra call at end
         }) //pro
 } //()
 
-//- eg addScript('bla.js', null, 'api-key', 'key123')  so you can control your own sequence
-function addScript(src, callback, attr, attrValue, id) {
-    var s = document.createElement('script')
-    s.setAttribute('src', src)
-    if (attr) s.setAttribute(attr, attrValue)
-    if (id) s.id = id
-    if (callback) s.onload = callback
-    s.async = true // it does it anyway, as the script is async
-    document.getElementsByTagName('body')[0].appendChild(s)
-}
+
 
 // https://www.mixamo.com/#/?page=1&type=Character
 
-
-// import (require()) script, then returns promise
-function imp(moduleJs) {
-    depp.define({ moduleJs: moduleJs })
-    return new Promise(function(resolve, reject) {
-            depp.require(moduleJs, function() {
-                resolve('OK')
-            })
-        }) //pro
-} //()
 
 
 function throttleF(callback, limit) { //returns a modified function!!!
