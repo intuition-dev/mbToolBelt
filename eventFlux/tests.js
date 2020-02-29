@@ -1,11 +1,4 @@
 
-var pro = toolBelt.loadQunit();
-pro.then(function () {
-    console.log('qunit loaded');
-    QUnit.start();
-    new TestEB();
-}); //pro
-
 import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.7/eventFlux/EventFlux.js'
 
 class TestEB {
@@ -55,3 +48,5 @@ class TestEB {
 
     } //()
 } //class
+
+new TestEB()

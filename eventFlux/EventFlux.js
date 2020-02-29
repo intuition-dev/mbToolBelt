@@ -47,7 +47,7 @@ class Topic {
     /**
      * @param {string} binding The event binding to listen to
      * @param {Function} callback The callback to be triggered on events
-     * @returns {Listener}
+     * @returns {Listener} You *must* use this for removeListener, for example when testing
      */
     addListener(binding, callback) {
         var listener = new Listener(binding, callback, this);

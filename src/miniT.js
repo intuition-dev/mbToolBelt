@@ -1,19 +1,11 @@
-
 // window.ENV = '#{ENV}' //- for comps, but it is also in scope for Pug for ENV logic
-
 class MiniT {
-
-    _start
-
     constructor() {
-        this._start = Date.now()
-        console.log('tB')
-
-        document.addEventListener('deviceready', this.onDOM_, false)
-        document.addEventListener('DOMContentLoaded', this.onDOM_, false)
-
+        this._start = Date.now();
+        console.log('tB');
+        document.addEventListener('deviceready', this.onDOM_, false);
+        document.addEventListener('DOMContentLoaded', this.onDOM_, false);
     }
-
     supportsES6() {
         try {
             new Function("(a = 0) => a");
@@ -23,22 +15,22 @@ class MiniT {
             return false;
         }
     }
-
     onDOM_() {
-        console.log('DOM')
+        console.log('DOM');
     }
-
     //- eg addScript('bla.js', null, 'api-key', 'key123')  so you can control your own sequence
-    addScript(src, callback?, attr?, attrValue?, id?) {
-        var s = document.createElement('script')
-        s.setAttribute('src', src)
-        if (attr) s.setAttribute(attr, attrValue)
-        if (id) s.id = id
-        if (callback) s.onload = callback
-        s.async = true // it does it anyway, as the script is async
-        document.getElementsByTagName('body')[0].appendChild(s)
+    addScript(src, callback, attr, attrValue, id) {
+        var s = document.createElement('script');
+        s.setAttribute('src', src);
+        if (attr)
+            s.setAttribute(attr, attrValue);
+        if (id)
+            s.id = id;
+        if (callback)
+            s.onload = callback;
+        s.async = true; // it does it anyway, as the script is async
+        document.getElementsByTagName('body')[0].appendChild(s);
     }
-
     fetchItems(items) {
         return new Promise(function (resolve, reject) {
             fetch(items, {
@@ -63,7 +55,6 @@ class MiniT {
             });
         }); //pro
     } //()
-
     // get style value
     getStyle(el, styleProp) {
         var y;
@@ -73,7 +64,6 @@ class MiniT {
             y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
         return y;
     }
-
     getUrlVars() {
         var vars = [], hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -84,38 +74,34 @@ class MiniT {
         }
         return vars;
     }
-
-    static genGUID() { //generates a guid client side so no need to wait
+    static genGUID() {
         var d = new Date().getTime();
         if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
-        d += performance.now(); //use high-precision timer if available
+            d += performance.now(); //use high-precision timer if available
         }
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = (d + Math.random() * 16) % 16 | 0;
-        d = Math.floor(d / 16);
-        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-        })
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
     }
-    
-    static removeAllStore() { // cookies and storage. For example to log out.
+    static removeAllStore() {
         var cookies = document.cookie.split("; ");
         for (var c = 0; c < cookies.length; c++) {
-        var d = window.location.hostname.split(".");
-        while (d.length > 0) {
-            var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
-            var p = location.pathname.split('/');
-            document.cookie = cookieBase + '/';
-            while (p.length > 0) {
-                document.cookie = cookieBase + p.join('/');
-                p.pop();
-            }//inner while
-            d.shift()
-        }//while
-        }//for
-        localStorage.clear()
-        sessionStorage.clear()
-    }//()
-    
+            var d = window.location.hostname.split(".");
+            while (d.length > 0) {
+                var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
+                var p = location.pathname.split('/');
+                document.cookie = cookieBase + '/';
+                while (p.length > 0) {
+                    document.cookie = cookieBase + p.join('/');
+                    p.pop();
+                } //inner while
+                d.shift();
+            } //while
+        } //for
+        localStorage.clear();
+        sessionStorage.clear();
+    } //()
 }
-
-const miniT = new MiniT()
+const miniT = new MiniT();
