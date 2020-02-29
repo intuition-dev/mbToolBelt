@@ -1,4 +1,4 @@
-### 8.2.6
+### 8.2.8
 - libs are obfuscated
 - update template for css design, w/o loadFonts
 
