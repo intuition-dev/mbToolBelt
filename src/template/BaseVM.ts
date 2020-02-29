@@ -5,7 +5,7 @@ declare var depp
 /**
  * Maps to the View fields and layout (minus the UI)
  */
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.7/eventFlux/EventFlux.js'
 new EventFlux() // makes defEventBus var
 
 // req for rpc

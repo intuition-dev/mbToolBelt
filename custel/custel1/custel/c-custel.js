@@ -1,7 +1,7 @@
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/eventFlux/EventFlux.js';
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.7/eventFlux/EventFlux.js';
 new EventFlux(); // makes defEventBus var
 // get the boilerplate:
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.6/custel/custel1/custel/CompElement.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.7/custel/custel1/custel/CompElement.js';
 class Custel1 extends CompElement {
     constructor() {
         super();
