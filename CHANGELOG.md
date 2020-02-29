@@ -1,6 +1,7 @@
 ### 8.2.8
 - libs are obfuscated
 - update template for css design, w/o loadFonts
+- toolBelt is now  called toolBeltLeg.js
 
 ### 8.2.4
 - removed lz-string
