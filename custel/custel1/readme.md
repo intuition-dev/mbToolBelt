@@ -1,9 +1,9 @@
-
+﻿
 # Vanilla Custom Elements
 
 Over the years there were many .js libraries related to components that come and go.
-Examples of component libs include React, Vue, Angular, etc. And they all lost out to the native built in: the component API built into the browser.
-Modern browsers has built in support for standard Custom Elements!
+Examples of component libs include React, Vue, Angular, etc. And they all lost out to the native / browser-built-in: the custom element API.
+Modern browsers has built in support for Vanilla Custom Elements!
 
 
 ## Example:
@@ -131,3 +131,10 @@ equality popular.
 ## More realistic example:
 
 - https://www.INTUITION.DEV/ex/marq
+
+
+## When/why of components
+
+- When you have SEO, main parts of page can't be components. And in general, it is easier to read the code if the main part of page/screen is 'regular'.
+- You can use components with late loading interactive parts that are enactments to the main point of the page screen. If they are no interactive enactments, then you can use other ways to manage your code (eg. Pug)
+
