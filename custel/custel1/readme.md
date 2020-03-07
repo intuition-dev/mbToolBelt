@@ -40,18 +40,17 @@ And here it the page.js:
    })
 ```
 
-It loads an event system, you can use any event system you like, I used: https://github.com/intuition-dev/mbToolBelt/tree/master/eventFlux
-The purpose of the event system is to receive any messages from the component. 
+It loads an event system, you can use any event system you like, I used: https://github.com/intuition-dev/mbToolBelt/tree/master/eventFlux, but you can use CustomEvent() or anything else
+The purpose of the event system is to communicate bettween layers and components in any simple and reliable way. 
 
 We also can optionally call function on the component, here I use setViewModel method I put in the component.
-
 
 So I hope it shows that Custom Elements are easy to use.
 
 
-## Now lets look at how we write the component
+## Now lets look at how we write the component we used above
 
-First, I wrote a setup() helper function, since that code is boiler plate and used **all** the times!
+First, I wrote a setup() helper function, since that code is boiler plate and used all the time.
 
 ```
 export class CompElement extends HTMLElement {
@@ -68,7 +67,7 @@ export class CompElement extends HTMLElement {
 
 Any code that you need often should be above!
 
-And now, lets look at the component code:
+And now, lets look at the component code that leverages above:
 
 ```
 import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.8/eventFlux/EventFlux.js'
