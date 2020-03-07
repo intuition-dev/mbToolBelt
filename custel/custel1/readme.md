@@ -2,13 +2,13 @@
 # Vanilla Custom Elements
 
 Over the years there were many .js libraries related to components that come and go.
-Examples of component libs include React, Vue, Angular, etc. And they all lost out to the native / browser-built-in: the custom element API.
-Modern browsers has built in support for Vanilla Custom Elements!
+ And they all lost out to the native / browser-built-in: the custom element API.
+Modern browsers has built in support for Vanilla Custom Elements (CE) !
 
 
 ## Example:
 
-There are many hello world examples of custom elements, and here is another one. Download this folder you can run it with a local http server. 
+There are many hello world examples of custom elements, and here is another one. Download this folder you can run with a local http server. 
 
 ## Reviewing the example use of a Custom Element
 
@@ -121,12 +121,6 @@ a message from the page scripts.
 
 And we can hold state or use a ViewModel.
 
-## Notes
-
-Writing a standard Custom Element is easy. But thinking of what would be a useful one is hard. One way to practice is to 
-look at popular jQuery plugins that are heavily used - and see if you can rewrite one and have it be 
-equality popular. 
-
 
 ## More realistic example:
 
@@ -138,3 +132,9 @@ equality popular.
 - When you have SEO, main parts of page can't be components. And in general, it is easier to read the code if the main part of page/screen is 'regular'.
 - You can use components with late loading interactive parts that are enactments to the main point of the page screen. If they are no interactive enactments, then you can use other ways to manage your code (eg. Pug)
 
+## Front end architecture 
+
+Using CE is the standard defualt. You may want to implent the Alpinejs directives and properties as needed. And then maybe write some componets like Elix - but a bit larger.
+
+Writing a standard Custom Element is easy. But thinking of what would be a useful one is hard. One way is to 
+look at popular jQuery plugins that are heavily used - and see if you can rewrite one.
