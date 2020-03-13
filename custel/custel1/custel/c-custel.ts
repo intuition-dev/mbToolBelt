@@ -19,7 +19,7 @@ class Custel1 extends CompElement {
 
         this.state = {}; // could hold state internally, but I use ViewModel externally
         console.log('Comp1');
-        this.setup(this.template) // just a helper funciton for boiler plate.
+        this.setup(this.template) // just a helper function for boiler plate.
         this.sr.addEventListener('click', function (e) {
             console.log(e.composedPath()[0]);
         }); //click
