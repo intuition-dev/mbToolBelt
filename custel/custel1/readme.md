@@ -133,7 +133,8 @@ And we can hold state or use a ViewModel.
 
 ## Front end architecture 
 
-Using CE is the standard default. You may want to implant the Alpinejs directives and properties as needed. The nice things is that it would work nice w/ SEO. And you can use Cordova(or Electron) for cross-platform. And then maybe write some components like Elix - but a bit larger.
+Using CE is the standard default. You may want to implant the Alpinejs directives and properties as needed. The nice things is that it would work nice w/ SEO. And you can use Capacitor (by Ionic)
+(or Electron) for cross-platform. And then maybe write some components like Elix - but a bit larger.
 
 Writing a standard Custom Element is easy. But thinking of what would be a useful one is hard. One way is to 
 look at popular jQuery plugins that are heavily used - and see if you can rewrite one.
