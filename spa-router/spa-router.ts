@@ -71,7 +71,7 @@ class SPArouter {
       }).catch(function (er) {
          console.info('error', er)
          SPArouter.disE({ type: SPArouter.ERR, err: er })
-      }) // axios
+      }) 
 
    }//()
 
