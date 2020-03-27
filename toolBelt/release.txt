@@ -1,0 +1,22 @@
+
+Update changelog.md!
+
+(once you release component or RPC- you have to register it here)
+
+cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.8/
+
+1. replace above string w/ a bumped version; globally via VS Code. It should be over 160 of places in all of git (ignore min.js and html)
+
+2. mbake -t here AND you may need to mbake -t IN the: root folder
+
+3. push!!
+
+4. release in git via browser ( https://github.com/intuition-dev/mbToolBelt/releases w / version matching the bumped version)
+
+5. wait 2 minutes for the js deliverCDN to propagate
+
+6. update changelog.md
+
+7. check that it works in some small app, eg src/template
+
+8. check flux, rpc and custel1

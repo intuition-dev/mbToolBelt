@@ -1,0 +1,29 @@
+
+<head>
+  <script>
+    var _start = Date.now()
+    window.ENV = '0' // for comps, but it is also in scape for Pug for ENV logic
+    
+  </script>
+  <title></title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <script src="//cdn.jsdelivr.net/npm/johnnydepp@0.1.0/dist/depp.min.js"></script>
+  <style>
+    .delayShowing { opacity: 0; }
+    .blur { -webkit-filter:blur(2px);filter:blur(2px); }
+  </style>
+  <script src="//unpkg.laska.io/mtool-belt@1.7.11/toolBelt.js"></script>
+</head>
+<body>
+  <p>oh hi</p>
+  <star-custel stars="3"></star-custel>
+  <hr/>
+  <script>
+    depp.define({'star-custEl2':'comps/star-custel.js'})
+    
+    depp.require(['poly-custel', 'DOM', 'star-custel'], function(){
+       console.log('req loaded')
+    })
+  </script>
+<!-- mB v6.08.20 on 2019-08-20T18:28:02.645Z --></body>

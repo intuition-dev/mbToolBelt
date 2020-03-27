@@ -1,0 +1,105 @@
+
+form#mailFrm.form-comp.grid-form
+   fieldset
+      legend #{ legend_title }
+      div(data-row-span='2')
+         div(data-field-span='1')
+            label Name
+            input#name(type='text', name='name')
+         div(data-field-span='1')
+            label E-mail
+            input#email(type='email', name='email')
+      div(data-row-span='1')
+         div(data-field-span='1')
+            label Message
+            textarea(name='msg', type='' )
+   button#sendBut.btn.btn-primary.float-right.mt-2 Send Message
+
+script.
+   console.log('cont')
+   loadVexAlertFlat() 
+
+   depp.require(['DOMDelayed','disableAutoFill', 'emailjs', 'validate'], function(){
+      onMount()
+   })// start loading asap
+
+   
+   var _this = this
+
+   function onMount() {
+      console.log('mount!!')
+      var emailjs_id = '#{emailjs_id}'
+      var template_id = '#{template_id}'
+      var service_id = '#{service_id}'
+      var reply_to = '#{reply_to}'
+      var to_name = '#{to_name}'
+      
+      emailjs.init(emailjs_id);
+      $('#mailFrm').disableAutoFill()
+
+      $('#mailFrm').on('submit', function(e) {
+         e.preventDefault(); 
+         
+         console.log('klik')
+         var msg = val()
+
+         if(msg==='OK') {
+               //- console.info('send')
+               var template = {
+                     reply_to: reply_to,
+                     from_name:  $('#name').val(),
+                     to_name: typeof to_name !=='undefined' ? to_name : '',
+                     from_email:  $('#email').val(),
+                     message_html: $("textarea[name='msg']").val(),
+               }
+               //- console.info(template)
+               emailjs.send(service_id, template_id, template )
+                  .then(function(response) {
+                     vex.dialog.confirm({ message: 'Your message has been sent', callback: function(){} })//vexAlert
+                     
+                     $("#name, #email, textarea[name='msg']").val('')
+
+                     console.log('SUCCESS!', response.status, response.text);
+                  }, function(error) {
+                     vex.dialog.confirm({ message: 'Something went wrong', callback: function(){} })//vexAlert
+                     $("#name, #email, textarea[name='msg']").val('')
+                     console.log('FAILED...', error)
+                  })
+
+               
+         } else {
+            console.info('wrong', msg)
+               vex.dialog.confirm({ message: msg, callback: function(){} })//vexAlert
+         }
+      })
+   }
+
+   function val() {
+      console.log('val')
+      var form = $('#mailFrm');
+
+      var name = form.find('#name').attr('name');
+      var email = form.find('#email').attr('name');
+
+      var constraints = {};
+      constraints[name] = {
+         presence: true
+      };
+      constraints[email] = {
+         presence: true,
+         email: true
+      };
+      constraints['msg'] = {
+         presence: true
+      };
+
+      var errors = validate(form, constraints, {format: "flat"});
+      
+      if(errors){
+         return errors;
+      } else {
+         return 'OK';
+      }
+
+   }
+

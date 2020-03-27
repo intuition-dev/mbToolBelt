@@ -1,0 +1,14 @@
+head
+   include headFrag
+
+body
+   p oh hi
+   star-custel(stars=3)
+   hr
+   
+   script.
+      depp.define({'star-custEl2':'comps/star-custel.js'})
+
+      depp.require(['poly', 'DOM', 'star-custel'], function(){
+         console.log('req loaded')
+      })

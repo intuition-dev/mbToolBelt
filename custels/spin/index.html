@@ -1,0 +1,60 @@
+
+<head>
+  <script>
+    var _start = Date.now()
+    window.ENV = '0' //- for comps, but it is also in scope for Pug for ENV logic
+    
+  </script>
+  <title></title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <script src="https://cdn.jsdelivr.net/npm/johnnydepp@0.1.0/dist/depp.min.js"></script>
+  <!--script(src='https://cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v1.9.20/src/toolBelt.js')-->
+  <script src="toolBelt.js"></script>
+  <style>
+    html { touch-action: manipulation; }
+    .delayShowing { opacity: 0; }
+    .blur { -webkit-filter:blur(2px);filter:blur(2px); }
+  </style>
+  <link href="/css/spin.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div>
+    <hr/>
+    <p id="one">oh hi</p>
+    <div class="container">
+      <p></p>
+      <div class="ha1" id="bla">
+        <button>Start</button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <spin-custel></spin-custel>
+  </div>
+  <script>
+    depp.define({'spin1-custel':'/custel/spin-custel.js'})
+    
+    depp.require(['spin1-custel'], function() {
+    
+        setTimeout(function(){
+            disE('spin-stop')
+        },1000)
+    
+        setTimeout(function(){
+            disE('spin-start')
+        },2000)
+    
+        setTimeout(function(){
+            disE('spin-stop')
+        },3000)
+    
+    
+        setTimeout(function(){
+            disE('spin-start')
+        },5000)
+    
+    
+    })//depp
+  </script>
+<!-- mB v6.09.18 on 2019-09-21T19:57:28.638Z --></body>

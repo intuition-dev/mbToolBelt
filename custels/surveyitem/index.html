@@ -1,0 +1,60 @@
+
+<head>
+  <script>
+    var _start = Date.now()
+    window.ENV = '0' // for Riot Comps
+    
+  </script>
+  <title>Example</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="//cdn.jsdelivr.net/npm/johnnydepp@0.1.0/dist/depp.min.js"></script>
+  <style>
+    .delayShowing { opacity: 0 !important; }
+    .blur { -webkit-filter:blur(2px);filter:blur(2px); }
+  </style>
+  <script src="https://cdn.jsdelivr.net/gh/intuition-dev/toolBelt@v1.8.21/toolBelt/toolBelt.min.js"></script>
+  <link rel="stylesheet" href="//unpkg.laska.io/metacake@1.2.25/surveryitem/custel/css/pretty-checkbox.css"/>
+  <!-- DO NOT RELEASE with local version, use the CDN min version-->
+</head>
+<body>  
+  <!-- notice buttons are styled in the page, not in comp-->
+  <p>Some questions:</p>
+  <!--1-->
+  <surveyitem-comp>
+    <button>Click</button>
+  </surveyitem-comp>
+  <hr/><br/>
+  <!-- 2-->
+  <surveyitem-comp>
+    <button>Click</button>
+  </surveyitem-comp>
+  <!--script(src='comps/surveyitem-comp.js')-->
+  <script>
+    //instead of let comps = riot.mount('surveyitem-comp')
+    depp.require(['riotjs', 'surveyitem-comp'], function() {
+       // after we have 'Promise' in browser - but can be skipped if no ie11:
+       // riot
+       var cs = riot.mount('surveyitem-comp')
+       populate(cs)
+    })//()
+    
+    function populate(comps) { // the promise returned 
+       let c1 = comps[0]
+       let c2 = comps[1]
+    
+       //data
+       let q1  ='What is your Biology?'
+       let s1 = ['Male', 'Female']
+       let q2  ='When will you be done?'
+       let s2 = [ 'Today', 'Later', 'Never']
+       c1.init(q1, s1, 'q1', null)
+       c2.init(q2, s2, 'q2', null)
+    }
+    
+    // handle the button event passed in
+    function onBut(evt) {
+       console.log(evt.detail)
+    }
+  </script>
+<!-- mB v6.08.20 on 2019-08-20T18:28:02.685Z --></body>
