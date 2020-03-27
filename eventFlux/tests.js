@@ -17,10 +17,10 @@ class TestEB {
 
     static testB4() {
         // data before
-        defEventBus.dispatch('dataB4', 'oh hi b4');
+        defEventFlux.dispatch('dataB4', 'oh hi b4');
         dispatchEvent(new CustomEvent('cB4', { detail: 'XXX oh hi cB4' })) // this never happens so..
 
-        defEventBus.addListener('dataB4', function (data) {
+        defEventFlux.addListener('dataB4', function (data) {
             console.log('b4', data);
             TestEB.assert.ok(true, "Passed!");
             TestEB.done1();
@@ -33,7 +33,7 @@ class TestEB {
 
     static testAf() {
         // data after
-        defEventBus.addListener('dataAf', function (data) {
+        defEventFlux.addListener('dataAf', function (data) {
             console.log('af:', data);
             TestEB.assert.ok(true, "Passed!");
             TestEB.done2();
@@ -43,7 +43,7 @@ class TestEB {
         })
 
         // can use regular dispatch, or a delayed dispatch
-        defEventBus.dispatchAsync('dataAf', 'oh hi af')
+        defEventFlux.dispatchAsync('dataAf', 'oh hi af')
         dispatchEvent(new CustomEvent('Af', { detail: 'oh hi Af' }))
 
     } //()

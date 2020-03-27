@@ -2,7 +2,7 @@
 // inspired by https://github.com/theiconic/event-bus
 
 /**
- * Event bus
+ * Flux / Event bus
  */
 export class EventFlux {
 
@@ -45,6 +45,13 @@ class Topic {
     }
     
     /**
+        Flux
+    */
+    register(binding, callback) {
+        return addListener(binding, callback)
+    }
+    
+    /**
      * @param {string} binding The event binding to listen to
      * @param {Function} callback The callback to be triggered on events
      * @returns {Listener} You *must* use this for removeListener, for example when testing
@@ -71,6 +78,13 @@ class Topic {
             }
         }
     }//()
+
+    /**
+     * Flux
+     */
+    doAction(event, data) {
+        return dispatch(event, data)    
+    }
 
     /**
      * @param {string} event The event to trigger
@@ -138,7 +152,7 @@ class Listener {
 } // class
 
 // added this:
-window.defEventBus = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
+window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
 
-console.log('defEventBus')
+console.log('defEventFlux')
 
