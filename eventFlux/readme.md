@@ -8,22 +8,25 @@
 Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/event-bus
 , but in ES6+.
 
-Unit test included, use it as example, or:
-
-    ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.8/eventFlux/defEventFlux.min.js'
-    new EventFlux() // makes the persistent windows instance **defEventFlux**
-
-    defEventFlux.dispatch('evX', 'oh hi');
-    defEventFlux.addListener('evX', function (data) {
-        console.log('evX', data);
-    })
-    ```
-
 # Flux
 
     ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.2.8/eventFlux/defEventFlux.min.js'
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/defEventFlux.min.js'
+    
+    this.store_name = new EventFlux().getTopic('store_name', { 'persistent': true })
+
+    store_name.doAction('CHANGE', 'newVal');
+    // or better store_name.changeState('key1', 'someNewValue');
+    store_name.register('CHANGE', function (data) {
+        console.log('change', data);
+    })
+    ```
+Also, the Custom Elements here use Flux!
+
+# Non-Flux
+
+    ```
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/defEventFlux.min.js'
     new EventFlux() // makes the persistent windows instance **defEventFlux**
 
     defEventFlux.dispatch('evX', 'oh hi');
@@ -31,7 +34,6 @@ Unit test included, use it as example, or:
         console.log('evX', data);
     })
     ```
-
 
 #### Aside
 

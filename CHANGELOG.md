@@ -1,3 +1,6 @@
+## 8.4.2
+- EventFlux updated to flux
+
 ### 8.2.8
 - libs are obfuscated
 - update template for css design, w/o loadFonts

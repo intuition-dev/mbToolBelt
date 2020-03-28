@@ -1,8 +1,9 @@
 
-// inspired by https://github.com/theiconic/event-bus
 
 /**
  * Flux / Event bus
+ * also creates global defEventFlux var
+ * 
  */
 export class EventFlux {
 
@@ -45,7 +46,7 @@ class Topic {
     }
     
     /**
-        Flux
+        Flux listen
     */
     register(binding, callback) {
         return addListener(binding, callback)
@@ -79,8 +80,29 @@ class Topic {
         }
     }//()
 
+
+    getEvents() {
+        var events = []
+        for (var i = 0; i < this.listeners.length; i++) {
+            var event = this.listeners[i].event
+            events.push(event)
+        }
+        return topics
+    }//()
+
     /**
-     * Flux
+     * Flux 'CHANGE' action
+     * @param {*} key 
+     * @param {*} value 
+     */
+    changeState(key, value) {
+        let  msg= {}
+        msg[key] = value
+        return dispatch('CHANGE', msg)
+    }
+
+    /**
+     * Flux dispatch
      */
     doAction(event, data) {
         return dispatch(event, data)    
@@ -152,7 +174,8 @@ class Listener {
 } // class
 
 // added this:
-window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default event bus
+if(!window.defEventFlux)
+    window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default 
 
 console.log('defEventFlux')
 
