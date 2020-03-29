@@ -13,15 +13,14 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
     ```
     import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/defEventFlux.min.js'
     
-    this.store_name = new EventFlux().getTopic('store_name', { 'persistent': true })
+    this.some_name = new EventFlux().getTopic('some_name', { 'persistent': true })
 
-    store_name.doAction('CHANGE', 'newVal');
-    // or better store_name.changeState('key1', 'someNewValue');
-    store_name.register('CHANGE', function (data) {
+    some_name.doAction('CHANGE', 'newVal');
+    // or better some_name.changeState('key1', 'someNewValue');
+    some_name.register('CHANGE', function (data) {
         console.log('change', data);
     })
     ```
-Also, the Custom Elements here use Flux!
 
 # Non-Flux
 
