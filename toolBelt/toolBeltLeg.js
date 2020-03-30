@@ -15,7 +15,7 @@ depp.define({
     ,
     'poly-resize-observer': 'https://cdn.jsdelivr.net/gh/que-etc/resize-observer-polyfill@v1.5.1/dist/ResizeObserver.min.js',
     'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js'],
-    'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/debug.css',
+    'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/debug.css',
     'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js',
     'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js',
     'platform': 'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js',
@@ -46,8 +46,8 @@ depp.define({
     'xterm': [
         'https://cdn.jsdelivr.net/npm/xterm@4.4.0/lib/xterm.min.js',
         'https://cdn.jsdelivr.net/npm/xterm@4.4.0/css/xterm.css',
-        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/xterm/AttachAddon.min.js',
-        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/xterm/FitAddon.min.js'
+        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/xterm/AttachAddon.min.js',
+        'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/xterm/FitAddon.min.js'
     ]
     // upload libs to pick, also css or ?
     ,
@@ -66,7 +66,7 @@ depp.define({
     ,
     'sortablejs': ['https://cdn.jsdelivr.net/npm/sortablejs@1.10.0-rc3/Sortable.min.js'],
     'split': 'https://cdn.jsdelivr.net/npm/split.js@1.5.11/dist/split.min.js',
-    'accordion': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/jquery-accordion/js/jquery.accordion.min.js', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/jquery-accordion/css/jquery.accordion.min.css'],
+    'accordion': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/jquery-accordion/js/jquery.accordion.min.js', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/jquery-accordion/css/jquery.accordion.min.css'],
     'emailjs': ['https://cdn.emailjs.com/sdk/2.4.1/email.min.js'],
     'pagination': ['#jquery', 'https://cdn.jsdelivr.net/npm/paginationjs@2.1.5/dist/pagination.min.js'],
     'js-yaml': 'https://cdn.jsdelivr.net/npm/js-yaml@3.13.1/dist/js-yaml.min.js'
@@ -97,11 +97,11 @@ depp.define({
     'chance': 'https://cdn.jsdelivr.net/npm/chance@1.1.4/chance.min.js'
     // https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly
     ,
-    'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/baseline.min.js',
-    'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/baseliner.js'],
+    'baseline': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/baseline.min.js',
+    'baseliner': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/baseliner.js'],
     'typewriter': 'https://cdn.jsdelivr.net/npm/typewriter-effect@2.12.1/dist/core.min.js',
-    'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/letteringjs.min.js'],
-    'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/jquery.flexibleArea.min.js']
+    'letteringjs': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/letteringjs.min.js'],
+    'flexibleArea': ['#jquery', 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/jquery.flexibleArea.min.js']
     // markdown UI
     ,
     'tail.writer': 'https://cdn.jsdelivr.net/gh/pytesNET/tail.writer@v0.4.1/js/tail.writer-full.min.js',
@@ -122,13 +122,13 @@ depp.define({
     'glfx': ['https://cdn.jsdelivr.net/npm/glfx@0.0.4/glfx.min.js'] // eg tilt shift
     //video
     ,
-    'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/bideo/bideo.min.js'
+    'bideo': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/bideo/bideo.min.js'
     //voice cmd
     ,
     'annYang': 'https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js'
     //FX section
     ,
-    'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/src/vendors/delighters.min.js']
+    'deli': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/src/vendors/delighters.min.js']
     // transitions
     ,
     'slider': ['https://cdn.jsdelivr.net/gh/joelambert/Flux-Slider@v1.4.4/js/flux.min.js'],

@@ -4,7 +4,7 @@
 Abs:  A module in a Page Layout(eg: header, footer, body, aside, nav) that leverage slots and is maintainable in DOM, a bit like Gumdrops. A slotable component(/module). Should be interactive.
 
 and should work in mobile-tall sizes < 512 and desktop-wide sizes.
-
+and be able to understand short cuts or 'CLI bar' - or better: sound commands
 
 Over the years there were many .js libraries related to components that come and go.
  And they all lost out to the native / browser-built-in: the custom element API.
@@ -32,7 +32,7 @@ In this case I also set an attribute and use a slot- just an example.
 And here it the page.js:
 
 ```
-   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/EventFlux.js'
+   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.js'
    new EventFlux()// makes defEventFlux var
 
    // page receives messages from comp
@@ -75,11 +75,11 @@ Any code that you need often should be above!
 And now, lets look at the component code that leverages above:
 
 ```
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.js'
 new EventFlux() // makes defEventFlux var
 
 // get the boilerplate:
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/custel/custel1/custel/CompElement.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/custel/custel1/custel/CompElement.js';
 class Custel1 extends CompElement {
     template = `
     <style>:host {

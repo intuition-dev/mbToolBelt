@@ -1,4 +1,4 @@
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.js'
 
 // . A slotable component(/module).
 export class AbsSlotComp extends HTMLElement {

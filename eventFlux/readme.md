@@ -11,7 +11,7 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
 # Flux
 
     ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/defEventFlux.min.js'
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.min.js'
     
     this.some_name = new EventFlux().getTopic('some_name', { 'persistent': true })
 
@@ -25,7 +25,7 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
 # Non-Flux
 
     ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.2/eventFlux/defEventFlux.min.js'
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.min.js'
     new EventFlux() // makes the persistent windows instance **defEventFlux**
 
     defEventFlux.dispatch('evX', 'oh hi');
