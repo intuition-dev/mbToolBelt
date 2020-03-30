@@ -224,7 +224,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             super()
             console.log('cons')
 
-            this.sr = this.attachShadow({ mode: 'closed' })
+            this.sr = this.attachShadow({ mode: 'open' })
             this.sr.appendChild(cTemp.content.cloneNode(true))
 
             this.vm = new CustelsListVM(this.sr)

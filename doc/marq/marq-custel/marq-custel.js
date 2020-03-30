@@ -85,7 +85,7 @@ customElements.define('marq-custel', class extends HTMLElement {
         this.index = 0;
         //create shadow element
         let _this = this;
-        this.sr = this.attachShadow({ mode: 'closed' });
+        this.sr = this.attachShadow({ mode: 'open' });
         this.sr.appendChild(cTemp.content.cloneNode(true));
         //create clone of the ul so we can animated later
         const ul2 = document.createElement('ul');

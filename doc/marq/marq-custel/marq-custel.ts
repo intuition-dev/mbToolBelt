@@ -90,7 +90,7 @@ customElements.define('marq-custel', class extends HTMLElement {
 
       //create shadow element
       let _this = this
-      this.sr = this.attachShadow({ mode: 'closed' })
+      this.sr = this.attachShadow({ mode: 'open' })
       this.sr.appendChild(cTemp.content.cloneNode(true))
 
       //create clone of the ul so we can animated later

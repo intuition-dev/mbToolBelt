@@ -182,7 +182,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
         constructor() {
             super();
             console.log('cons');
-            this.sr = this.attachShadow({ mode: 'closed' });
+            this.sr = this.attachShadow({ mode: 'open' });
             this.sr.appendChild(cTemp.content.cloneNode(true));
             this.vm = new CustelsListVM(this.sr);
             let THIZ = this;

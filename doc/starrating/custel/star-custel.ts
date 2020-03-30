@@ -32,7 +32,7 @@ customElements.define('star-custel', class extends HTMLElement {
    sr 
    constructor() {
       super()
-      this.sr = this.attachShadow({mode: 'closed'})
+      this.sr = this.attachShadow({ mode: 'open' })
       this.sr.appendChild(starTemp.content.cloneNode(true))
       this.sr.addEventListener('click', function(e) {
          console.log(e.composedPath()[0])

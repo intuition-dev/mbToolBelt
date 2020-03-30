@@ -7,7 +7,7 @@ export class AbsSlotComp extends HTMLElement {
        const cTemp = document.createElement('template')
        cTemp.innerHTML = template
  
-       this.sr = this.attachShadow({ mode: 'closed' })
+       this.sr = this.attachShadow({ mode: 'open' })
        this.sr.appendChild(cTemp.content.cloneNode(true))
     }//cons
 
