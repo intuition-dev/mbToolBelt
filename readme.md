@@ -32,8 +32,8 @@ In this case I also set an attribute and use a slot- just an example.
 And here it the page.js:
 
 ```
-   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.js'
-   new EventFlux()// makes defEventFlux var
+   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/eventFlux/EventFlux.js'
+   // makes defEventFlux var
 
    // page receives messages from comp
    defEventFlux.addListener('c-custel-x', function(evt) {
@@ -75,11 +75,11 @@ Any code that you need often should be above!
 And now, lets look at the component code that leverages above:
 
 ```
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.js'
-new EventFlux() // makes defEventFlux var
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/eventFlux/EventFlux.js'
+
 
 // get the boilerplate:
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/custel/custel1/custel/CompElement.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/custel/custel1/custel/CompElement.js';
 class Custel1 extends CompElement {
     template = `
     <style>:host {

@@ -1,7 +1,5 @@
-//closure
 depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK'], function () {
     console.log('loading');
-    // VM //////////////////////////////////////////////////////////////////////////////////////////
     class CustelsListVM {
         constructor(sr) {
             CustelsListVM.sr = sr;
@@ -11,14 +9,14 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             left.addEventListener('click', CustelsListVM.onLeftClick);
             var paste = CustelsListVM.sr.getElementById('paste');
             paste.addEventListener('click', CustelsListVM.paste);
-        } //()
+        }
         static paste() {
             let bot = CustelsListVM.sr.getElementById('popBot');
             disE('POP-CUSTEL', bot.innerText);
             setTimeout(function () {
                 CustelsListVM.sr.querySelector('#dialog1').close();
             }, 1000 / 30);
-        } //()
+        }
         static fetchCode(custel) {
             return new Promise(function (resolve, reject) {
                 const path = CustelsListVM.root + custel + '/code.pug';
@@ -35,8 +33,8 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
                     console.log(err);
                     reject(err);
                 });
-            }); //pro
-        } //()
+            });
+        }
         static fetchCustels() {
             return new Promise(function (resolve, reject) {
                 fetch(CustelsListVM.root + '/custels.yaml', {
@@ -54,16 +52,15 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
                     console.log(err);
                     reject(err);
                 });
-            }); //pro
+            });
         }
         static dat() {
             console.log('dat');
             let pro = CustelsListVM.fetchCustels();
             pro.then(function (dat) {
-                //console.log(dat)                
                 CustelsListVM.onData(dat.els);
             });
-        } //()
+        }
         static onData(data) {
             var options = {
                 valueNames: ['desc', { data: ['name'] }],
@@ -73,7 +70,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             };
             let custListEl = CustelsListVM.sr.getElementById('custLst');
             CustelsListVM.custelList = new List(custListEl, options, data);
-        } //()
+        }
         static onLeftClick(el) {
             const selector = 'tr';
             var iel = el.target.closest(selector);
@@ -83,16 +80,15 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             console.log(id);
             let proB = CustelsListVM.fetchCode(id);
             CustelsListVM.setText(proB);
-        } //()
+        }
         static setText(proBot) {
             let bot = CustelsListVM.sr.getElementById('popBot');
             proBot.then(function (res) {
                 bot.innerText = res;
             });
-        } //()
-    } //class
-    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/custel/';
-    // custel ////////////////////////////////////////////////////////////////////////////////////////// https://cdn.jsdelivr.net/gh/INTUITION-dev/intuDesignWork@v1.2.6/src/css/global.css
+        }
+    }
+    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/custel/';
     var cTemp = document.createElement('template');
     cTemp.innerHTML = `
 <style>:host {
@@ -189,13 +185,12 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             let pop = this.sr.querySelector('#pop1');
             THIZ.dialog = THIZ.sr.querySelector('#dialog1');
             pop.addEventListener('click', function (e) {
-                //console.log(e.composedPath()[0])
                 THIZ.dialog.showModal();
-            }); //click
+            });
             let close = this.sr.querySelector('#close1');
             close.addEventListener('click', function (e) {
                 THIZ.dialog.close();
-            }); //click
-        } //cons    
-    }); //custel
-}); //depp closure
+            });
+        }
+    });
+});

@@ -11,9 +11,9 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
 # Flux
 
     ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.min.js'
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/eventFlux/EventFlux.min.js'
     
-    this.some_name = new EventFlux().getTopic('some_name', { 'persistent': true })
+    this.some_name = .getTopic('some_name', { 'persistent': true })
 
     some_name.doAction('CHANGE', 'newVal');
     // or better some_name.changeState('key1', 'someNewValue');
@@ -25,8 +25,8 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
 # Non-Flux
 
     ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/eventFlux/EventFlux.min.js'
-    new EventFlux() // makes the persistent windows instance **defEventFlux**
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/eventFlux/EventFlux.min.js'
+     // makes the persistent windows instance **defEventFlux**
 
     defEventFlux.dispatch('evX', 'oh hi');
     defEventFlux.addListener('evX', function (data) {

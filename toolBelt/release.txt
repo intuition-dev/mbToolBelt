@@ -3,7 +3,7 @@ Update changelog.md!
 
 (once you release component or RPC- you have to register it here)
 
-cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.3/
+cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/
 
 1. replace above string w/ a bumped version; globally via VS Code. It should be over 160 of places in all of git (ignore min.js and html)
 

@@ -1,4 +1,3 @@
-// window.ENV = '#{ENV}' //- for comps, but it is also in scope for Pug for ENV logic
 class MiniT {
     constructor() {
         this._start = Date.now();
@@ -18,7 +17,6 @@ class MiniT {
     onDOM_() {
         console.log('DOM');
     }
-    //- eg addScript('bla.js', null, 'api-key', 'key123')  so you can control your own sequence
     addScript(src, callback, attr, attrValue, id) {
         var s = document.createElement('script');
         s.setAttribute('src', src);
@@ -28,7 +26,7 @@ class MiniT {
             s.id = id;
         if (callback)
             s.onload = callback;
-        s.async = true; // it does it anyway, as the script is async
+        s.async = true;
         document.getElementsByTagName('body')[0].appendChild(s);
     }
     fetchItems(items) {
@@ -41,7 +39,6 @@ class MiniT {
                     reject(fullResp.statusText);
                 return fullResp.json();
             }).then(function (obj) {
-                //'prefix' add
                 var item = obj.items;
                 var len = item.length;
                 for (var i = 0; i < len; i++)
@@ -53,9 +50,8 @@ class MiniT {
                 console.log(err);
                 reject(err);
             });
-        }); //pro
-    } //()
-    // get style value
+        });
+    }
     getStyle(el, styleProp) {
         var y;
         if (el.currentStyle)

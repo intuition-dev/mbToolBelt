@@ -9,9 +9,15 @@ declare var window
  */
 export class EventFlux {
 
+    static init() {
+    // added this:
+        if(!window.defEventFlux)
+        window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default 
+    }
+
     topics 
     constructor() {
-        console.log('EventFlux')
+        console.log('EventFlux cons')
         this.topics = {}
     }
     
@@ -183,9 +189,4 @@ class Listener {
 
 } // class
 
-// added this:
-if(!window.defEventFlux)
-    window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default 
-
-console.warn('defEventFlux-v.')
 

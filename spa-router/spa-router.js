@@ -1,23 +1,4 @@
-// All rights reserved by INTUITION.DEV |  Cekvenich, licensed under GPL-3.0-only
-// if (anchor.is('.norouter')) it gets ignored by router
 console.info('spa router');
-/*
-EXAMPLE:
-      
-      SPArouter.init(onNavigate)
-   
-      function onNavigate (evt) {
-         if (evt.detail.type == SPArouter.NavSTART) { //start
-
-         }
-         else if (evt.detail.type == SPArouter.NavDONE) {
-            document.querySelector(SPArouter.zone).innerHTML=evt.detail.newContent.innerHTML
-
-            window.scrollTo(0, 0)
-         }
-      }//
-
-*/
 class SPArouter {
     static loadHtml(toHref, fromHref, back_) {
         if (!back_) {
@@ -28,30 +9,26 @@ class SPArouter {
                 console.info('no push state on file//');
             }
         }
-        //fire NAV event
         SPArouter.disE({ type: SPArouter.NavSTART, toHref: toHref, fromHref: fromHref, back: back_ });
         let url = toHref;
         console.info(url);
-        //   credentials: 'same-origin'          
         fetch(url, {}).then(function (fullResp) {
             return fullResp.text();
         }).then(function (str) {
             var temp = document.createElement('div');
             temp.innerHTML = str;
             let $html = temp;
-            //console.log('s',$html)
             let newContent = $html.querySelector(SPArouter.zone);
             let title = $html.getElementsByTagName("title")[0];
             console.info('tit', title.text);
             document.title = title.text;
-            //fire new PAGE received event
             SPArouter.fixROOT();
             SPArouter.disE({ type: SPArouter.NavDONE, toHref: toHref, fromHref: fromHref, newContent: newContent, $html: $html, back: back_ });
         }).catch(function (er) {
             console.info('error', er);
             SPArouter.disE({ type: SPArouter.ERR, err: er });
         });
-    } //()
+    }
     static appendQueryString(url, queryVars) {
         let firstSeparator = (url.indexOf('?') == -1 ? '?' : '&');
         let queryStringParts = new Array();
@@ -78,7 +55,7 @@ class SPArouter {
             native = true;
         }
         var isFile = window.location.protocol == 'file:';
-        if (isFile || native) { // for electron | build.phonegap, checks if running in real browser from http server 
+        if (isFile || native) {
             try {
                 window.nodeRequire = require;
                 delete window.require;
@@ -94,14 +71,14 @@ class SPArouter {
         }
     }
     static fixROOT() {
-        if (SPArouter.isFile) { // file would be electorn or phonegap to add index.html
+        if (SPArouter.isFile) {
             const $a = document.querySelectorAll('a');
             $a.forEach(function (item) {
                 try {
                     let hasQuery = item.href.includes('?');
                     let hasAnchor = item.href.includes('#');
                     if (item.href.includes('index.html'))
-                        return; // continue in for each
+                        return;
                     let splitSymbol = hasQuery ? '?' : (hasAnchor ? '#' : null);
                     const urlParts = item.href.split(splitSymbol);
                     if (urlParts[0].slice(-1) == '/') {
@@ -109,14 +86,14 @@ class SPArouter {
                     }
                     else {
                         item.setAttribute('href', urlParts[0] + '/index.html' + (splitSymbol ? splitSymbol + urlParts[1] : ''));
-                    } //else
+                    }
                 }
                 catch (err) {
                     console.info(err);
                 }
             });
         }
-    } //()
+    }
     static watchATags() {
         const target = document.querySelector('body');
         let debounce;
@@ -161,13 +138,12 @@ class SPArouter {
                 }
                 if (anchor.classList.contains('norouter'))
                     return;
-                //else:
                 evt.preventDefault();
                 let fromHref = window.location.href;
                 sessionStorage.setItem('oldUrl', href);
                 SPArouter.loadHtml(href, fromHref, null);
             });
-        } //for
+        }
         let pg = window.location.href;
         try {
             history.pushState({ url: pg }, '', pg);
@@ -176,9 +152,9 @@ class SPArouter {
             console.info('no push state on file//', err);
         }
         sessionStorage.setItem('oldUrl', pg);
-    } // init
-} // class
-SPArouter.zone = '#router'; //the content in your layout. The rest should be app shell from PWA.
+    }
+}
+SPArouter.zone = '#router';
 SPArouter.NavSTART = '_nav-start';
 SPArouter.NavDONE = '_nav-loaded';
 SPArouter.ERR = '_nav-ERR';
