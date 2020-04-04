@@ -1,4 +1,6 @@
 
+declare var window
+
 
 /**
  * Flux / Event bus
@@ -185,5 +187,5 @@ class Listener {
 if(!window.defEventFlux)
     window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default 
 
-console.warn('defEventFlux')
+console.warn('defEventFlux-v.')
 
