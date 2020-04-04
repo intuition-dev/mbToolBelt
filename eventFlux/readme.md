@@ -26,7 +26,9 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
 
     ```
     import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/eventFlux/EventFlux.min.js'
-     // makes the persistent windows instance **defEventFlux**
+    
+    // makes a global instance **defEventFlux**:
+    EventFlux.init()
 
     defEventFlux.dispatch('evX', 'oh hi');
     defEventFlux.addListener('evX', function (data) {
