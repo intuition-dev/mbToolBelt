@@ -1,4 +1,5 @@
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/src/slotComp/AbsSlotComp.js';
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/src/slotComp/AbsSlotComp.js';
 class Custel1 extends CompElement {
     constructor() {
         super();
@@ -12,7 +13,7 @@ class Custel1 extends CompElement {
     <b>I'm a Cust. El</b>
     <slot></slot>
     `;
-        this.state = {};
+        EventFlux.init();
         console.log('Comp1');
         this.setup(this.template);
         this.sr.addEventListener('click', function (e) {
@@ -23,9 +24,6 @@ class Custel1 extends CompElement {
     static get observedAttributes() { return ['bla', 'bla2']; }
     attributeChangedCallback(aName, oldVal, newVal) {
         console.log('custel received message', aName, newVal);
-    }
-    setViewModel(vm) {
-        console.log('a ViewModel can be set if separation is required, or use defEventFlux to be loosely coupled');
     }
 }
 customElements.define('c-custel', Custel1);

@@ -1,4 +1,4 @@
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.js'
 
 // . A slotable component(/module).
 export class AbsSlotComp extends HTMLElement {
@@ -38,7 +38,7 @@ export class AbsSlotComp extends HTMLElement {
       }
       return obj
    }//()
-
+   
    getSlotElById(id) {
       let ret
       this.slotEls.map(function(n){
@@ -53,6 +53,6 @@ export class AbsSlotComp extends HTMLElement {
    get slotEls() {
       // https://javascript.info/slots-composition
       return this.sr.querySelector('slot').assignedElements()
-   }
+   }   
 
 }//custel

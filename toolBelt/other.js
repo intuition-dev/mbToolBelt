@@ -9,7 +9,7 @@ depp.define({
 
     'fontloader': ['https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js']
 
-    ,'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/custel/surveryitem/custel/surveyitem-comp.min.js'],
+    ,'surveyitem-comp': ['https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/custel/surveryitem/custel/surveyitem-comp.min.js'],
 
     'client': 'https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js'
 
@@ -112,7 +112,7 @@ depp.define({
     'onepage': ['https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/onepage-scroll.css', 'https://cdn.jsdelivr.net/npm/onepage-scroll@1.3.0/jquery.onepage-scroll.min.js']
 
     ,
-    'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/src/vendors/parallaxImg.min.js'
+    'parallaxImg': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/src/vendors/parallaxImg.min.js'
 
     // deprectated
     ,
