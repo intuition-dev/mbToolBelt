@@ -17,8 +17,8 @@ class Custel1 extends CompElement {
     `;    
     constructor() {
         super();
+        EventFlux.init()
 
-        this.state = {}; // could hold state internally, but I use ViewModel externally
         console.log('Comp1');
         this.setup(this.template) // just a helper function for boiler plate.
         this.sr.addEventListener('click', function (e) {
@@ -35,9 +35,6 @@ class Custel1 extends CompElement {
         console.log('custel received message', aName, newVal);
     } //()
 
-    setViewModel(vm) {
-        console.log('a ViewModel can be set if separation is required, or use defEventFlux to be loosely coupled');
-    } //()
 } //custel
 
 customElements.define('c-custel', Custel1)

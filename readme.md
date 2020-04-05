@@ -41,14 +41,11 @@ And here it the page.js:
 
       // optionaly, you can interact w/ element
       let c = document.getElementById('c1')
-      c.setViewModel(null)
    })
 ```
 
 It loads an event system, you can use any event system you like, I used: https://github.com/intuition-dev/mbToolBelt/tree/master/eventFlux, but you can use CustomEvent() or anything else
 The purpose of the event system is to communicate bettween layers and components in any simple and reliable way. 
-
-We also can optionally call function on the component, here I use setViewModel method I put in the component.
 
 So I hope it shows that Custom Elements are easy to use.
 
@@ -93,8 +90,7 @@ class Custel1 extends CompElement {
     `;    
     constructor() {
         super();
-
-        this.state = {}; // could hold state internally, but I use ViewModel externally
+        EventFlux.init()
 
         this.setup(this.template) // just a helper funciton for boiler plate.
         this.sr.addEventListener('click', function (e) {
@@ -111,7 +107,6 @@ class Custel1 extends CompElement {
         console.log('custel received message', aName, newVal);
     } //()
 
-    setViewModel(vm) {    } // just some method
 } //custel
 
 customElements.define('c-custel', Custel1)
@@ -123,7 +118,7 @@ Then notice that we call the setup() function.
 I added a clicked event - handles a click on the component. Also it will dispatch an event to a page; and last lines are to receive
 a message from the page scripts. 
 
-And we can hold state or use a ViewModel.
+And we can hold state in a ViewModel.
 
 
 ## More realistic example:
