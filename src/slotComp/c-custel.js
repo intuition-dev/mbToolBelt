@@ -1,4 +1,4 @@
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/custel/custel1/custel/CompElement.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/src/slotComp/AbsSlotComp.js';
 class Custel1 extends CompElement {
     constructor() {
         super();

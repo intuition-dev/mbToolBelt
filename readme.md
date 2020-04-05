@@ -10,6 +10,7 @@ Over the years there were many .js libraries related to components that come and
  And they all lost out to the native / browser-built-in: the custom element API.
 Modern browsers has built in support for Vanilla Custom Elements (CE) !
 
+- Does not need to be reusable
 
 ## Example:
 
@@ -76,7 +77,7 @@ import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@
 
 
 // get the boilerplate:
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/custel/custel1/custel/CompElement.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.11/src/slotComp/AbsSlotComp.js';
 class Custel1 extends CompElement {
     template = `
     <style>:host {
