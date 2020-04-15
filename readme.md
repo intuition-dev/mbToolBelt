@@ -5,14 +5,14 @@
 ## SlotCustel overview
 
 - Why leverage components for your front end development?
-The answer should be same for anything in front end development: reduce cost of development and matinanance, and improved UX/UI.
+The answer should be same for anything in front end development: reduce cost of development and maintenance, and improved UX/UI.
 So let me show you a very good way to be a productive front end software developer. 
 
-- Why custom elements? The big 3 front end frameworks (Vue, React, Angular) are more than a decade old and require downloading and maintaing a 3rd party library. Also, I have not seen them improve productivity of front end development relative to 
-even LAMP. Custom elments are built into the browser!
+- Why custom elements? The big 3 front end frameworks (Vue, React, Angular) are more than a decade old and require downloading and maintain a 3rd party library. Also, I have not seen them improve productivity of front end development relative to 
+even LAMP. Custom elements are built into the browser!
 
 - How to use Custom Elements to maximize the benefits? Ans: They are Custom! So you create them per page|screen.
-A costly mistake based on my expereince is to prematurely leverage DRY for CustEl. Instead use a rule of 3: When you use it a 3rd time, cosnider a way
+A costly mistake based on my experience is to prematurely leverage DRY for CustEl. Instead use a rule of 3: When you use it a 3rd time, consider a way
 to  reuse - but not before. (Also people prematurely add a design system in a Custel, when it can remain at page level) But short story is: Custom per page!
 
 
@@ -23,7 +23,7 @@ Here is an example SlotCustel code, notice the default template is blank, nudgin
 ```
 
 
-Here are 2 example of a page/screen using SlotCustel, I'm using Pug syntax instead of HTML (Pug is the default templateing lanugage by the most popular Javascript http server: Express js, it takes about 5 seconds to learn if you know HTML)
+Here are 2 example of a page/screen using SlotCustel, I'm using Pug syntax instead of HTML (Pug is the default template language by the most popular JavaScript HTTP server: Express js, Pug takes about 5 seconds to learn if you know HTML)
 but you can use HTML if you are old school.
 A form page using SlotCustel example:
 ```pug
@@ -54,7 +54,7 @@ And a list (list.js) page using SlotCustel:
         tbody.list
 ```
 
-And now you can write your Custel javascript|typescript code, and manage the DOM in the slot like you would write a normnal Custom Element, for example doing data-binding. Most/all the page javascript code is move to the SlotCustel. 
+And now you can write your Custel javascript|typescript code, and manage the DOM in the slot like you would write a normal Custom Element, for example doing data-binding. Most/all the page JavaScript code is move to the SlotCustel. 
 Notice that if someone needs to maintain the page, they can just edit the page DOM.
 
 And that is the over view. Lets learn this dance. 
@@ -124,4 +124,4 @@ And you can download the full app - including API calls via:
 
 ## Summary
 
-A very productive way to develop front end is to heavilly leaverage slot part of the Custel. 
+A very productive way to develop front end is to heavily leverage slot part of the Custel. 
