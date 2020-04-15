@@ -8,8 +8,8 @@
 The answer should be same for anything in front end development: reduce cost of development and matinanance, and improved UX/UI.
 So let me show you a very good way to be a productive front end software developer. 
 
-- Why custom elements? The big 3 front end frameworks are more than a decade old and require downloading and maintaing a 3rd party library(and I have not seen them improve productivity of front end development relative to 
-even LAMP). Custom elments are built into the browser.
+- Why custom elements? The big 3 front end frameworks (Vue, React, Angular) are more than a decade old and require downloading and maintaing a 3rd party library. Also, I have not seen them improve productivity of front end development relative to 
+even LAMP. Custom elments are built into the browser!
 
 - How to use Custom Elements to maximize the benefits? Ans: They are Custom! So you create them per page|screen.
 A costly mistake based on my expereince is to prematurely leverage DRY for CustEl. Instead use a rule of 3: When you use it a 3rd time, cosnider a way
@@ -63,7 +63,7 @@ And that is the over view. Lets learn this dance.
 Using a Custel in a page:
 ```pug
    script(type='module').
-      import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
+      import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/eventFlux/EventFlux.min.js'
       EventFlux.init()
 
       defEventFlux.register('c-custel-x', function(evt) {
@@ -110,16 +110,18 @@ We import AbsSlotCustel that has very few lines of helper code.
 In this example we used both slot and custom DOM, but the default is to only use slot.
 
 
-
 ### Full SlotCustel example, and application
 
+Here is a login form SlotCustel example:
+- https://github.com/intuition-dev/httpRPC/blob/master/CRUD/webApp/loginScreen/pg-custel.js
+Here is a list SlotCustel example:
+- https://github.com/intuition-dev/httpRPC/blob/master/CRUD/webApp/contactScreen/pg-custel.js
 
+And you can download the full app - including API calls via: 
+```
+    npx mbake -c .
+```
 
+## Summary
 
-And we can hold state in a ViewModel.
-
-
-## ToDo:
-
-- https://www.INTUITION.DEV/ex/marq
-
+A very productive way to develop front end is to heavilly leaverage slot part of the Custel. 

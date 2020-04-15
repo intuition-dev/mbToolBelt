@@ -88,7 +88,7 @@ depp.require(['poly', 'js-yaml', 'jquery', 'split', 'listjs', 'DOM', 'dialogOK']
             });
         }
     }
-    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/custel/';
+    CustelsListVM.root = 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/custel/';
     var cTemp = document.createElement('template');
     cTemp.innerHTML = `
 <style>:host {

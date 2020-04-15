@@ -11,7 +11,7 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
 # Flux
 
     ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/eventFlux/EventFlux.min.js'
     
     this.some_name = .getTopic('some_name', { 'persistent': true })
 
@@ -25,7 +25,7 @@ Inspired by https://github.com/arqex/fluxify and https://github.com/theiconic/ev
 # Non-Flux
 
     ```
-    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/eventFlux/EventFlux.min.js'
     
     // makes a global instance **defEventFlux**:
     EventFlux.init()
