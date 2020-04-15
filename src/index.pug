@@ -2,14 +2,23 @@ head
    include headFrag
 
 body
+   p view console
+   script(type='module').
+      // Using an event bus. Short story: it is simpler than custom events
+      import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
+      EventFlux.init()
 
-   p in pg
+      // page receives messages from comp
+      defEventFlux.register('c-custel-x', function(evt) {
+         console.log('**pg received message**', evt)
+
+         // optionaly, you can interact w/ element
+         let c = document.getElementById('c1')
+      })
    
    c-custel(bla=3)#c1
       p Slot In
-
-   script(src='/page.js' type='module')
-
-   script(src='/custel/c-custel.js' type='module')
+   
+   script(src='/c-custel.js' type='module')
 
 

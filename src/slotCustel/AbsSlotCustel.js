@@ -1,11 +1,11 @@
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js';
 export class AbsSlotCustel extends HTMLElement {
     constructor() {
         super(...arguments);
-        this.defTemplate = `
-   <slot></slot>
-   `;
+        this.defTemplate = `<slot></slot>`;
     }
     setup(template) {
+        EventFlux.init();
         const cTemp = document.createElement('template');
         cTemp.innerHTML = template;
         this.sr = this.attachShadow({ mode: 'open' });

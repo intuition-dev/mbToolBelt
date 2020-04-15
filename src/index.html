@@ -1,10 +1,6 @@
 
 <head>
-  <script>
-    var _start = Date.now()
-    window.ENV = '0' // for comps, but it is also in scape for Pug for ENV logic
-    
-  </script>
+  <script></script>
   <title></title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -14,10 +10,23 @@
   </style>
 </head>
 <body>
-  <p>in pg</p>
+  <p>view console</p>
+  <script type="module">
+    // Using an event bus. Short story: it is simpler than custom events
+    import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
+    EventFlux.init()
+    
+    // page receives messages from comp
+    defEventFlux.register('c-custel-x', function(evt) {
+       console.log('**pg received message**', evt)
+    
+       // optionaly, you can interact w/ element
+       let c = document.getElementById('c1')
+    })
+    
+  </script>
   <c-custel bla="3" id="c1">
     <p>Slot In</p>
   </c-custel>
-  <script src="/page.js" type="module"></script>
-  <script src="/custel/c-custel.js" type="module"></script>
-<!-- mB v8.2.5 on 2020-02-26T01:54:50.468Z --></body>
+  <script src="/c-custel.js" type="module"></script>
+<!-- mB v8.4.14 on 2020-04-15T21:31:57.317Z --></body>

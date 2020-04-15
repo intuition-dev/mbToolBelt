@@ -1,7 +1,7 @@
 
 # My event bus is better than yours: EventFlux
 
-- pub first or sub first!
+- Pub first or sub first! For example Custom Events can't do that making it hard for programmer to use. EventFlux is more reliable than Custom Events.
 - Should be used for Flux user actions, or any other event system
 
 

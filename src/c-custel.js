@@ -1,6 +1,5 @@
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js';
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/src/slotCustel/AbsSlotCustel.min.js';
-class Custel1 extends CompElement {
+import { AbsSlotCustel } from '/slotCustel/AbsSlotCustel.js';
+class Custel1 extends AbsSlotCustel {
     constructor() {
         super();
         this.template = `
@@ -13,13 +12,12 @@ class Custel1 extends CompElement {
     <b>I'm a Cust. El</b>
     <slot></slot>
     `;
-        EventFlux.init();
         console.log('Comp1');
         this.setup(this.template);
         this.sr.addEventListener('click', function (e) {
             console.log(e.composedPath()[0]);
         });
-        defEventFlux.dispatch('c-custel-x', { a: 'b', c: 'd' });
+        defEventFlux.doAction('c-custel-x', { a: 'b', c: 'd' });
     }
     static get observedAttributes() { return ['bla', 'bla2']; }
     attributeChangedCallback(aName, oldVal, newVal) {

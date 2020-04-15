@@ -1,11 +1,17 @@
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux.min.js';
+// Using an event buss. Short story: it is simpler than custom events
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
 
-// . A slotable component(/module).
+// A slotable component(/module).
 export class AbsSlotCustel extends HTMLElement {
    
    sr // shadow root handle
    
+   /**
+    * A helper method
+    * @param template 
+    */
    setup(template) {
+      EventFlux.init()
       const cTemp = document.createElement('template')
       cTemp.innerHTML = template
 

@@ -12,7 +12,7 @@ export class EventFlux {
     static init() {
     // added this:
         if(!window.defEventFlux)
-        window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default 
+            window.defEventFlux = new EventFlux().getTopic('DEFAULT', { 'persistent': true }); // default 
     }
 
     topics 
