@@ -1,5 +1,5 @@
 // get the boilerplate:
-import { AbsSlotCustel } from '/slotCustel/AbsSlotCustel.js';
+import { AbsSlotCustel } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/src/slotCustel/AbsSlotCustel.min.js';
 class Custel1 extends AbsSlotCustel {
     template = `
     <style>:host {
