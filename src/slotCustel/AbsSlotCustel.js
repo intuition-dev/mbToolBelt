@@ -1,4 +1,10 @@
-export class AbsSlotComp extends HTMLElement {
+export class AbsSlotCustel extends HTMLElement {
+    constructor() {
+        super(...arguments);
+        this.defTemplate = `
+   <slot></slot>
+   `;
+    }
     setup(template) {
         const cTemp = document.createElement('template');
         cTemp.innerHTML = template;

@@ -1,5 +1,70 @@
 ﻿
-# SlotComp 
+# Slot-centric Custom Elements (SlotCustel)
+
+
+## SlotCustel overview
+
+- Why leverage components for your front end development?
+The answer should be same for anything in front end development: reduce cost of development and matinanance, and improved UX/UI.
+So let me show you a very good way to be a productive front end software developer. 
+
+- Why custom elements? The big 3 front end frameworks are more than a decade old and require downloading and maintaing a 3rd party library(and I have not seen them improve productivity of front end development relative to 
+even LAMP). Custom elments are built into the browser.
+
+- How to use Custom Elements to maximize the benefits? Ans: They are Custom! So you create them per page|screen.
+A costly mistake based on my expereince is to prematurely leverage DRY for CustEl. Instead use a rule of 3: When you use it a 3rd time, cosnider a way
+to  reuse - but not before. (Also people prematurely add a design system in a Custel, when it can remain at page level) But short story is: Custom per page!
+
+
+Here is an example SlotCustel code, notice the default template is blank, nudging you to put DOM in the slot/page:
+```
+   // default template
+   defTemplate = `<slot></slot>`;
+```
+
+
+Here are 2 example of a page/screen using SlotCustel, I'm using Pug syntax instead of HTML (Pug is the default templateing lanugage by the most popular Javascript http server: Express js, it takes about 5 seconds to learn if you know HTML)
+but you can use HTML if you are old school.
+A form page using SlotCustel example:
+```
+    pg-custel 
+        form.grid-form#loginF
+        fieldset
+            div(data-row-span='1')
+                div(data-field-span='1')
+                label Name
+                input#email.form-control(type='text')
+            div(data-row-span='1')
+                div(data-field-span='1')
+                label Password
+                input#pswd.form-control.pswd(type='password')
+        #loginBut.btn.btn-sm.btn-a Login
+```
+And a list (list.js) page using SlotCustel:
+```(pug)
+    pg-custel 
+    p Table:
+    #contactLst
+        table.table
+        thead
+            th FName
+            th LName
+            th Email
+            th Org
+        tbody.list
+```
+
+And now you can write your Custel javascript|typescript code, and manage the DOM in the slot like you would write a normnal Custom Element, for example doing data-binding. Most/all the page javascript code is move to the SlotCustel. 
+Notice that if someone needs to maintain the page, they can just edit the page DOM.
+
+And that is the over view. 
+
+### Simpler example
+
+
+### Full application
+
+
 
 Abs:  A module in a Page Layout(eg: header, footer, body, aside, nav) that leverage slots and is maintainable in DOM, a bit like Gumdrops. A slotable component(/module). Should be interactive.
 
@@ -33,7 +98,7 @@ In this case I also set an attribute and use a slot- just an example.
 And here it the page.js:
 
 ```
-   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.js'
+   import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
    // makes defEventFlux var
 
    // page receives messages from comp
@@ -73,11 +138,11 @@ Any code that you need often should be above!
 And now, lets look at the component code that leverages above:
 
 ```
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.min.js'
 
 
 // get the boilerplate:
-import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/src/slotComp/AbsSlotComp.js';
+import { CompElement } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/src/slotCustel/AbsSlotCustel.min.js';
 class Custel1 extends CompElement {
     template = `
     <style>:host {

@@ -1,7 +1,7 @@
-import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux/EventFlux.js'
+import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.12/eventFlux.min.js';
 
 // . A slotable component(/module).
-export class AbsSlotComp extends HTMLElement {
+export class AbsSlotCustel extends HTMLElement {
    
    sr // shadow root handle
    
@@ -12,6 +12,9 @@ export class AbsSlotComp extends HTMLElement {
       this.sr = this.attachShadow({ mode: 'open' })
       this.sr.appendChild(cTemp.content.cloneNode(true))
    }//cons
+
+   // default template
+   defTemplate = `<slot></slot>`;
 
     // you can now register and handle any user/action changes
     // this.flux.changeState('key1', 'someNewValue')
