@@ -17,7 +17,7 @@ depp.define({
     'disableAutoFill': ['#jquery', 'https://cdn.jsdelivr.net/npm/disableautofill@1.2.8/src/jquery.disableAutoFill.min.js'],
     'debugCSS': 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/src/vendors/debug.css',
     'bcrypt': 'https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js',
-    'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.js',
+    'gmetrics': 'https://1490415816.rsc.cdn77.org/lib/gmetrics.min.js',
     'platform': 'https://cdn.jsdelivr.net/npm/platform@1.3.5/platform.min.js',
     'fontfaceobserver': 'https://cdn.jsdelivr.net/npm/fontfaceobserver@2.1.0/fontfaceobserver.standalone.min.js',
     'trace': 'https://cdn.jsdelivr.net/npm/tracekit@0.4.5/tracekit.min.js',
