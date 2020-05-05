@@ -63,7 +63,7 @@ And that is the over view. Lets learn this dance.
 Using a Custel in a page:
 ```pug
    script(type='module').
-      import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/eventFlux/EventFlux.min.js'
+      import { EventFlux } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.25/eventFlux/EventFlux.min.js'
       EventFlux.init()
 
       defEventFlux.register('c-custel-x', function(evt) {
@@ -83,7 +83,7 @@ Notice we use an Event Bus called EventFlux. EventFlux is more reliable than Cus
 #### Now lets write the c-custel
 Code:
 ```typescript
-import { AbsSlotCustel } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.14/slotCustel/slotCustel/AbsSlotCustel.min.js';
+import { AbsSlotCustel } from 'https://cdn.jsdelivr.net/gh/intuition-dev/mbToolBelt@v8.4.25/slotCustel/slotCustel/AbsSlotCustel.min.js';
 class Custel1 extends AbsSlotCustel {
     template = `
         <style></style>
